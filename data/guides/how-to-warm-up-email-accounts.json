@@ -1,0 +1,53 @@
+{
+  "slug": "how-to-warm-up-email-accounts",
+  "title": "How to Warm Up Email Accounts for Cold Outreach",
+  "metaTitle": "How to Warm Up Email Accounts (2026)",
+  "metaDescription": "What email warmup is, the ramp schedule that works, how long it takes, and the mistakes that waste it. A practical guide to warming cold email accounts.",
+  "tags": ["Deliverability", "Warmup"],
+  "publishedDate": "2026-02-09",
+  "updatedDate": "2026-06-11",
+  "readTime": 9,
+  "excerpt": "Warmup teaches mailbox providers you are a real sender before you run real campaigns. Skip it and a clean setup still lands in spam. Here is how to do it right.",
+  "toc": [
+    { "id": "what-warmup-is", "title": "What warmup is" },
+    { "id": "why-needed", "title": "Why new accounts need it" },
+    { "id": "the-ramp", "title": "The ramp schedule" },
+    { "id": "how-long", "title": "How long it takes" },
+    { "id": "by-provider", "title": "Differences by provider" },
+    { "id": "manual-vs-auto", "title": "Manual vs automated" },
+    { "id": "mistakes", "title": "Warmup mistakes" },
+    { "id": "not-enough", "title": "When warmup is not enough" },
+    { "id": "faq", "title": "FAQ" }
+  ],
+  "contentHtml": "<p>Warmup is the process of building a sending reputation for a new email account before you use it for real campaigns. You send a small, slowly increasing volume of mail that gets opened and replied to, which teaches mailbox providers that you are a legitimate sender.</p><p>It is the step people are most tempted to skip, because it is slow and produces no immediate result. Skipping it is also the fastest way to send a perfectly configured account straight to spam.</p><h2 id=\"what-warmup-is\">What warmup actually is</h2><p>A mailbox provider trusts a sender based on history. A brand-new account has no history, so it has no trust. Warmup manufactures that history in a controlled way.</p><p>In practice, warmup means the account exchanges real emails with other real accounts. Those emails get opened, replied to, and pulled out of spam if they land there. Every one of those actions is a positive engagement signal, and the steady accumulation of them is what reputation is made of.</p><h2 id=\"why-needed\">Why new accounts need it</h2><p>Behaving like an established sender is itself a signal you have to earn. If a one-day-old account suddenly sends 500 emails, that pattern looks nothing like a real person and everything like a spammer spinning up a burner.</p><p>This applies to new domains, new mailboxes on an existing domain, and accounts returning from a deliverability problem. Any account without a recent, healthy sending history needs warmup before it carries campaign volume.</p><h2 id=\"the-ramp\">The ramp schedule that works</h2><p>Warmup is a gradual ramp, not a fixed number. The exact figures vary by provider and account age, but the shape is consistent: start very low, increase slowly, and never jump.</p><ul><li><strong>Week 1.</strong> A handful of warmup emails per day per mailbox. The goal is the first signals of life, not volume.</li><li><strong>Week 2.</strong> Increase steadily, still well below campaign volume. Watch that the mail is landing in the inbox, not spam.</li><li><strong>Week 3.</strong> Continue the ramp and begin layering in a small amount of real campaign volume alongside ongoing warmup.</li><li><strong>Ongoing.</strong> Keep warmup running underneath your campaigns. It is a maintenance signal, not just an onboarding step.</li></ul><p>You can model the target volume for your mailbox count with the free <a href=\"/tools/warmup-calculator\">warmup calculator</a>.</p><h2 id=\"how-long\">How long warmup takes</h2><p>Plan on two to three weeks before a new account is ready for meaningful campaign volume. There is no shortcut. Anyone promising a fully warmed account in three days is describing a number, not a reputation.</p><p>The account is not done at the end of week three. Warmup continues to run at a lower level underneath your real sending, because a sudden stop in warmup activity is itself a change in pattern.</p><h2 id=\"by-provider\">Warmup differs by mailbox provider</h2><p>One ramp schedule does not fit every mailbox. Google, Outlook, and Azure mailboxes each respond differently, so the volume you ramp to and the reply rate warmup targets should be tuned per provider, not copied across all of them.</p><p>Microsoft mailboxes, both Outlook and Microsoft 365, are generally more sensitive than Gmail. They tolerate a slower ramp and a lower steady volume, and pushing them at Gmail's pace is a common way to stall a Microsoft mailbox. Gmail and Google Workspace mailboxes usually accept a somewhat faster ramp once the early signals are healthy. Azure-hosted mailboxes are a third case again, with their own tolerances. A warmup setup that treats all three identically will over-push some mailboxes and under-warm others.</p><p>This is one more reason to use automated warmup that is provider-aware. Sendbox's <a href=\"/deliverability/human-like-warmup\">human-like warmup</a> adjusts ramp volume and warmup reply rate per provider, so a Microsoft mailbox is never held to a Gmail schedule.</p><h2 id=\"manual-vs-auto\">Manual vs automated warmup</h2><p>You can warm up manually by emailing colleagues and contacts on a schedule, but it does not scale past a couple of mailboxes and it is easy to do inconsistently. Automated warmup runs the ramp for you across every mailbox.</p><p>The quality difference between warmup tools is real. Older tools blast a fixed schedule regardless of what is happening to the account. Sendbox's <a href=\"/deliverability/human-like-warmup\">human-like warmup</a> varies timing and volume to look organic, and auto-throttles when account health dips so warmup heals the mailbox instead of pushing it harder while it struggles.</p><h2 id=\"mistakes\">Common warmup mistakes</h2><ul><li><strong>Skipping it entirely.</strong> The big one. A clean setup with no warmup still lands in spam.</li><li><strong>Ramping too fast.</strong> Jumping from warmup straight to full campaign volume undoes the work. The transition has to be gradual too.</li><li><strong>Stopping warmup once campaigns start.</strong> Warmup is ongoing maintenance, not a one-time onboarding task.</li><li><strong>Warming up but ignoring the data.</strong> If a mailbox is landing warmup mail in spam, that is a signal to slow down, not push through.</li><li><strong>Warming a broken setup.</strong> Warmup cannot fix missing authentication or a bad domain. Get the foundation right first.</li></ul><h2 id=\"not-enough\">When warmup is not enough</h2><p>Warmup builds reputation, but it cannot overcome a broken foundation. If your <a href=\"/learn/email-authentication-spf-dkim-dmarc-guide\">authentication</a> is missing, your domain is wrong, or you are sending to an unvalidated list, warmup will not save you.</p><p>It also cannot fully protect you on a shared IP pool, where other senders affect the same reputation you are trying to build. Warmup is one layer of a larger system. Pair it with proper infrastructure and authentication, and walk through the full picture in the <a href=\"/learn/cold-email-deliverability-guide\">deliverability guide</a> and the <a href=\"/learn/cold-email-infrastructure-setup-guide\">infrastructure setup guide</a>.</p>",
+  "faqs": [
+    {
+      "question": "How long does it take to warm up a new email account?",
+      "answer": "Plan on two to three weeks before a new account is ready for real campaign volume. Warmup is a gradual ramp from a handful of emails per day up toward campaign levels, and it cannot be safely rushed."
+    },
+    {
+      "question": "Do I need to keep warmup running after I start sending campaigns?",
+      "answer": "Yes. Warmup is ongoing maintenance, not a one-time step. Keep it running at a lower level underneath your real campaigns, because a sudden stop in warmup activity is itself a change in your sending pattern."
+    },
+    {
+      "question": "Can I warm up an email account manually?",
+      "answer": "You can, by emailing real contacts on a consistent schedule, but it does not scale past one or two mailboxes and is easy to do inconsistently. Automated warmup runs the ramp reliably across every mailbox at once."
+    },
+    {
+      "question": "Does warmup fix bad deliverability?",
+      "answer": "Only the part caused by a missing reputation. Warmup cannot fix broken authentication, a bad sending domain, or an unvalidated list. Fix the foundation first, then warmup builds the reputation on top of it."
+    },
+    {
+      "question": "How many warmup emails per day should I send?",
+      "answer": "Start with just a handful per mailbox per day in week one, then increase steadily. The exact number depends on the provider and account age. The principle is to start low and never jump volume sharply."
+    },
+    {
+      "question": "Does warmup work the same for Gmail, Outlook, and Azure mailboxes?",
+      "answer": "No. Microsoft mailboxes, including Outlook and Microsoft 365, are generally more sensitive than Gmail and need a slower, lower-volume ramp. Azure-hosted mailboxes differ again. Warmup ramp volume and reply rates should be tuned per provider, not applied uniformly across every mailbox."
+    },
+    {
+      "question": "Is it safe to warm up and send campaigns from the same mailbox?",
+      "answer": "Yes, once the mailbox is past its initial ramp. By week three you can layer a small amount of campaign volume alongside ongoing warmup, then increase campaign volume gradually while warmup keeps running underneath."
+    }
+  ]
+}

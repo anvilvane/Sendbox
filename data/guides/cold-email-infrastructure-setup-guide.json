@@ -1,0 +1,48 @@
+{
+  "slug": "cold-email-infrastructure-setup-guide",
+  "title": "Cold Email Infrastructure Setup Guide: Domains, Mailboxes, and DNS",
+  "metaTitle": "Cold Email Infrastructure Setup Guide (2026)",
+  "metaDescription": "How to set up cold email infrastructure from scratch: sending domains, mailboxes, DNS and authentication, warmup, and how many of each you actually need.",
+  "tags": ["Infrastructure", "Setup"],
+  "publishedDate": "2026-02-23",
+  "updatedDate": "2026-02-23",
+  "readTime": 10,
+  "excerpt": "Cold email infrastructure is the set of domains, mailboxes, and DNS records you send from. Set it up in the wrong order and you spend weeks undoing it. Here is the right order.",
+  "toc": [
+    { "id": "what-it-is", "title": "What infrastructure means" },
+    { "id": "step-1-domains", "title": "Step 1: Sending domains" },
+    { "id": "step-2-mailboxes", "title": "Step 2: Mailboxes" },
+    { "id": "step-3-dns", "title": "Step 3: DNS and authentication" },
+    { "id": "step-4-warmup", "title": "Step 4: Warmup" },
+    { "id": "step-5-connect", "title": "Step 5: Connect a sending tool" },
+    { "id": "how-many", "title": "How many domains and mailboxes" },
+    { "id": "faq", "title": "FAQ" }
+  ],
+  "contentHtml": "<p>Cold email infrastructure is the set of domains, mailboxes, and DNS records your campaigns actually send from. It is the foundation everything else sits on, and the order you build it in matters. Set it up wrong and you spend weeks unwinding it.</p><p>This is the setup sequence from scratch. Follow it in order. Each step depends on the one before it.</p><h2 id=\"what-it-is\">What cold email infrastructure means</h2><p>When you send a cold email, it leaves from a mailbox, which lives on a domain, which has DNS records that tell the world who is allowed to send for it. That stack is your infrastructure. The sending tool sits on top of it, but it is not the infrastructure itself.</p><p>The reason this gets its own guide is that almost every deliverability problem traces back to an infrastructure decision: the wrong domain, no authentication, too few mailboxes pushed too hard. Get the foundation right and the rest of cold email gets dramatically easier.</p><h2 id=\"step-1-domains\">Step 1: Buy your sending domains</h2><p>The first rule of cold email infrastructure: never send from your primary domain. If a cold campaign damages reputation, you do not want that anywhere near your main domain or your team's everyday email.</p><p>Instead, register separate sending domains. These are usually close variations of your brand name. Each one is a distinct reputation, isolated from your primary domain and from each other. Buy them well before you plan to send, because they need age and warmup before they are useful.</p><h2 id=\"step-2-mailboxes\">Step 2: Set up mailboxes</h2><p>On each sending domain, create mailboxes. These are the actual email accounts your campaigns send from, hosted on a provider like Google Workspace or Microsoft 365.</p><p>Each mailbox should send a conservative daily volume. The way you scale cold email is by adding mailboxes, not by pushing existing mailboxes harder. More mailboxes at a low per-mailbox rate is far safer than a few mailboxes at a high rate. You can model the math with the free <a href=\"/tools/mailbox-calculator\">mailbox calculator</a>.</p><h2 id=\"step-3-dns\">Step 3: Configure DNS and authentication</h2><p>With domains and mailboxes in place, set up the DNS records that make them trustworthy. This is non-negotiable and it comes before any sending.</p><ul><li><strong>MX records</strong> so mail can be received, which matters for replies and for looking like a real domain.</li><li><strong>SPF</strong>, a single record listing every service allowed to send for the domain.</li><li><strong>DKIM</strong>, a signing key published for each sending platform you use.</li><li><strong>DMARC</strong>, a policy record, started in monitoring mode.</li></ul><p>The <a href=\"/learn/email-authentication-spf-dkim-dmarc-guide\">SPF, DKIM and DMARC guide</a> walks through each one, and the free <a href=\"/tools/spf-dkim-checker\">authentication checker</a> confirms they all pass before you move on. Do not skip the verification step. DNS fails silently.</p><h2 id=\"step-4-warmup\">Step 4: Warm up every account</h2><p>Domains and mailboxes are configured, but they have no reputation yet. Sending real campaigns now would look exactly like a spammer spinning up burner accounts.</p><p>Warm up every mailbox with a gradual ramp before it touches a campaign. Plan on two to three weeks. The <a href=\"/learn/how-to-warm-up-email-accounts\">warmup guide</a> covers the schedule, and a tool with <a href=\"/deliverability/human-like-warmup\">human-like warmup</a> runs the ramp across all your mailboxes at once instead of you doing it by hand.</p><h2 id=\"step-5-connect\">Step 5: Connect a sending tool</h2><p>Only now does the sending platform enter the picture. It connects to your warmed mailboxes and runs the campaigns, sequencing, and tracking on top of the infrastructure you built.</p><p>This is also where the dedicated versus shared IP question gets decided. Many tools route all of this through a shared IP pool, which means the infrastructure work you just did sits on a reputation you do not fully control. Sendbox gives every account <a href=\"/deliverability/dedicated-ips\">dedicated IPs</a> and <a href=\"/deliverability/isolated-infrastructure\">isolated infrastructure</a>, and can provision mailboxes directly, so the whole stack stays under your control. The <a href=\"/learn/dedicated-ip-vs-shared-ip-cold-email\">dedicated vs shared IP guide</a> covers why that matters.</p><h2 id=\"how-many\">How many domains and mailboxes do you need</h2><p>It depends entirely on your target volume, which is exactly why the order in this guide matters. You work backward from how many emails you need to send.</p><p>Start from a conservative daily send per mailbox. Divide your target daily volume by that number to get your mailbox count. Then spread those mailboxes across multiple domains so no single domain carries all the risk. The <a href=\"/tools/mailbox-calculator\">mailbox calculator</a> does this math for you. The instinct to over-provision is usually wrong early on. Build for the volume you will actually send in the next quarter, warm it properly, and add more domains and mailboxes as you scale.</p><p>Infrastructure is the least glamorous part of cold email and the part that decides everything else. Build it carefully once, in this order, and you rarely have to think about it again.</p>",
+  "faqs": [
+    {
+      "question": "Can I send cold email from my main company domain?",
+      "answer": "No. Always use separate sending domains for cold email. If a campaign damages reputation, dedicated sending domains keep that fallout away from your primary domain and your team's everyday email. This is the single most important infrastructure decision."
+    },
+    {
+      "question": "How many mailboxes do I need for cold email?",
+      "answer": "Work backward from your target volume. Start with a conservative daily send per mailbox, then divide your target daily volume by that number. You scale cold email by adding mailboxes at a low per-mailbox rate, not by pushing a few mailboxes hard."
+    },
+    {
+      "question": "What DNS records do I need for cold email?",
+      "answer": "MX records so the domain can receive mail, plus the three authentication records: SPF, DKIM, and DMARC. All of them should be configured and verified as passing before you send a single campaign."
+    },
+    {
+      "question": "Do I need to warm up mailboxes before sending campaigns?",
+      "answer": "Yes, every one of them. A configured but unwarmed mailbox has no reputation, and sending real volume from it looks like a spammer spinning up burner accounts. Plan on two to three weeks of warmup per mailbox before it carries campaigns."
+    },
+    {
+      "question": "What is the right order to set up cold email infrastructure?",
+      "answer": "Buy sending domains, create mailboxes on them, configure DNS and authentication, warm up every account, then connect a sending tool. Each step depends on the one before it, and doing them out of order means redoing work."
+    },
+    {
+      "question": "Should I buy mailboxes or set them up myself?",
+      "answer": "Either works, but consistency matters more than the method. Whether you provision them yourself on Google Workspace or Microsoft 365 or buy them through a platform, every mailbox still needs correct DNS and a full warmup ramp before it sends campaigns."
+    }
+  ]
+}

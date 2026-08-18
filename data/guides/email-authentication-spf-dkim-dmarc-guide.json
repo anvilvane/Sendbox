@@ -1,0 +1,48 @@
+{
+  "slug": "email-authentication-spf-dkim-dmarc-guide",
+  "title": "Email Authentication: SPF, DKIM, and DMARC Explained",
+  "metaTitle": "SPF, DKIM & DMARC Guide for Cold Email (2026)",
+  "metaDescription": "What SPF, DKIM, and DMARC actually do, how to set up each record, and how to read the results. The authentication foundation every cold email setup needs.",
+  "tags": ["Deliverability", "Authentication"],
+  "publishedDate": "2026-01-26",
+  "updatedDate": "2026-05-02",
+  "readTime": 10,
+  "excerpt": "SPF, DKIM, and DMARC are three DNS records that prove you are allowed to send from your domain. Without all three, mailbox providers treat you as suspicious by default.",
+  "toc": [
+    { "id": "why-it-matters", "title": "Why authentication matters" },
+    { "id": "spf", "title": "SPF explained" },
+    { "id": "dkim", "title": "DKIM explained" },
+    { "id": "dmarc", "title": "DMARC explained" },
+    { "id": "setup", "title": "How to set each up" },
+    { "id": "reading-results", "title": "Reading the results" },
+    { "id": "common-failures", "title": "Common failures" },
+    { "id": "faq", "title": "FAQ" }
+  ],
+  "contentHtml": "<p>Email authentication is three DNS records that together prove you are allowed to send email from your domain. SPF, DKIM, and DMARC. Without them, mailbox providers cannot tell you apart from someone spoofing your domain, so they treat you as suspicious by default.</p><p>In 2026 this is not optional. Google and Microsoft effectively require authentication for anyone sending at volume. If you take one thing from this guide: set up all three before you send a single cold email.</p><h2 id=\"why-it-matters\">Why authentication matters</h2><p>Email was designed without identity verification. Anyone can put your domain in the from field. Authentication is the layer that was bolted on to fix that, and it answers one question for the receiving server: is this sender actually allowed to send for this domain.</p><p>If the answer is yes, you clear the first trust hurdle. If the answer is no or unknown, you are filtered before your content is even read. Authentication does not get you to the inbox by itself, but the lack of it keeps you out.</p><h2 id=\"spf\">SPF: who is allowed to send</h2><p>SPF, or Sender Policy Framework, is a DNS record that lists which servers are authorized to send email for your domain. When a server receives your mail, it checks the sending server against your SPF record.</p><p>SPF is a single TXT record on your domain. The most common mistake is having more than one SPF record, or exceeding the lookup limit by stacking too many sending services into it. You get one SPF record, and every sending tool you use has to be included in that one record.</p><h2 id=\"dkim\">DKIM: proof the message was not tampered with</h2><p>DKIM, or DomainKeys Identified Mail, adds a cryptographic signature to every email you send. The receiving server checks that signature against a public key published in your DNS. If they match, the message is verified as genuinely from you and unaltered in transit.</p><p>DKIM is published as a DNS record at a selector subdomain, and the value is usually provided by your email service. Each sending platform typically has its own DKIM key, so if you send through more than one tool, each one needs its own DKIM record published.</p><h2 id=\"dmarc\">DMARC: what to do when checks fail</h2><p>DMARC, or Domain-based Message Authentication, Reporting and Conformance, ties SPF and DKIM together. It is a DNS record that tells receiving servers what to do when a message fails authentication: do nothing, quarantine it, or reject it outright.</p><p>DMARC also enables reporting, so you get data on who is sending mail using your domain. For cold email, start with a monitoring policy so you can see what is happening, confirm your legitimate mail passes, then tighten the policy. Publishing an aggressive reject policy before your own mail passes will block your own campaigns.</p><h2 id=\"setup\">How to set each one up</h2><p>All three are DNS records you add through your domain registrar or DNS host. The exact values come from your email provider, but the order matters.</p><ul><li><strong>SPF first.</strong> Create one TXT record that includes every service you send through. Confirm it is a single record.</li><li><strong>DKIM second.</strong> Get the DKIM record from each sending platform and publish each at its selector. Verify each one resolves.</li><li><strong>DMARC last.</strong> Add the DMARC record only after SPF and DKIM pass, starting with a monitoring policy. Tighten it once you confirm your legitimate mail is passing.</li></ul><p>When all three are live, verify them with the free <a href=\"/tools/spf-dkim-checker\">SPF, DKIM and DMARC checker</a>. It tests across common DKIM selectors and shows you exactly which records pass.</p><h2 id=\"reading-results\">Reading the results</h2><p>A clean setup shows SPF pass, DKIM pass, and a DMARC record present and aligned. You can also confirm this on real mail by opening the raw headers of a test email and looking at the authentication results line. The free <a href=\"/tools/email-header-analyzer\">email header analyzer</a> parses that for you.</p><p>The word to watch for is alignment. SPF and DKIM can technically pass while still failing DMARC if the domains do not align. If DMARC shows a fail despite SPF and DKIM passing, alignment is almost always the reason.</p><h2 id=\"common-failures\">Common failures and how to spot them</h2><ul><li><strong>Two SPF records.</strong> Only one is allowed. A second one, often left over from an old tool, invalidates both.</li><li><strong>SPF lookup limit exceeded.</strong> Too many included services pushes you past the limit and SPF fails silently.</li><li><strong>Missing DKIM for a new tool.</strong> You added a sending platform but never published its DKIM record, so its mail is unsigned.</li><li><strong>DMARC too aggressive too early.</strong> A reject policy published before your own mail passes blocks your own campaigns.</li><li><strong>A record that broke and nobody noticed.</strong> DNS changes silently. Re-check authentication periodically, not just once at setup.</li></ul><p>Authentication is the cheapest, fastest deliverability win there is, and the easiest to overlook. Once it is solid, move on to the rest of the system in the <a href=\"/learn/cold-email-deliverability-guide\">deliverability guide</a> and warm your accounts properly with the <a href=\"/learn/how-to-warm-up-email-accounts\">warmup guide</a>.</p>",
+  "faqs": [
+    {
+      "question": "Do I really need all three of SPF, DKIM, and DMARC?",
+      "answer": "Yes. SPF says which servers can send for you, DKIM proves the message was not tampered with, and DMARC ties them together and sets a failure policy. Missing any one weakens your authentication, and in 2026 bulk senders are effectively required to have all three."
+    },
+    {
+      "question": "What happens if my SPF or DKIM record fails?",
+      "answer": "Mail that fails authentication is treated as unverified, which means it is far more likely to be filtered to spam or rejected entirely. A failing record is one of the most common and fastest-to-fix causes of poor cold email deliverability."
+    },
+    {
+      "question": "Can I have more than one SPF record?",
+      "answer": "No. A domain is allowed exactly one SPF record. If you have two, often because an old tool left one behind, both are invalidated. Every sending service you use must be included in that single record."
+    },
+    {
+      "question": "What DMARC policy should I start with for cold email?",
+      "answer": "Start with a monitoring policy so you can see who is sending as your domain and confirm your legitimate mail passes. Only tighten to quarantine or reject after you have verified your own campaigns are passing, or you will block yourself."
+    },
+    {
+      "question": "How do I check if my authentication is set up correctly?",
+      "answer": "Run your sending domain through an SPF, DKIM, and DMARC checker, which tests each record and common DKIM selectors. You can also open the raw headers of a test email and read the authentication results line directly."
+    },
+    {
+      "question": "Why does DMARC fail when SPF and DKIM both pass?",
+      "answer": "Almost always alignment. DMARC requires the domain in SPF or DKIM to align with the domain in your from address. If they pass on a different domain than the one you are sending from, DMARC still fails."
+    }
+  ]
+}

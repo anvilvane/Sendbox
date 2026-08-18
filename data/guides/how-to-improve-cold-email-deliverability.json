@@ -1,0 +1,49 @@
+{
+  "slug": "how-to-improve-cold-email-deliverability",
+  "title": "How to Improve Cold Email Deliverability: A Fix-It Playbook",
+  "metaTitle": "How to Improve Cold Email Deliverability (2026)",
+  "metaDescription": "Deliverability dropped? Work the fixes in order: authentication, blacklists, list quality, volume, content, then reputation rebuild. A step-by-step diagnostic.",
+  "tags": ["Deliverability", "Troubleshooting"],
+  "publishedDate": "2026-04-21",
+  "updatedDate": "2026-07-28",
+  "readTime": 10,
+  "excerpt": "When deliverability slips, fixing things in the wrong order wastes days. Here is the diagnostic sequence I work through, from fastest fix to slowest.",
+  "toc": [
+    { "id": "confirm-problem", "title": "Confirm you have a problem" },
+    { "id": "step-1-auth", "title": "Step 1: Authentication" },
+    { "id": "step-2-blacklist", "title": "Step 2: Blacklists" },
+    { "id": "step-3-list", "title": "Step 3: List quality" },
+    { "id": "step-4-volume", "title": "Step 4: Volume and ramp" },
+    { "id": "step-5-content", "title": "Step 5: Content" },
+    { "id": "step-6-rebuild", "title": "Step 6: Rebuild reputation" },
+    { "id": "recovery-time", "title": "How long recovery takes" },
+    { "id": "faq", "title": "FAQ" }
+  ],
+  "contentHtml": "<p>When deliverability drops, the instinct is to rewrite your email. That is almost always the last thing that matters. The fixes have an order, from fastest and most common to slowest, and working them out of order costs you days.</p><p>This is the exact sequence I run through. Start at step one and only move on once each step is clean.</p><h2 id=\"confirm-problem\">First, confirm you actually have a problem</h2><p>Open rate dropping is not proof of a deliverability problem. Open tracking is unreliable, blocked or pre-fetched by many clients. Before you change anything, get a real measurement.</p><p>Run an <a href=\"/tools/inbox-placement-test\">inbox placement test</a> from the affected mailbox. If you are landing in primary, your problem is targeting or copy, not deliverability. If you are landing in spam or not delivered, continue down this list.</p><h2 id=\"step-1-auth\">Step 1: Check your authentication</h2><p>This is the most common cause and the fastest fix, so it goes first. Broken or missing SPF, DKIM, or DMARC tells mailbox providers you are unverified, and in 2026 that alone can route you to spam.</p><p>Run your sending domain through the free <a href=\"/tools/spf-dkim-checker\">SPF, DKIM and DMARC checker</a>. All three should pass. A common silent failure is an SPF record that broke when you added a new sending tool, or a DKIM key that was never published. Fix any failure before touching anything else. The <a href=\"/learn/email-authentication-spf-dkim-dmarc-guide\">authentication guide</a> covers each record.</p><h2 id=\"step-2-blacklist\">Step 2: Check blacklists</h2><p>If authentication is clean, check whether your domain or IP got listed. A blacklist listing can tank placement overnight, and it often happens without any obvious cause on your end, especially on shared infrastructure.</p><p>Run your domain and sending IP through a <a href=\"/tools/blacklist-checker\">blacklist checker</a>. If you are listed, find the delisting process for that specific blacklist, fix the underlying cause first, then submit the request. Delisting without fixing the cause just gets you relisted.</p><h2 id=\"step-3-list\">Step 3: Audit your list quality</h2><p>A high bounce rate is a spammer signal, and it compounds fast. If your last campaign bounced above 3 percent, your list is the problem and it is actively damaging your reputation with every send.</p><p>Stop sending to that list. Run it through an <a href=\"/tools/email-validator\">email verifier</a>, cut every invalid and risky address, and only resume with the clean remainder. Going forward, validate on import so a bad list never reaches your campaigns. Sendbox does this automatically. The <a href=\"/learn/how-to-reduce-cold-email-bounce-rate\">bounce rate guide</a> covers the full picture, including the secure email gateways that bounce valid addresses.</p><h2 id=\"step-4-volume\">Step 4: Review your volume and ramp</h2><p>Sending too much, too fast, from a domain that has not earned it is a classic self-inflicted wound. If you recently doubled volume or added new mailboxes and skipped warmup, that is likely your cause.</p><p>Pull volume back to a conservative level per mailbox and hold it there. New mailboxes need a warmup ramp before they carry real campaigns. Spreading volume across more mailboxes at a lower per-mailbox rate is almost always safer than pushing a few mailboxes hard.</p><h2 id=\"step-5-content\">Step 5: Fix obvious content problems</h2><p>Now content. Not because it never matters, but because it rarely matters until the first four steps are clean. Run your template through the free <a href=\"/tools/spam-checker\">spam checker</a> and cut the obvious triggers: spammy phrases, heavy links, large images, shouting formatting.</p><p>Keep cold emails short and plain. A three-line text email from a clean setup outperforms a polished HTML email from a broken one, every time.</p><h2 id=\"step-6-rebuild\">Step 6: Rebuild reputation</h2><p>If reputation is already damaged, the fixes above stop the bleeding but do not heal it. Healing happens through controlled, low-volume sending that generates positive engagement over time.</p><p>Pull the affected mailboxes out of active campaigns and run <a href=\"/deliverability/human-like-warmup\">warmup</a> on them to rebuild engagement signals. Re-enable them only when health metrics recover. With Sendbox you can watch <a href=\"/deliverability/auto-mailbox-protection\">per-mailbox reply and bounce rate</a> to know when a mailbox is safe to send from again.</p><h2 id=\"recovery-time\">How long recovery takes</h2><p>Set expectations honestly. Authentication and list fixes are immediate. Blacklist delisting takes 24 to 72 hours once the cause is fixed. Reputation rebuilding takes two to four weeks of careful sending. There is no button that resets a burned domain.</p><p>The faster path is not to get here in the first place: solid infrastructure, real authentication, validated lists, and a proper warmup ramp. If you are rebuilding from scratch anyway, it is worth fixing the foundation so you are not back here in a month.</p>",
+  "faqs": [
+    {
+      "question": "Why did my cold email deliverability suddenly drop?",
+      "answer": "The most common causes, in order of likelihood: an authentication record broke, your domain or IP got blacklisted, you sent to an unvalidated list and spiked bounces, or you increased volume without a warmup ramp. Check them in that order."
+    },
+    {
+      "question": "How do I know if my domain is blacklisted?",
+      "answer": "Run your sending domain and IP through a blacklist checker that scans the major DNSBL and RBL databases. If you are listed, fix the underlying cause first, then follow that specific blacklist's delisting process. Delisting without a fix just leads to relisting."
+    },
+    {
+      "question": "Can I fix deliverability without pausing my campaigns?",
+      "answer": "Authentication and content fixes can happen live. But if reputation is damaged or your list was bad, you need to pause the affected mailboxes. Continuing to send through a damaged mailbox makes recovery slower, not faster."
+    },
+    {
+      "question": "Should I just buy a new domain instead of fixing the old one?",
+      "answer": "Sometimes, if the domain is badly burned. But a new domain starts with zero reputation and needs full warmup, and if you do not fix the practices that burned the first domain, you will burn the second one too. Fix the process either way."
+    },
+    {
+      "question": "How long should I warm up a mailbox before sending again?",
+      "answer": "For a recovering mailbox, plan on two to three weeks of warmup before returning it to real campaigns, and re-enable it only when bounce and engagement metrics have recovered. For a brand-new mailbox, the same ramp applies from the start."
+    },
+    {
+      "question": "Does sending plain text instead of HTML improve deliverability?",
+      "answer": "It helps at the margin. Plain, link-light emails avoid content-based spam triggers and look more like normal human email. But content is a step-five fix. If your authentication or list is broken, switching to plain text will not save you."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "how-to-reduce-cold-email-bounce-rate",
+  "title": "How to Reduce Your Cold Email Bounce Rate",
+  "metaTitle": "How to Reduce Cold Email Bounce Rate (2026)",
+  "metaDescription": "What causes cold email bounces, how to validate addresses before sending, and why strict filters like Proofpoint and Cisco Ironport inflate your bounce rate.",
+  "tags": ["Deliverability", "Bounces"],
+  "publishedDate": "2026-04-07",
+  "updatedDate": "2026-06-19",
+  "readTime": 10,
+  "excerpt": "A bounce rate above 2 to 3 percent tells mailbox providers your data is dirty. Most of it comes from two fixable sources: unvalidated addresses and strict secure email gateways.",
+  "toc": [
+    { "id": "what-it-is", "title": "What bounce rate is" },
+    { "id": "hard-vs-soft", "title": "Hard vs soft bounces" },
+    { "id": "causes", "title": "What causes bounces" },
+    { "id": "validate", "title": "Validate before you send" },
+    { "id": "segs", "title": "The SEG problem" },
+    { "id": "handling-segs", "title": "Skipping strict SEGs" },
+    { "id": "monitor", "title": "Monitor per mailbox" },
+    { "id": "faq", "title": "FAQ" }
+  ],
+  "contentHtml": "<p>Bounce rate is the share of your emails that never get delivered. It matters far beyond the wasted send, because a high bounce rate is one of the clearest signals a mailbox provider has that your list is dirty, and dirty lists are a spammer trait.</p><p>The working threshold: keep bounce rate under 2 percent. Past 3 percent you are actively damaging your sender reputation with every campaign. The good news is that most bounces come from two sources you can fix before you ever hit send.</p><h2 id=\"what-it-is\">What bounce rate actually is</h2><p>A bounce is an email the receiving side refused to deliver. Your sending tool records it, and your bounce rate is bounces divided by total sends for a campaign or a mailbox.</p><p>It is a behavior signal. Providers like Google and Microsoft watch it because legitimate senders email people who exist, and spammers blast scraped or stale lists full of dead addresses. A climbing bounce rate moves you toward the second category in their eyes, regardless of how clean your intent is.</p><h2 id=\"hard-vs-soft\">Hard bounces vs soft bounces</h2><p>Not all bounces are equal, and the difference tells you what to fix.</p><ul><li><strong>Hard bounces</strong> are permanent. The address does not exist, the domain does not exist, or the mailbox is closed. These are pure list-quality failures and they do the most reputation damage.</li><li><strong>Soft bounces</strong> are temporary. The mailbox is full, the server is briefly down, or the message was deferred. A few soft bounces are normal. A pattern of them on the same domain often points to filtering, not a real outage.</li></ul><p>Hard bounces are the ones to attack first, because they are almost entirely preventable.</p><h2 id=\"causes\">What actually causes bounces</h2><p>Cold email bounces cluster into a few causes:</p><ul><li><strong>Invalid or outdated addresses.</strong> People change jobs, companies shut down, typos exist. Any list decays over time.</li><li><strong>Catch-all uncertainty.</strong> Some domains accept mail to any address, so you cannot tell from a basic check whether a specific mailbox exists.</li><li><strong>Spam traps.</strong> Dead addresses recycled specifically to catch senders using scraped lists. Hitting these is a serious reputation hit.</li><li><strong>Strict secure email gateways.</strong> The cause most people miss. Even when the address is real, an aggressive gateway in front of it can refuse the message outright.</li></ul><h2 id=\"validate\">Validate before you send</h2><p>The single highest-leverage fix is validating every address before it reaches a campaign. A good validator checks format, confirms the domain can receive mail, and probes the mailbox where possible, then categorizes each address as deliverable, risky, or undeliverable.</p><p>Cut the undeliverable addresses and decide carefully on the risky ones. Sendbox runs <a href=\"/deliverability/email-validation\">email validation</a> automatically on import, so bad addresses are flagged before they ever enter a campaign, and the free <a href=\"/tools/email-validator\">email verifier</a> lets you spot-check individual addresses. Validation alone takes most lists from a painful bounce rate down to a safe one.</p><h2 id=\"segs\">The SEG problem nobody warns you about</h2><p>A Secure Email Gateway, or SEG, is a filtering layer that sits in front of a company's inboxes and screens everything coming in. Proofpoint, Cisco Ironport, Mimecast, and Barracuda are the common ones, and they are built to be strict.</p><p>Here is why they wreck your bounce rate. The recipient's address is completely valid, but the gateway refuses or quarantines cold email aggressively before it ever reaches the person. Depending on the gateway, that shows up as a bounce, or as a silent quarantine that still drags down your engagement metrics. Either way, sending blindly into SEG-protected domains inflates your bounce and complaint rates with addresses that were never going to convert anyway. Enterprise domains are especially likely to sit behind one.</p><h2 id=\"handling-segs\">Skipping or routing strict SEGs</h2><p>You cannot validate your way around a SEG, because the address is real. The fix is to detect the gateway before you send and decide what to do about it.</p><p>Sendbox has <a href=\"/features/seg-detection\">SEG detection</a> built in. Before a campaign sends, it checks whether each recipient domain is protected by a Secure Email Gateway. You then choose: skip those leads entirely so they never touch your campaign metrics, or route them through specific mailboxes you designate for SEG handling. Most cold email tools send blind and let you work out afterward why deliverability dropped. Detecting the gateway upfront keeps the bounce and spam rates on your main mailboxes clean, which protects the <a href=\"/learn/dedicated-ip-vs-shared-ip-cold-email\">dedicated IP reputation</a> you spent weeks building.</p><h2 id=\"monitor\">Monitor bounce rate per mailbox</h2><p>Bounce rate is not a number you check once. Watch it continuously, and watch it per mailbox, not just per campaign. A campaign-wide average of 2 percent can hide one mailbox sitting at 8 percent while the rest are clean.</p><p>Sendbox shows <a href=\"/deliverability/bounce-monitoring\">bounce rate per mailbox</a> in real time, alongside reply rate, so a struggling mailbox stands out before the damage spreads. When one does, pull it from campaigns and run warmup to rebuild it. The free <a href=\"/tools/bounce-rate-calculator\">bounce rate calculator</a> helps you sanity-check where a campaign landed.</p><p>Put together, the playbook is simple: validate every address, detect and handle SEGs before you send, and watch bounce rate per mailbox so nothing creeps. Do those three things and bounce rate stops being a threat to your reputation. For the bigger picture, the <a href=\"/learn/cold-email-deliverability-guide\">deliverability guide</a> covers every other lever, and the <a href=\"/learn/how-to-improve-cold-email-deliverability\">fix-it playbook</a> covers what to do if your numbers are already bad.</p>",
+  "faqs": [
+    {
+      "question": "What is a good bounce rate for cold email?",
+      "answer": "Keep it under 2 percent. Between 2 and 3 percent needs attention, and above 3 percent you are actively damaging your sender reputation with every send. A clean, validated list sent from a healthy setup should sit well below 2 percent."
+    },
+    {
+      "question": "What is the difference between a hard bounce and a soft bounce?",
+      "answer": "A hard bounce is permanent: the address or domain does not exist, or the mailbox is closed. A soft bounce is temporary: a full mailbox, a brief server issue, or a deferral. Hard bounces do the most reputation damage and are almost entirely preventable with validation."
+    },
+    {
+      "question": "What is a Secure Email Gateway and why does it cause bounces?",
+      "answer": "A Secure Email Gateway, such as Proofpoint, Cisco Ironport, Mimecast, or Barracuda, is a strict filtering layer in front of a company's inboxes. Even when the recipient address is valid, the gateway can refuse or quarantine cold email before it reaches the person, which inflates your bounce and complaint rates."
+    },
+    {
+      "question": "Should I skip SEG-protected leads entirely?",
+      "answer": "Often yes, especially early on, because SEG-protected domains carry higher bounce and spam risk for little upside. The alternative is to route them through specific mailboxes designated for SEG handling, so the risk stays off your main sending. Sendbox's SEG detection lets you do either."
+    },
+    {
+      "question": "How do I lower my bounce rate before a campaign?",
+      "answer": "Validate every address and remove the undeliverable ones, detect SEG-protected domains and skip or route them, and never send to a list you have not cleaned. Validation and SEG detection together remove the two biggest bounce sources before a single email goes out."
+    },
+    {
+      "question": "Does a high bounce rate affect my future campaigns?",
+      "answer": "Yes. Bounce rate feeds your sender reputation, and a damaged reputation carries forward. One campaign to a dirty or SEG-heavy list can depress deliverability for weeks, which is why prevention through validation and SEG detection matters more than any after-the-fact fix."
+    }
+  ]
+}
