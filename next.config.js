@@ -1,10 +1,3 @@
-// Branded battlecard short links: /better-than-<tool> -> the concise, customer-safe one-pager PDF
-// served same-domain from public/docs. Lets the reply agent share a short on-brand link instead of
-// a raw storage URL (which reads as untrustworthy and hurts deliverability). All 11 one-pagers are
-// committed under public/docs, so the redirect and its target ship together in this deploy.
-const BATTLECARD_TOOLS = ['smartlead', 'instantly', 'emailbison', 'lemlist', 'apollo', 'replyio',
-  'saleshandy', 'quickmail', 'woodpecker', 'mailshake', 'plusvibe'];
-
 const nextConfig = {
   reactStrictMode: true,
   async headers() {
@@ -90,12 +83,10 @@ const nextConfig = {
         destination: '/:slug',
         permanent: true,
       },
-      // branded battlecard short links -> same-domain concise one-pager PDFs (2026-07-13)
-      ...BATTLECARD_TOOLS.map((tool) => ({
-        source: `/better-than-${tool}`,
-        destination: `/docs/sendbox-vs-${tool}-battlecard.pdf`,
-        permanent: true,
-      })),
+      // Branded "/better-than-<tool>" battlecard short links used to redirect here to
+      // same-domain PDFs -- those were SendKit's real battlecards, deleted along with
+      // the rest of the SendKit-branded doc library (see app/(main)/university/page.js).
+      // TODO(user): re-add once real Sendbox battlecard PDFs exist.
     ];
   },
   images: {

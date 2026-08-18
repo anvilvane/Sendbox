@@ -25,14 +25,20 @@ export const metadata = getSEOTags({
 
 const D = '/docs';
 
+// Most of this library used to be real PDF files -- but they were SendKit's
+// actual downloadable guides/battlecards, carried over by an earlier rebrand
+// pass that renamed the links here to sendbox-*.pdf without renaming (or
+// replacing the content of) the actual files on disk, so nearly all of them
+// were broken 404s anyway. Deleted the SendKit-branded files entirely rather
+// than leave them reachable at their real filenames or leave dead links here.
+// Only the tracks/docs below point at real files that still exist and aren't
+// SendKit-branded. TODO(user): this library is a real content gap now --
+// write genuine Sendbox guides to refill it, don't reuse a competitor's.
 const TRACKS = [
   {
     name: 'Getting started',
     blurb: 'From signup to your first reply.',
     docs: [
-      { title: 'Setting up Sendbox: from signup to first send', href: `${D}/sendbox-setup-process.pdf` },
-      { title: 'The 14-day onboarding checklist', href: `${D}/sendbox-14-day-onboarding.pdf` },
-      { title: 'The three mailbox routes: buy, import, or connect', href: `${D}/sendbox-three-mailbox-routes.pdf` },
       { title: 'Cold email launch playbook: zero to first reply', href: `${D}/cold-email-launch-playbook.pdf` },
     ],
   },
@@ -40,78 +46,22 @@ const TRACKS = [
     name: 'Mailboxes and infrastructure',
     blurb: 'Dedicated IPs, domains, providers, and the math.',
     docs: [
-      { title: 'Mailbox math: how many inboxes you actually need', href: `${D}/sendbox-mailbox-math.pdf` },
       { title: 'Try the live mailbox calculator', href: '/tools/mailbox-calculator' },
-      { title: 'Google vs Azure vs SMTP: choosing providers', href: `${D}/sendbox-google-vs-azure-vs-smtp.pdf` },
-      { title: 'Secondary domains, never your primary', href: `${D}/sendbox-secondary-domains.pdf` },
-      { title: 'Dedicated IPs and isolated infrastructure, explained', href: `${D}/sendbox-dedicated-ips-explained.pdf` },
-      { title: 'Mailbox health and underperformers', href: `${D}/sendbox-mailbox-health.pdf` },
       { title: 'SPF, DKIM, and DMARC setup guide', href: `${D}/spf-dkim-dmarc-setup-guide.pdf` },
-    ],
-  },
-  {
-    name: 'Campaigns',
-    blurb: 'Building, launching, and tuning sequences.',
-    docs: [
-      { title: 'Setting up a campaign in Sendbox', href: `${D}/sendbox-campaign-setup.pdf` },
-      { title: 'Campaign best practices', href: `${D}/sendbox-campaign-best-practices.pdf` },
-      { title: 'Import and validate your leads', href: `${D}/sendbox-import-validate-leads.pdf` },
-      { title: 'Copy that lands (and spintax that sounds human)', href: `${D}/sendbox-copy-that-lands.pdf` },
-      { title: 'Subsequences and follow-up flows', href: `${D}/sendbox-subsequences.pdf` },
-      { title: 'Understanding Sendbox settings', href: `${D}/sendbox-settings-explained.pdf` },
-      { title: 'ESP matching, honestly assessed', href: `${D}/sendbox-esp-matching.pdf` },
-      { title: 'SEGs explained (and the SEG setting)', href: `${D}/sendbox-segs-explained.pdf` },
-    ],
-  },
-  {
-    name: 'Replies, Unibox, and the AI agent',
-    blurb: 'From reply to booked conversation.',
-    docs: [
-      { title: 'Unibox basics: tags, filters, and the reply workflow', href: `${D}/sendbox-unibox-basics.pdf` },
-      { title: 'Building your AI reply agent', href: `${D}/sendbox-reply-agent-setup.pdf` },
-      { title: 'The AI reply agent vs your Unibox manager', href: `${D}/sendbox-reply-agent-vs-unibox.pdf` },
-      { title: 'The Slack integration', href: `${D}/sendbox-slack-integration.pdf` },
     ],
   },
   {
     name: 'Warm-up and deliverability',
     blurb: 'Landing in the inbox, and staying there.',
     docs: [
-      { title: 'How warm-up improves your email health', href: `${D}/sendbox-warmup-email-health.pdf` },
-      { title: 'How Sendbox warm-up is different', href: `${D}/sendbox-warmup-vs-others.pdf` },
-      { title: 'The warm-up filters, explained', href: `${D}/sendbox-warmup-filters.pdf` },
       { title: 'The mailbox warmup playbook', href: `${D}/mailbox-warmup-playbook.pdf` },
-      { title: 'Prove your placement before you scale', href: `${D}/sendbox-placement-test-howto.pdf` },
-      { title: 'The cold email deliverability checklist', href: `${D}/cold-email-deliverability-checklist.pdf` },
-      { title: 'Zero replies: the triage checklist', href: `${D}/sendbox-zero-replies-triage.pdf` },
-      { title: 'Bounce types and validation', href: `${D}/sendbox-bounce-types.pdf` },
-      { title: 'High bounces on a new campaign', href: `${D}/sendbox-high-bounces-new-campaign.pdf` },
-      { title: 'Reaching Gmail and Yahoo inboxes', href: `${D}/sendbox-personal-email-deliverability.pdf` },
     ],
   },
   {
     name: 'Leads and data',
     blurb: 'Sourcing, enrichment, and credits.',
     docs: [
-      { title: 'Finding leads with the built-in 400M database', href: `${D}/finding-leads-400m-database.pdf` },
-      { title: 'Credits, enrichment, and validation, end to end', href: `${D}/sendbox-credits-explained.pdf` },
-    ],
-  },
-  {
-    name: 'Reporting',
-    blurb: 'Numbers your manager and clients can read.',
-    docs: [
-      { title: 'Reporting up: results your manager can read', href: `${D}/sendbox-reporting-up.pdf` },
-      { title: 'Generating reports in Sendbox', href: `${D}/sendbox-generating-reports.pdf` },
-    ],
-  },
-  {
-    name: 'Integrations, API, and automation',
-    blurb: 'Run Sendbox from your own stack.',
-    docs: [
-      { title: 'Run Sendbox from Claude: the MCP quickstart', href: `${D}/sendbox-claude-mcp-quickstart.pdf` },
-      { title: 'The Sendbox CLI, at a glance', href: `${D}/sendbox-cli-reference.pdf` },
-      { title: 'Webhooks: wire Sendbox events into your stack', href: `${D}/sendbox-webhooks.pdf` },
+      { title: 'Finding leads with the built-in database', href: `${D}/finding-leads-400m-database.pdf` },
     ],
   },
   {
@@ -120,25 +70,12 @@ const TRACKS = [
     docs: [
       { title: 'Managing multi-client workspaces as an agency', href: `${D}/managing-agency-workspaces.pdf` },
       { title: 'The cold email agency operating system', href: `${D}/cold-email-agency-operating-system.pdf` },
-      { title: 'Scale and measure: past your first campaign', href: `${D}/sendbox-scale-and-measure.pdf` },
-      { title: 'Which Sendbox plan fits you', href: `${D}/sendbox-plan-chooser.pdf` },
     ],
   },
   {
     name: 'Compare Sendbox',
     blurb: 'Honest one-page comparisons, strengths conceded.',
     docs: [
-      { title: 'Sendbox vs Smartlead', href: `${D}/sendbox-vs-smartlead-battlecard.pdf` },
-      { title: 'Sendbox vs Instantly', href: `${D}/sendbox-vs-instantly-battlecard.pdf` },
-      { title: 'Sendbox vs EmailBison', href: `${D}/sendbox-vs-emailbison-battlecard.pdf` },
-      { title: 'Sendbox vs Apollo', href: `${D}/sendbox-vs-apollo-battlecard.pdf` },
-      { title: 'Sendbox vs Lemlist', href: `${D}/sendbox-vs-lemlist-battlecard.pdf` },
-      { title: 'Sendbox vs Reply.io', href: `${D}/sendbox-vs-replyio-battlecard.pdf` },
-      { title: 'Sendbox vs Saleshandy', href: `${D}/sendbox-vs-saleshandy-battlecard.pdf` },
-      { title: 'Sendbox vs PlusVibe', href: `${D}/sendbox-vs-plusvibe-battlecard.pdf` },
-      { title: 'Sendbox vs QuickMail', href: `${D}/sendbox-vs-quickmail-battlecard.pdf` },
-      { title: 'Sendbox vs Mailshake', href: `${D}/sendbox-vs-mailshake-battlecard.pdf` },
-      { title: 'Sendbox vs Woodpecker', href: `${D}/sendbox-vs-woodpecker-battlecard.pdf` },
       { title: 'All comparisons and alternatives', href: '/compare' },
     ],
   },
