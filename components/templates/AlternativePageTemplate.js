@@ -62,17 +62,22 @@ function MethodologySection({ methodology }) {
   );
 }
 
-/* ---- Switch Reasons ---- */
+/* ---- Switch Reasons ----
+   Flowing divider list with a small violet dot leading-mark instead of
+   a grid of identical bordered boxes -- matches WhySection's pattern. */
 function SwitchReasons({ reasons, competitorName }) {
   if (!reasons || reasons.length === 0) return null;
   return (
     <div id="why-switch" className="scroll-mt-24">
       <h2 className="text-[1.375rem] font-semibold text-black tracking-tight leading-[1.2] mb-5">Why people switch from {competitorName}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 divide-y divide-gray-100 border-t border-gray-100 sm:grid-cols-2 sm:divide-y-0 sm:gap-x-8">
         {reasons.map((r, i) => (
-          <div key={i} className="rounded-lg border border-gray-200 p-4">
-            <h3 className="text-[14px] font-semibold text-black mb-1.5">{r.title}</h3>
-            <p className="text-[13px] text-[#6b7280] leading-relaxed">{r.description}</p>
+          <div key={i} className={`flex items-start gap-3 py-4 sm:border-t sm:border-gray-100 ${i % 2 === 0 ? 'sm:pr-4' : 'sm:pl-4'}`}>
+            <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#695AF2]" />
+            <div>
+              <h3 className="text-[14px] font-semibold text-black mb-1">{r.title}</h3>
+              <p className="text-[13px] text-[#6b7280] leading-relaxed">{r.description}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -212,11 +217,6 @@ export default function AlternativePageTemplate({ alternative }) {
             <span>/</span>
             <span className="text-[#6b7280]">{a.competitorName} Alternatives</span>
           </nav>
-
-          <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
-            <span>{a.competitorName.toLowerCase()} alternatives</span>
-          </div>
 
           <h1 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] text-black tracking-tight mb-5">{a.headline}</h1>
           <p className="text-[17px] text-[#374151] leading-[1.7] mb-5 max-w-2xl">{a.description}</p>

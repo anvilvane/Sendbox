@@ -18,14 +18,14 @@ export default function FeatureFAQ({ items }) {
         </div>
       </div>
       <div className="max-w-6xl mx-auto">
-        <div className="mb-10 md:mb-16">
-          <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1 bg-[#695AF2] rounded-xl" />
-            <span>frequently asked questions</span>
-          </div>
-          <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight text-balance">
+        {/* Asymmetric split header -- matches homepage FAQ.js, no eyebrow badge */}
+        <div className="mb-10 flex flex-col gap-6 md:mb-16 lg:flex-row lg:items-end lg:justify-between">
+          <h2 className="max-w-2xl text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight text-balance">
             Got questions? We've got answers.
           </h2>
+          <a href="/contact" className="shrink-0 text-sm text-[#6b7280] transition-colors hover:text-[#695AF2]">
+            Still stuck? <span className="font-medium text-[#695AF2]">Talk to us →</span>
+          </a>
         </div>
 
         <div className="space-y-0 border-t border-gray-200">
