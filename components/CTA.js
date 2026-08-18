@@ -1,59 +1,52 @@
 import { APP_LOGIN_URL } from "@/lib/app-url";
 
-
 import React from 'react';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 
 const CTA = () => {
   return (
-    <section className="py-12 md:py-16 px-4 md:px-8 bg-white border-t border-gray-100 relative">
-      {/* Vertical guide lines + corner dots */}
-      <div className="absolute inset-0 pointer-events-none hidden lg:block">
-        <div className="max-w-[80rem] h-full mx-auto relative">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200" />
-          <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-200" />
-          {/* Top corners */}
-          <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[7px] h-[7px] rounded-full bg-[#7196f4]" />
-          <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-[7px] h-[7px] rounded-full bg-[#7196f4]" />
-          {/* Bottom corners */}
-          <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[7px] h-[7px] rounded-full bg-[#7196f4] z-10" />
-          <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[7px] h-[7px] rounded-full bg-[#7196f4] z-10" />
-        </div>
-      </div>
-      <div className="max-w-2xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight mb-6 text-balance">
-          Ready to land in primary?
-        </h2>
+    // Full-bleed violet band -- a "Drenched" color moment (brand.md permits this:
+    // "a single saturated color spread... is not excess; it's voice") instead of
+    // the small centered white box every other section-ending CTA on this template
+    // used. Left-aligned, asymmetric composition matching Hero's voice, not a
+    // second copy of it.
+    <section className="relative overflow-hidden bg-[#695AF2] py-20 md:py-28">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-[26rem] w-[26rem] rounded-full bg-white/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/4 h-[22rem] w-[22rem] rounded-full bg-[#5847E0] blur-3xl" />
 
-        {/* Description */}
-        <p className="text-lg leading-relaxed text-[#6b7280] mb-10">
-          Get your own isolated Sendbox setup running and start sending inside 15 minutes.
-        </p>
+      <div className="relative mx-auto max-w-[80rem] px-4 sm:px-6 md:px-8">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <h2 className="max-w-[16ch] text-[clamp(2.25rem,5.5vw,4.25rem)] font-semibold leading-[1.02] tracking-tight text-white">
+            Ready to land in primary?
+          </h2>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href={APP_LOGIN_URL}
-            data-fast-goal="click_hit_primary"
-            data-fast-goal-location="cta"
-            className="inline-flex items-center justify-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-[#695AF2] text-white rounded-lg text-sm md:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group"
-          >
-              Land in Primary
-            <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href="/pricing"
-            data-fast-goal="click_compare_plans"
-            data-fast-goal-location="cta"
-            className="inline-flex items-center justify-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-transparent text-[#6b7280] border border-[#e5e5e5] rounded-lg text-sm md:text-[15px] font-medium transition-all hover:bg-[#f5f5f5] hover:text-black hover:-translate-y-0.5"
-          >
-            See the Plans
-          </a>
+          <div className="flex flex-col items-start gap-5 lg:items-end lg:text-right">
+            <p className="max-w-sm text-base leading-relaxed text-white/70 lg:text-right">
+              Get your own isolated Sendbox setup running and start sending inside 15 minutes.
+            </p>
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <a
+                href={APP_LOGIN_URL}
+                data-fast-goal="click_hit_primary"
+                data-fast-goal-location="cta"
+                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-[15px] font-medium text-[#695AF2] transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Land in Primary
+                <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />
+              </a>
+              <a
+                href="/pricing"
+                data-fast-goal="click_compare_plans"
+                data-fast-goal-location="cta"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 bg-transparent px-6 py-3 text-[15px] font-medium text-white transition-all hover:bg-white/10"
+              >
+                See the Plans
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Trust indicator */}
-        <p className="text-sm text-[#9ca3af] mt-6">
+        <p className="relative mt-12 border-t border-white/15 pt-6 text-sm text-white/60">
           Every plan includes a dedicated IP. Cancel whenever you want.
         </p>
       </div>

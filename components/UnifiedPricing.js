@@ -48,12 +48,14 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto">
-        {/* Pricing Header */}
-        <div className="max-w-4xl pb-12 mx-auto text-center">
-          <HeadingTag className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight mb-6 text-balance">
+        {/* Pricing Header -- left-aligned and split, matching the Hero/WhySection
+            voice, instead of the centered heading-then-subhead block every
+            generic pricing section defaults to. */}
+        <div className="mb-12 flex flex-col gap-6 border-b border-gray-100 pb-12 lg:flex-row lg:items-end lg:justify-between">
+          <HeadingTag className="max-w-2xl text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[1.05] text-black tracking-tight text-balance">
             Room to grow, built in from the first mailbox
           </HeadingTag>
-          <p className="text-lg md:text-xl leading-relaxed text-[#6b7280] max-w-2xl mx-auto">
+          <p className="max-w-sm text-base leading-relaxed text-[#6b7280] lg:text-right">
             Every tier runs on the same dedicated infrastructure — pick the one sized for your team, not a stripped-down version of it.
           </p>
         </div>
@@ -178,7 +180,7 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
                     href={APP_LOGIN_URL}
                     data-fast-goal="click_get_started"
                     data-fast-goal-plan="power"
-                    className="relative py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#695AF2] text-white hover:bg-[#1e4ed8] transition-colors overflow-hidden text-center no-underline"
+                    className="relative py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#695AF2] text-white hover:bg-[#5847E0] transition-colors overflow-hidden text-center no-underline"
                   >
                     Get Started
                   </a>

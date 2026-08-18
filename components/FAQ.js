@@ -24,11 +24,16 @@ const FAQ = () => {
         </div>
       </div>
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-10 md:mb-16">
-          <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight max-w-3xl text-balance">
+        {/* Header -- split, not stacked-and-centered: heading left, a direct
+            "still stuck" prompt right, matching the asymmetric voice used
+            elsewhere on the page instead of one more centered block. */}
+        <div className="mb-10 flex flex-col gap-6 md:mb-16 lg:flex-row lg:items-end lg:justify-between">
+          <h2 className="max-w-2xl text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight text-balance">
             Questions people usually have before they sign up
           </h2>
+          <a href="/contact" className="shrink-0 text-sm text-[#6b7280] transition-colors hover:text-[#695AF2]">
+            Still stuck? <span className="font-medium text-[#695AF2]">Talk to us →</span>
+          </a>
         </div>
 
         {/* FAQ List */}
