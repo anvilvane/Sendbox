@@ -24,11 +24,6 @@ const Features = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-10 md:mb-14">
-          <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
-            <span>why teams choose us</span>
-          </div>
-
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight max-w-3xl text-balance">
             The infrastructure serious outbound teams actually need.
           </h2>

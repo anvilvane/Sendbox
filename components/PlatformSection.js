@@ -62,16 +62,11 @@ const PlatformSection = () => {
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
           {/* Header */}
           <div className="mb-12 md:mb-20">
-            <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-white">
-              <div className="w-5 h-1 bg-[#695AF2] rounded-xl"></div>
-              <span>one platform</span>
-            </div>
-
-            <div className="grid lg:grid-cols-2 items-end">
-              <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-white tracking-tight">
-                One platform with every tool your outbound team needs.
+            <div className="grid lg:grid-cols-[1.3fr_1fr] items-end gap-8">
+              <h2 className="text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[1.05] text-white tracking-tight">
+                One platform.<br />Every tool your outbound team needs.
               </h2>
-              <div>
+              <div className="lg:border-l lg:border-white/10 lg:pl-8">
                 <p className="text-base leading-relaxed text-[#9ca3af] mb-6">
                   Campaigns, mailboxes, a unified inbox, analytics, and a dialer all live under one roof, so you're not duct-taping five separate tools together.
                 </p>

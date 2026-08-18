@@ -50,10 +50,6 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
       <div className="max-w-7xl mx-auto">
         {/* Pricing Header */}
         <div className="max-w-4xl pb-12 mx-auto text-center">
-          <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
-            <span>pricing</span>
-          </div>
           <HeadingTag className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight mb-6 text-balance">
             Room to grow, built in from the first mailbox
           </HeadingTag>

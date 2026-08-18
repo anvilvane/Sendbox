@@ -21,12 +21,6 @@ const CTA = () => {
         </div>
       </div>
       <div className="max-w-2xl mx-auto text-center">
-        {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-          <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
-          <span>get started today</span>
-        </div>
-
         {/* Heading */}
         <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight mb-6 text-balance">
           Ready to land in primary?
