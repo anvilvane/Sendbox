@@ -27,12 +27,12 @@ const FAQ = () => {
         {/* Header */}
         <div className="mb-10 md:mb-16">
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1 bg-[#2663eb] rounded-xl"></div>
-            <span>Frequently asked questions</span>
+            <div className="w-5 h-1 bg-[#695AF2] rounded-xl"></div>
+            <span>frequently asked</span>
           </div>
 
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight max-w-3xl text-balance">
-            Got questions? We've got answers.
+            Questions people usually have before they sign up
           </h2>
         </div>
 
@@ -47,15 +47,15 @@ const FAQ = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full py-6 flex items-center justify-between text-left group transition-all hover:bg-gray-50/50"
               >
-                <span className="text-base md:text-xl font-semibold text-black pr-4 md:pr-6 group-hover:text-[#2663eb] transition-colors duration-200">
+                <span className="text-base md:text-xl font-semibold text-black pr-4 md:pr-6 group-hover:text-[#695AF2] transition-colors duration-200">
                   {faq.question}
                 </span>
                 <motion.div
-                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 group-hover:bg-[#2663eb]/10 transition-colors duration-200"
+                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 group-hover:bg-[#695AF2]/10 transition-colors duration-200"
                   animate={{ rotate: openIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
-                  <PlusIcon size={20} className={`transition-colors duration-200 ${openIndex === index ? 'text-[#2663eb]' : 'text-black group-hover:text-[#2663eb]'}`} />
+                  <PlusIcon size={20} className={`transition-colors duration-200 ${openIndex === index ? 'text-[#695AF2]' : 'text-black group-hover:text-[#695AF2]'}`} />
                 </motion.div>
               </button>
 

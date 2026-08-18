@@ -7,7 +7,7 @@ import {
   Send, Mail, Users, TrendingUp, MessageSquare, Phone, Shield,
   FlaskConical, LayoutGrid, Search, ChevronDown,
   Plus, MoreHorizontal, Wrench, Filter, SortAsc,
-  CornerUpLeft, RefreshCw, Info, X, Eye, ThumbsUp,
+  CornerUpLeft, RefreshCw, Info, X, Eye, ThumbsUp, Bot, PlayCircle,
 } from 'lucide-react';
 
 
@@ -28,7 +28,7 @@ const navItems = [
 function Checkbox({ checked = false }) {
   return (
     <div className={`w-[15px] h-[15px] rounded-[3px] border flex items-center justify-center flex-shrink-0 transition-colors ${
-      checked ? 'bg-[#2663eb] border-[#2663eb]' : 'bg-white border-gray-300'
+      checked ? 'bg-[#695AF2] border-[#695AF2]' : 'bg-white border-gray-300'
     }`}>
       {checked && (
         <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
@@ -59,7 +59,13 @@ function BuildingsIcon() {
   );
 }
 
-function DashboardSidebar({ activePage }) {
+const toolkitItems = [
+  { id: 'inbox-placement', label: 'Inbox Placement', icon: FlaskConical },
+  { id: 'blacklist',       label: 'Blacklist Check',  icon: Shield },
+  { id: 'ai-agents',       label: 'AI Agents & Tags', icon: Bot },
+];
+
+function DashboardSidebar({ activePage, onSelectPage }) {
   return (
     <div id="product-sidebar" className="w-[200px] h-full flex flex-col bg-white border-r border-gray-200/60 flex-shrink-0">
       {/* Logo - matches SidebarHeader h-16 border-b, centered */}
@@ -89,20 +95,21 @@ function DashboardSidebar({ activePage }) {
           return (
             <button
               key={item.id}
+              onClick={() => onSelectPage?.(item.id)}
               className={`w-full flex items-center gap-3 h-9 px-3 rounded-md transition-colors ${
                 isActive
-                  ? 'bg-blue-50 text-blue-600 font-medium pointer-events-none'
+                  ? 'bg-violet-50 text-violet-600 font-medium pointer-events-none'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
               <Icon
                 size={15}
-                className={isActive ? 'text-blue-600' : 'text-gray-500'}
+                className={isActive ? 'text-violet-600' : 'text-gray-500'}
                 strokeWidth={isActive ? 2.25 : 1.75}
               />
               <span className="text-[13px]">{item.name}</span>
               {item.id === 'inbox' && activePage !== 'inbox' && (
-                <span className="ml-auto flex h-4 min-w-4 items-center justify-center rounded-full bg-blue-500 px-1 text-[10px] font-medium text-white">3</span>
+                <span className="ml-auto flex h-4 min-w-4 items-center justify-center rounded-full bg-violet-500 px-1 text-[10px] font-medium text-white">3</span>
               )}
             </button>
           );
@@ -113,17 +120,25 @@ function DashboardSidebar({ activePage }) {
       <div className="px-2 pb-2 flex-shrink-0">
         {/* Expanded utility items - appear above the trigger */}
         <div className="space-y-0.5 py-1">
-          {[
-            { label: 'Inbox Placement', icon: <FlaskConical size={15} className="text-gray-500" strokeWidth={1.75} /> },
-            { label: 'Blacklist Check',  icon: <Shield       size={15} className="text-gray-500" strokeWidth={1.75} /> },
-            { label: 'AI Agents & Tags', icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className="text-gray-500 shrink-0"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" strokeLinecap="round"/></svg> },
-            { label: 'Reports',          icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className="text-gray-500 shrink-0"><path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" strokeLinejoin="round"/></svg> },
-          ].map(({ label, icon }) => (
-            <button key={label} className="flex items-center gap-3 w-full px-3 py-2 rounded-md text-[13px] text-gray-600 hover:bg-gray-100">
-              {icon}
-              <span>{label}</span>
-            </button>
-          ))}
+          {toolkitItems.map(({ id, label, icon: Icon }) => {
+            const isActive = id === activePage;
+            return (
+              <button
+                key={id}
+                onClick={() => onSelectPage?.(id)}
+                className={`flex items-center gap-3 w-full px-3 py-2 rounded-md text-[13px] transition-colors ${
+                  isActive ? 'bg-violet-50 text-violet-600 font-medium' : 'text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                <Icon size={15} className={isActive ? 'text-violet-600' : 'text-gray-500'} strokeWidth={isActive ? 2.25 : 1.75} />
+                <span>{label}</span>
+              </button>
+            );
+          })}
+          <button className="flex items-center gap-3 w-full px-3 py-2 rounded-md text-[13px] text-gray-600 hover:bg-gray-100">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className="text-gray-500 shrink-0"><path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>Reports</span>
+          </button>
         </div>
         {/* Trigger button */}
         <button className="flex items-center gap-3 w-full h-9 px-3 rounded-md hover:bg-gray-50/80 transition-colors group">
@@ -223,7 +238,7 @@ const campaignRows = [
 ];
 
 // tiny inline sparkline - exact match to real app (32×14, quadratic bezier + drop-shadow)
-function Sparkline({ data, color = '#3b82f6' }) {
+function Sparkline({ data, color = '#8878F8' }) {
   const width = 32, height = 14, padding = 2;
   if (!data || data.length < 2) return null;
   const max = Math.max(...data, 1);
@@ -263,7 +278,7 @@ function CampaignsMockup() {
           {/* Title + action */}
           <div className="flex items-center justify-between flex-shrink-0">
             <h2 className="text-2xl font-semibold text-gray-900">Campaigns</h2>
-            <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-blue-600 rounded-lg shadow-sm">
+            <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-violet-600 rounded-lg shadow-sm">
               <Plus size={13} strokeWidth={2.5} />
               New Campaign
             </button>
@@ -369,7 +384,7 @@ function CampaignsMockup() {
                     <td className="border-r-[0.5px] border-r-[#E3E3E3] whitespace-nowrap" style={{ padding: 0 }}>
                       <div className="flex h-11 items-center justify-center px-3 gap-2">
                         <span className="text-sm text-gray-900">{c.sent ? c.sent.toLocaleString() : '-'}</span>
-                        {c.status === 'active' && <Sparkline data={[1,3,5,4,7,6,9,8,11,10,13,12,14]} color="#3b82f6" />}
+                        {c.status === 'active' && <Sparkline data={[1,3,5,4,7,6,9,8,11,10,13,12,14]} color="#8878F8" />}
                       </div>
                     </td>
                     {/* Opened */}
@@ -437,14 +452,14 @@ function CampaignsMockup() {
 // ── Inbox ─────────────────────────────────────────────────────────────────────
 const conversations = [
   { from: 'Marcus Chen',  initials: 'MC', company: 'Notion',    preview: 'This looks really interesting, can we hop on a quick call this week?', time: '2m',  tag: 'Interested', tagColor: 'bg-green-50 text-green-700',   unread: true  },
-  { from: 'Sarah Kim',    initials: 'SK', company: 'Stripe',    preview: 'What does your pricing look like for around 10 mailboxes?',             time: '18m', tag: 'Pricing',    tagColor: 'bg-blue-50 text-blue-700',     unread: true  },
+  { from: 'Sarah Kim',    initials: 'SK', company: 'Stripe',    preview: 'What does your pricing look like for around 10 mailboxes?',             time: '18m', tag: 'Pricing',    tagColor: 'bg-violet-50 text-violet-700',     unread: true  },
   { from: 'Tom Bradley',  initials: 'TB', company: 'Linear',    preview: "We've been struggling with deliverability. Tell me more about it.",      time: '1h',  tag: 'Interested', tagColor: 'bg-green-50 text-green-700',   unread: false },
   { from: 'Priya Patel',  initials: 'PP', company: 'Figma',     preview: 'Not the right time for us, maybe follow up in Q3.',                      time: '3h',  tag: 'Not Now',    tagColor: 'bg-gray-100 text-gray-500',    unread: false },
   { from: 'David Wu',     initials: 'DW', company: 'Vercel',    preview: 'This is exactly what we needed. Can you send over the details?',         time: '5h',  tag: 'Interested', tagColor: 'bg-green-50 text-green-700',   unread: false },
   { from: 'Aisha Okonkwo','initials': 'AO', company: 'Segment',  preview: "We're evaluating a few tools. How does Sendbox compare to Instantly?",   time: '7h',  tag: 'Evaluating', tagColor: 'bg-amber-50 text-amber-700',   unread: false },
 ];
 
-const avatarColors = ['bg-blue-500', 'bg-violet-500', 'bg-emerald-500', 'bg-rose-400', 'bg-cyan-500', 'bg-orange-400'];
+const avatarColors = ['bg-violet-500', 'bg-indigo-500', 'bg-emerald-500', 'bg-rose-400', 'bg-cyan-500', 'bg-orange-400'];
 
 function InboxMockup() {
   const [selected, setSelected] = useState(0);
@@ -462,7 +477,7 @@ function InboxMockup() {
           </button>
           <div className="h-4 w-px bg-gray-200 mx-0.5" />
           <span className="text-[13px] font-medium text-gray-900">Inbox</span>
-          <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-blue-500 px-1 text-[10px] font-medium text-white ml-1">3</span>
+          <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-violet-500 px-1 text-[10px] font-medium text-white ml-1">3</span>
           <div className="ml-auto flex items-center gap-1">
             <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-md transition-colors">
               <Filter size={13} />
@@ -486,12 +501,12 @@ function InboxMockup() {
               onClick={() => setSelected(i)}
               className={`w-full text-left px-3 py-3 border-b border-gray-100/80 transition-colors relative ${
                 i === selected
-                  ? 'bg-blue-50 border-l-2 border-l-blue-500'
+                  ? 'bg-violet-50 border-l-2 border-l-violet-500'
                   : 'hover:bg-gray-50 border-l-2 border-l-transparent'
               }`}
             >
               <div className="flex items-start gap-2.5">
-                <div className={`w-8 h-8 rounded-full ${c.unread ? 'bg-blue-500' : avatarColors[i]} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                <div className={`w-8 h-8 rounded-full ${c.unread ? 'bg-violet-500' : avatarColors[i]} flex items-center justify-center flex-shrink-0 mt-0.5`}>
                   <span className="text-[10px] font-semibold text-white">{c.initials}</span>
                 </div>
                 <div className="flex-1 min-w-0 space-y-1">
@@ -499,7 +514,7 @@ function InboxMockup() {
                     <span className={`text-[12.5px] truncate ${c.unread ? 'font-semibold text-gray-900' : 'font-medium text-gray-700'}`}>
                       {c.from}
                     </span>
-                    <span className={`text-[10.5px] flex-shrink-0 ${c.unread ? 'font-medium text-blue-600' : 'text-gray-400'}`}>{c.time}</span>
+                    <span className={`text-[10.5px] flex-shrink-0 ${c.unread ? 'font-medium text-violet-600' : 'text-gray-400'}`}>{c.time}</span>
                   </div>
                   <p className="text-[11.5px] text-gray-500 truncate leading-snug">{c.preview}</p>
                   <div className="flex items-center gap-1.5">
@@ -509,7 +524,7 @@ function InboxMockup() {
                         {c.tag}
                       </span>
                     )}
-                    {c.unread && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />}
+                    {c.unread && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0" />}
                   </div>
                 </div>
               </div>
@@ -535,14 +550,14 @@ function InboxMockup() {
           </div>
           {/* Action buttons - text+icon style matching real app */}
           <div className="flex items-center gap-0.5 flex-shrink-0 ml-3">
-            <button className="px-2 py-1 flex items-center gap-1 text-xs text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors">
+            <button className="px-2 py-1 flex items-center gap-1 text-xs text-gray-600 hover:text-violet-600 hover:bg-violet-50 rounded transition-colors">
               <CornerUpLeft size={12} />Reply
             </button>
             <div className="w-px h-4 bg-gray-200 mx-0.5" />
             <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded transition-colors">
               <RefreshCw size={13} />
             </button>
-            <button className="px-2 py-1 flex items-center gap-1 text-xs text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors">
+            <button className="px-2 py-1 flex items-center gap-1 text-xs text-gray-600 hover:text-violet-600 hover:bg-violet-50 rounded transition-colors">
               <Mail size={12} />Unread
             </button>
             <button className="px-2 py-1 flex items-center gap-1 text-xs text-gray-600 hover:text-red-600 hover:bg-red-50 rounded transition-colors">
@@ -574,7 +589,7 @@ function InboxMockup() {
                     </div>
                   </div>
                   <div className="text-sm text-gray-700 whitespace-pre-wrap break-words" style={{ lineHeight: '1.7' }}>
-                    Hey {conv.from.split(' ')[0]}, noticed your team is scaling outbound at {conv.company}. We built Sendbox specifically to fix deliverability - dedicated IPs, real warmup, no shared infrastructure. Worth a quick look?
+                    Hi {conv.from.split(' ')[0]}, noticed {conv.company} is pushing harder on outbound lately. We built Sendbox around the deliverability problem specifically — every account gets its own IP, real warmup, and zero shared reputation with other senders. Worth a quick look?
                   </div>
                 </div>
               </div>
@@ -582,7 +597,7 @@ function InboxMockup() {
             {/* Lead reply */}
             <div className="group relative">
               <div className="flex items-start gap-3 p-3 relative z-10">
-                <div className={`h-8 w-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0 text-xs font-medium`}>
+                <div className={`h-8 w-8 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center flex-shrink-0 text-xs font-medium`}>
                   {conv.initials}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -615,7 +630,7 @@ function InboxMockup() {
               <span className="text-xs font-medium text-gray-600">Replying to {conv.from}</span>
               <div className="flex items-center gap-1">
                 <button className="px-2 py-1 text-xs font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded transition-colors">CC/BCC</button>
-                <button className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium text-blue-600 hover:bg-blue-50 rounded transition-colors">
+                <button className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium text-violet-600 hover:bg-violet-50 rounded transition-colors">
                   <Image src="/icon.png" alt="Sendbox" className="w-3 h-3 object-contain" width={48} height={48} />
                   Write for me
                   <span className="text-gray-400 ml-0.5">(3 credits)</span>
@@ -649,7 +664,7 @@ function InboxMockup() {
             <div className="flex items-center px-3 py-2 border-t border-gray-100 bg-gray-50 rounded-b-lg">
               <div className="flex items-center gap-2 ml-auto">
                 <button className="px-3 py-1 text-xs font-medium text-gray-600 hover:text-gray-900 transition-colors">Cancel</button>
-                <button className="inline-flex items-center h-6 px-2.5 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition-colors">
+                <button className="inline-flex items-center h-6 px-2.5 text-xs font-medium text-white bg-violet-600 rounded hover:bg-violet-700 transition-colors">
                   Send
                 </button>
               </div>
@@ -698,7 +713,7 @@ function OutlookIcon() {
 }
 
 function Toggle({ enabled, orange = false }) {
-  const onColor = orange ? '#f97316' : '#2663eb';
+  const onColor = orange ? '#f97316' : '#695AF2';
   return (
     <div
       className="relative inline-flex h-[20px] w-[34px] rounded-full transition-colors duration-200 cursor-pointer flex-shrink-0"
@@ -786,7 +801,7 @@ function MailboxesMockup() {
         <div className="flex-1 flex flex-col gap-4 px-6 pt-4 pb-4 bg-white overflow-hidden">
           <div className="flex items-center justify-between flex-shrink-0">
             <h2 className="text-2xl font-semibold text-gray-900">Mailboxes</h2>
-            <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-blue-600 rounded-lg shadow-sm">
+            <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-violet-600 rounded-lg shadow-sm">
               <Plus size={13} strokeWidth={2.5} />
               Add Mailbox
             </button>
@@ -901,7 +916,7 @@ function MailboxesMockup() {
                             ? 'bg-orange-50 text-orange-700 border-orange-100'
                             : tag === 'Agency'
                             ? 'bg-purple-50 text-purple-700 border-purple-100'
-                            : 'bg-blue-50 text-blue-700 border-blue-100';
+                            : 'bg-violet-50 text-violet-700 border-violet-100';
                           return (
                             <span key={ti} className={`inline-flex items-center px-1.5 py-0.5 rounded border text-xs truncate max-w-[110px] ${cls}`}>
                               {tag}
@@ -951,7 +966,7 @@ function MailboxesMockup() {
                 <button aria-label="Previous page" className="w-7 h-7 flex items-center justify-center rounded border border-gray-200 bg-white text-gray-400 hover:bg-gray-50">
                   <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
                 </button>
-                <button className="w-7 h-7 flex items-center justify-center rounded bg-blue-50 border border-blue-200 text-blue-600 text-xs font-medium">1</button>
+                <button className="w-7 h-7 flex items-center justify-center rounded bg-violet-50 border border-violet-200 text-violet-600 text-xs font-medium">1</button>
                 <button aria-label="Next page" className="w-7 h-7 flex items-center justify-center rounded border border-gray-200 bg-white text-gray-400 hover:bg-gray-50">
                   <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                 </button>
@@ -965,7 +980,7 @@ function MailboxesMockup() {
 
 // ── Leads ─────────────────────────────────────────────────────────────────────
 const leadTagColors = {
-  blue:   'bg-blue-50 text-blue-700 border-blue-100',
+  blue:   'bg-violet-50 text-violet-700 border-violet-100',
   purple: 'bg-purple-50 text-purple-700 border-purple-100',
   green:  'bg-green-50 text-green-700 border-green-100',
   orange: 'bg-orange-50 text-orange-700 border-orange-100',
@@ -1026,7 +1041,7 @@ function LeadsMockup() {
                 <Plus size={13} strokeWidth={2.5} />
                 Add Lead
               </button>
-              <button className="inline-flex items-center gap-1.5 h-8 px-3 text-[13px] font-medium text-white bg-blue-600 rounded-lg shadow-sm">
+              <button className="inline-flex items-center gap-1.5 h-8 px-3 text-[13px] font-medium text-white bg-violet-600 rounded-lg shadow-sm">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
                 </svg>
@@ -1047,7 +1062,7 @@ function LeadsMockup() {
                 <span className="text-sm text-gray-400 select-none">Search leads...</span>
               </div>
               {/* Validate Emails - blue with @ SVG */}
-              <button className="inline-flex items-center gap-1.5 h-8 px-3 text-[13px] font-medium text-white bg-blue-600 rounded-lg shrink-0">
+              <button className="inline-flex items-center gap-1.5 h-8 px-3 text-[13px] font-medium text-white bg-violet-600 rounded-lg shrink-0">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
                 </svg>
@@ -1193,7 +1208,7 @@ function LeadsMockup() {
                 <button aria-label="Previous page" className="w-7 h-7 flex items-center justify-center rounded border border-gray-200 bg-white text-gray-400 hover:bg-gray-50">
                   <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
                 </button>
-                <button className="w-7 h-7 flex items-center justify-center rounded bg-blue-50 border border-blue-200 text-blue-600 text-xs font-medium">1</button>
+                <button className="w-7 h-7 flex items-center justify-center rounded bg-violet-50 border border-violet-200 text-violet-600 text-xs font-medium">1</button>
                 <button aria-label="Next page" className="w-7 h-7 flex items-center justify-center rounded border border-gray-200 bg-white text-gray-400 hover:bg-gray-50">
                   <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                 </button>
@@ -1215,7 +1230,7 @@ const bounceSeries = sentSeries.map(v => Math.round(v * 0.019));
 
 // Analytics card sparkline - 64×24 with gradient area fill
 // idx prop makes gradient ID unique even when same color is used multiple times
-function MiniChart({ data, color = '#3b82f6', idx = 0 }) {
+function MiniChart({ data, color = '#8878F8', idx = 0 }) {
   const W = 64, H = 24, pad = 2;
   if (!data || data.length < 2) return <div style={{ width: W, height: H }} />;
   const max = Math.max(...data, 1);
@@ -1251,8 +1266,8 @@ function SVGAreaChart() {
   const IW = VW - ML - MR, IH = VH - MT - MB;
 
   const series = [
-    { data: sentSeries,  color: '#3b82f6', id: 'svgac_s' },
-    { data: openSeries,  color: '#60a5fa', id: 'svgac_o' },
+    { data: sentSeries,  color: '#8878F8', id: 'svgac_s' },
+    { data: openSeries,  color: '#9F92FA', id: 'svgac_o' },
     { data: replySeries, color: '#0d7d0e', id: 'svgac_r' },
   ];
   const maxVal = Math.max(...sentSeries, 1);
@@ -1332,16 +1347,16 @@ function SVGAreaChart() {
 
 function AnalyticsMockup() {
   const metrics = [
-    { label: 'Emails sent',       value: '14,044',  sub: '61.4% open rate',           spark: sentSeries,                                 color: '#3b82f6' },
-    { label: 'Prospects reached', value: '8,620',   sub: '4.2% click rate',           spark: openSeries,                                 color: '#3b82f6' },
+    { label: 'Emails sent',       value: '14,044',  sub: '61.4% open rate',           spark: sentSeries,                                 color: '#8878F8' },
+    { label: 'Prospects reached', value: '8,620',   sub: '4.2% click rate',           spark: openSeries,                                 color: '#8878F8' },
     { label: 'Reply rate',        value: '8.3%',    sub: '1,166 replies',             spark: replySeries,                                color: '#0d7d0e' },
     { label: 'Positive replies',  value: '38.4%',   sub: '448 of 1,166 replies',      spark: replySeries.map(v => Math.round(v * 0.384)), color: '#10b981' },
     { label: 'Bounce rate',       value: '1.9%',    sub: '175 soft · 92 hard',        spark: bounceSeries,                               color: '#9ca3af' },
   ];
 
   const chartLegend = [
-    { label: 'Sent',    color: '#3b82f6', dim: false },
-    { label: 'Opens',   color: '#60a5fa', dim: false },
+    { label: 'Sent',    color: '#8878F8', dim: false },
+    { label: 'Opens',   color: '#9F92FA', dim: false },
     { label: 'Clicks',  color: '#8b5cf6', dim: true  },
     { label: 'Replies', color: '#0d7d0e', dim: false },
     { label: 'Bounces', color: '#cd3d3d', dim: true  },
@@ -1554,7 +1569,7 @@ function DialerMockup() {
               <span className="text-gray-500 text-xs">Credits:</span>
               <span className="font-medium text-gray-900 text-sm">$12.45</span>
             </div>
-            <button className="h-9 px-3 text-xs font-medium text-white bg-blue-600 rounded-lg flex items-center gap-2">
+            <button className="h-9 px-3 text-xs font-medium text-white bg-violet-600 rounded-lg flex items-center gap-2">
               Focus
               <kbd className="px-1.5 py-0.5 text-[10px] rounded border bg-white/10 border-white/20 text-white/80">F</kbd>
             </button>
@@ -1691,7 +1706,7 @@ function DialerMockup() {
 
             {/* Call button */}
             <div className="flex flex-col items-center gap-2">
-              <button className="h-16 w-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-lg transition-colors">
+              <button className="h-16 w-16 rounded-full bg-violet-600 hover:bg-violet-700 text-white flex items-center justify-center shadow-lg transition-colors">
                 <Phone size={26} strokeWidth={2.5} />
               </button>
               <kbd className="px-2 py-0.5 text-[10px] rounded border bg-gray-100 border-gray-200 text-gray-400">space</kbd>
@@ -1725,7 +1740,7 @@ const finderFilterSections = [
 
 function FinderFilterChip({ label }) {
   return (
-    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-100">
+    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-violet-50 text-violet-700 border border-violet-100">
       {label}
       <svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.8" className="cursor-pointer">
         <path d="M2 2l6 6M8 2L2 8" strokeLinecap="round"/>
@@ -1747,7 +1762,7 @@ function FinderMockup() {
               <Filter size={14} className="text-gray-500" />
               <h2 className="text-sm font-semibold text-gray-900">Filters</h2>
             </div>
-            <span className="inline-flex items-center justify-center h-5 min-w-5 px-1.5 rounded-full text-[10px] font-semibold bg-blue-100 text-blue-700">3</span>
+            <span className="inline-flex items-center justify-center h-5 min-w-5 px-1.5 rounded-full text-[10px] font-semibold bg-violet-100 text-violet-700">3</span>
           </div>
 
           {/* Domain input */}
@@ -1771,7 +1786,7 @@ function FinderMockup() {
                   <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" strokeLinecap="round"/>
                 </svg>
                 <span className="flex-1 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-600">Person</span>
-                <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full text-[9px] font-semibold bg-blue-100 text-blue-700">4</span>
+                <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full text-[9px] font-semibold bg-violet-100 text-violet-700">4</span>
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 rotate-90">
                   <path d="M4.5 2.5l3 3-3 3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -1801,7 +1816,7 @@ function FinderMockup() {
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
                 </svg>
                 <span className="flex-1 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-600">Location</span>
-                <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full text-[9px] font-semibold bg-blue-100 text-blue-700">1</span>
+                <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full text-[9px] font-semibold bg-violet-100 text-violet-700">1</span>
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 rotate-90">
                   <path d="M4.5 2.5l3 3-3 3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -1820,7 +1835,7 @@ function FinderMockup() {
                   <rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
                 </svg>
                 <span className="flex-1 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-600">Company</span>
-                <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full text-[9px] font-semibold bg-blue-100 text-blue-700">2</span>
+                <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full text-[9px] font-semibold bg-violet-100 text-violet-700">2</span>
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 rotate-90">
                   <path d="M4.5 2.5l3 3-3 3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -1852,7 +1867,7 @@ function FinderMockup() {
 
           {/* Footer actions */}
           <div className="border-t border-gray-100 px-3 py-3 flex-shrink-0 space-y-2">
-            <button className="w-full flex items-center justify-center gap-2 py-2 bg-blue-600 hover:bg-blue-700 text-white text-[12px] font-medium rounded-lg transition-colors">
+            <button className="w-full flex items-center justify-center gap-2 py-2 bg-violet-600 hover:bg-violet-700 text-white text-[12px] font-medium rounded-lg transition-colors">
               <Search size={13} />
               Search Leads
             </button>
@@ -1874,7 +1889,7 @@ function FinderMockup() {
                 </svg>
                 Find &amp; Import
               </button>
-              <button className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-[12px] font-medium transition-colors">
+              <button className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-violet-600 hover:bg-violet-700 text-white rounded-lg text-[12px] font-medium transition-colors">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
                   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -1900,7 +1915,7 @@ function FinderMockup() {
               <tbody>
                 {finderLeads.map((lead, i) => {
                   const initials = lead.name.split(' ').map(p => p[0]).join('').slice(0,2);
-                  const bgColors = ['from-blue-400 to-blue-600','from-violet-400 to-violet-600','from-emerald-400 to-emerald-600','from-rose-400 to-rose-500','from-amber-400 to-amber-600','from-cyan-400 to-cyan-600','from-pink-400 to-pink-600','from-indigo-400 to-indigo-600'];
+                  const bgColors = ['from-fuchsia-400 to-violet-600','from-violet-400 to-violet-600','from-emerald-400 to-emerald-600','from-rose-400 to-rose-500','from-amber-400 to-amber-600','from-cyan-400 to-cyan-600','from-pink-400 to-pink-600','from-indigo-400 to-indigo-600'];
                   const avatarBg = bgColors[i % bgColors.length];
                   return (
                     <tr key={i} className="hover:bg-gray-50 cursor-pointer" style={{ borderBottom: '0.5px solid #E5E7EB' }}>
@@ -1971,7 +1986,7 @@ function FinderMockup() {
                 <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 12 12" strokeWidth="1.5"><path d="M7.5 2.5L3.5 6l4 3.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
               {[1,2,3].map(n => (
-                <button key={n} className={`h-7 w-7 flex items-center justify-center rounded text-[12px] font-medium transition-colors ${n === 1 ? 'bg-blue-600 text-white border border-blue-600' : 'border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>{n}</button>
+                <button key={n} className={`h-7 w-7 flex items-center justify-center rounded text-[12px] font-medium transition-colors ${n === 1 ? 'bg-violet-600 text-white border border-violet-600' : 'border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>{n}</button>
               ))}
               <button className="h-7 w-7 flex items-center justify-center rounded border border-gray-200 text-gray-400 hover:bg-gray-50 transition-colors">
                 <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 12 12" strokeWidth="1.5"><path d="M4.5 2.5L8.5 6l-4 3.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -1996,7 +2011,7 @@ const crmBoards = [
     ],
   },
   {
-    id: 'interested', name: 'Interested', color: '#3b82f6',
+    id: 'interested', name: 'Interested', color: '#8878F8',
     leads: [
       { name: 'David Wu',    email: 'david.wu@vercel.com',    company: 'Vercel',   campaign: 'SaaS VP Decision Makers', tags: [],         status: 'sent',    date: 'Jan 16', verified: true  },
       { name: 'Priya Patel', email: 'priya.p@figma.io',       company: 'Figma',    campaign: 'Enterprise IT Directors', tags: ['Design'], status: 'sent',    date: 'Jan 15', verified: true  },
@@ -2057,7 +2072,7 @@ function CRMCard({ lead }) {
       )}
       {/* Footer */}
       <div className="flex items-center justify-between pt-2 border-t border-gray-100">
-        <span className={`text-[11px] font-medium ${lead.status === 'replied' ? 'text-green-600' : 'text-blue-600'}`}>
+        <span className={`text-[11px] font-medium ${lead.status === 'replied' ? 'text-green-600' : 'text-violet-600'}`}>
           {lead.status === 'replied' ? 'Replied' : 'Email Sent'}
         </span>
         <div className="flex items-center gap-1 text-[10px] text-gray-400">
@@ -2101,7 +2116,7 @@ function CRMMockup() {
               <Filter size={13} className="text-gray-500" />
               Filter Boards
             </button>
-            <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-blue-600 rounded-lg shadow-sm">
+            <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-violet-600 rounded-lg shadow-sm">
               <Plus size={13} strokeWidth={2.5} />
               Add Board
             </button>
@@ -2147,19 +2162,219 @@ function CRMMockup() {
   );
 }
 
+// ── Blacklist Monitoring ──────────────────────────────────────────────────────
+const blacklistDomainRows = [
+  { domain: 'yourcompany.com',  mailboxes: 3, checkedAgo: '2h ago',  lists: { spamhaus: true, surbl: true, uribl: true, barracuda: true } },
+  { domain: 'seconddomain.io',  mailboxes: 1, checkedAgo: '2h ago',  lists: { spamhaus: true, surbl: true, uribl: false, barracuda: true } },
+  { domain: 'senddomain.io',    mailboxes: 1, checkedAgo: '4h ago',  lists: { spamhaus: true, surbl: true, uribl: true, barracuda: true } },
+  { domain: 'thirddomain.io',   mailboxes: 1, checkedAgo: '2h ago',  lists: { spamhaus: true, surbl: true, uribl: true, barracuda: true } },
+  { domain: 'outbound.agency',  mailboxes: 1, checkedAgo: '6h ago',  lists: { spamhaus: true, surbl: true, uribl: true, barracuda: true } },
+];
+const BLACKLIST_NAMES = { spamhaus: 'Spamhaus', surbl: 'SURBL', uribl: 'URIBL', barracuda: 'Barracuda' };
+
+function ListDot({ clean }) {
+  return (
+    <span className="inline-flex items-center gap-1 text-[11px]">
+      <span className={`h-1.5 w-1.5 rounded-full ${clean ? 'bg-green-500' : 'bg-red-500'}`} />
+      <span className={clean ? 'text-gray-500' : 'text-red-600 font-medium'}>{clean ? 'Clean' : 'Listed'}</span>
+    </span>
+  );
+}
+
+function BlacklistMockup() {
+  return (
+    <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+      <PageHeader page="Blacklist Check" />
+      <div className="flex-1 flex flex-col gap-4 px-6 pt-4 pb-4 bg-white overflow-hidden">
+        <div className="flex items-center justify-between flex-shrink-0">
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-900">Blacklist Monitoring</h2>
+            <p className="text-[13px] text-gray-500 mt-0.5">Checked automatically every 6 hours across 40+ DNSBLs. Domains auto-pause on a hit.</p>
+          </div>
+          <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-violet-600 rounded-lg shadow-sm">
+            <RefreshCw size={13} strokeWidth={2.5} />
+            Check All Now
+          </button>
+        </div>
+
+        <div className="flex flex-col bg-white rounded-lg overflow-hidden flex-shrink-0" style={{ border: '0.5px solid #E3E3E3', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+          <table className="w-full caption-bottom border-collapse text-sm" cellSpacing="0" cellPadding="0">
+            <thead>
+              <tr className="bg-[#FDFDFD]" style={{ borderBottom: '1px solid #E3E3E3' }}>
+                <th className="text-left border-r-[0.5px] border-r-[#E3E3E3]" style={{ padding: 0, minWidth: 180 }}>
+                  <div className="flex h-11 items-center pl-4 pr-3"><span className="text-xs font-medium text-gray-600 uppercase tracking-wider">Domain</span></div>
+                </th>
+                <th className="text-center border-r-[0.5px] border-r-[#E3E3E3]" style={{ padding: 0, width: 90 }}>
+                  <div className="flex h-11 items-center justify-center px-3"><span className="text-xs font-medium text-gray-600 uppercase tracking-wider">Mailboxes</span></div>
+                </th>
+                {Object.values(BLACKLIST_NAMES).map((name) => (
+                  <th key={name} className="text-center border-r-[0.5px] border-r-[#E3E3E3]" style={{ padding: 0, width: 90 }}>
+                    <div className="flex h-11 items-center justify-center px-3"><span className="text-xs font-medium text-gray-600 uppercase tracking-wider">{name}</span></div>
+                  </th>
+                ))}
+                <th className="text-center whitespace-nowrap" style={{ padding: 0, width: 100 }}>
+                  <div className="flex h-11 items-center justify-center px-3"><span className="text-xs font-medium text-gray-600 uppercase tracking-wider">Checked</span></div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {blacklistDomainRows.map((d) => (
+                <tr key={d.domain} className="hover:bg-[#F9FAFB]" style={{ borderBottom: '0.5px solid #E3E3E3' }}>
+                  <td className="border-r-[0.5px] border-r-[#E3E3E3]" style={{ padding: 0 }}>
+                    <div className="flex h-11 items-center pl-4 pr-3"><span className="text-sm font-medium text-gray-900">{d.domain}</span></div>
+                  </td>
+                  <td className="border-r-[0.5px] border-r-[#E3E3E3]" style={{ padding: 0 }}>
+                    <div className="flex h-11 items-center justify-center px-3"><span className="text-sm text-gray-900">{d.mailboxes}</span></div>
+                  </td>
+                  {Object.keys(BLACKLIST_NAMES).map((key) => (
+                    <td key={key} className="border-r-[0.5px] border-r-[#E3E3E3]" style={{ padding: 0 }}>
+                      <div className="flex h-11 items-center justify-center px-3"><ListDot clean={d.lists[key]} /></div>
+                    </td>
+                  ))}
+                  <td style={{ padding: 0 }}>
+                    <div className="flex h-11 items-center justify-center px-3"><span className="text-xs text-gray-400">{d.checkedAgo}</span></div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Inbox Placement Testing ───────────────────────────────────────────────────
+const placementResults = [
+  { provider: 'Personal Gmail',      folder: 'primary',    pct: 96 },
+  { provider: 'Google Workspace',    folder: 'primary',    pct: 94 },
+  { provider: 'Personal Outlook',    folder: 'primary',    pct: 91 },
+  { provider: 'Microsoft 365',       folder: 'primary',    pct: 89 },
+  { provider: 'Yahoo Mail',          folder: 'promotions', pct: 78 },
+];
+const FOLDER_STYLE = {
+  primary:    { label: 'Primary Inbox', dot: 'bg-green-500', text: 'text-green-700', bg: 'bg-green-50' },
+  promotions: { label: 'Promotions',    dot: 'bg-amber-500', text: 'text-amber-700', bg: 'bg-amber-50' },
+  spam:       { label: 'Spam Folder',   dot: 'bg-red-500',   text: 'text-red-700',   bg: 'bg-red-50' },
+};
+
+function InboxPlacementMockup() {
+  const overall = Math.round(placementResults.reduce((s, r) => s + r.pct, 0) / placementResults.length);
+  return (
+    <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+      <PageHeader page="Inbox Placement" />
+      <div className="flex-1 flex flex-col gap-4 px-6 pt-4 pb-4 bg-white overflow-hidden">
+        <div className="flex items-center justify-between flex-shrink-0">
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-900">Inbox Placement Testing</h2>
+            <p className="text-[13px] text-gray-500 mt-0.5">See exactly which folder your emails land in before you send at scale.</p>
+          </div>
+          <button className="inline-flex items-center justify-center h-8 gap-1.5 px-3 text-[13px] font-medium text-white bg-violet-600 rounded-lg shadow-sm">
+            <PlayCircle size={13} strokeWidth={2.5} />
+            Run New Test
+          </button>
+        </div>
+
+        <div className="flex items-center gap-4 flex-shrink-0">
+          <div className="rounded-lg p-4 flex-shrink-0 w-40" style={{ border: '0.5px solid #E3E3E3', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div className="text-xs uppercase text-gray-500">Overall score</div>
+            <div className="text-2xl font-bold text-gray-900">{overall}%</div>
+            <div className="text-xs text-gray-400">primary inbox</div>
+          </div>
+          <div className="flex-1 grid grid-cols-4 gap-3">
+            {placementResults.slice(0, 4).map((r) => {
+              const s = FOLDER_STYLE[r.folder];
+              return (
+                <div key={r.provider} className="rounded-lg p-3" style={{ border: '0.5px solid #E3E3E3' }}>
+                  <div className="text-[11px] text-gray-500 truncate">{r.provider}</div>
+                  <div className="text-lg font-semibold text-gray-900">{r.pct}%</div>
+                  <span className={`inline-flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 rounded ${s.bg} ${s.text}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
+                    {s.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="flex flex-col bg-white rounded-lg overflow-hidden flex-1" style={{ border: '0.5px solid #E3E3E3', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+          <div className="border-b border-[#E3E3E3] px-4 py-2.5"><span className="text-xs font-medium text-gray-600 uppercase tracking-wider">Full results by seed account</span></div>
+          <div className="divide-y divide-[#E3E3E3]">
+            {placementResults.map((r) => {
+              const s = FOLDER_STYLE[r.folder];
+              return (
+                <div key={r.provider} className="flex items-center justify-between px-4 py-2.5">
+                  <span className="text-sm text-gray-900">{r.provider}</span>
+                  <span className={`inline-flex items-center gap-1.5 text-[12px] font-medium px-2 py-0.5 rounded-full ${s.bg} ${s.text}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
+                    {s.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── AI Agents & Tags ──────────────────────────────────────────────────────────
+const aiAgents = [
+  { id: 'reply-tagging', name: 'Reply Intent Tagging',    description: 'Every reply auto-classified — interested, not now, out of office, wrong person, question, unsubscribe.', enabled: true },
+  { id: 'write-for-me',  name: 'AI Reply Drafting',       description: '"Write for me" drafts a reply in your voice from the thread context — reviewed before sending.', enabled: true },
+  { id: 'auto-followup', name: 'Auto Follow-Up Writer',   description: 'Generates the next sequence step’s copy variation automatically when a step under-performs.', enabled: false },
+  { id: 'send-time',     name: 'Smart Send-Time',         description: 'Learns each lead’s open-time pattern and nudges send time per-recipient.', enabled: false },
+];
+
+function AIAgentsMockup() {
+  return (
+    <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+      <PageHeader page="AI Agents & Tags" />
+      <div className="flex-1 flex flex-col gap-4 px-6 pt-4 pb-4 bg-white overflow-hidden">
+        <div className="flex-shrink-0">
+          <h2 className="text-2xl font-semibold text-gray-900">AI Agents &amp; Tags</h2>
+          <p className="text-[13px] text-gray-500 mt-0.5">Turn on the AI behaviors you want running across every campaign.</p>
+        </div>
+
+        <div className="flex flex-col gap-3 overflow-y-auto">
+          {aiAgents.map((a) => (
+            <div key={a.id} className="flex items-center justify-between gap-4 rounded-lg p-4" style={{ border: '0.5px solid #E3E3E3', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+              <div className="flex items-start gap-3 min-w-0">
+                <div className="h-8 w-8 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center flex-shrink-0">
+                  <Bot size={15} strokeWidth={1.75} />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-sm font-medium text-gray-900">{a.name}</div>
+                  <div className="text-xs text-gray-500 mt-0.5">{a.description}</div>
+                </div>
+              </div>
+              <Toggle enabled={a.enabled} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Main export ────────────────────────────────────────────────────────────────
-const PLATFORM_TABS = ['campaigns', 'mailboxes', 'leads', 'analytics', 'finder', 'crm', 'inbox', 'dialer'];
+const PLATFORM_TABS = ['campaigns', 'mailboxes', 'leads', 'analytics', 'finder', 'crm', 'inbox', 'dialer', 'inbox-placement', 'blacklist', 'ai-agents'];
 const ROTATE_MS = 4000;
 
 const platformMeta = [
-  { id: 'campaigns', icon: Send,          label: 'Campaigns' },
-  { id: 'mailboxes', icon: Mail,          label: 'Mailboxes' },
-  { id: 'leads',     icon: Users,         label: 'Leads'     },
-  { id: 'analytics', icon: TrendingUp,    label: 'Analytics' },
-  { id: 'finder',    icon: Search,        label: 'Finder'    },
-  { id: 'crm',       icon: LayoutGrid,    label: 'CRM'       },
-  { id: 'inbox',     icon: MessageSquare, label: 'Inbox'     },
-  { id: 'dialer',    icon: Phone,         label: 'Dialer'    },
+  { id: 'campaigns',        icon: Send,          label: 'Campaigns' },
+  { id: 'mailboxes',        icon: Mail,          label: 'Mailboxes' },
+  { id: 'leads',            icon: Users,         label: 'Leads'     },
+  { id: 'analytics',        icon: TrendingUp,    label: 'Analytics' },
+  { id: 'finder',           icon: Search,        label: 'Finder'    },
+  { id: 'crm',              icon: LayoutGrid,    label: 'CRM'       },
+  { id: 'inbox',            icon: MessageSquare, label: 'Inbox'     },
+  { id: 'dialer',           icon: Phone,         label: 'Dialer'    },
+  { id: 'inbox-placement',  icon: FlaskConical,  label: 'Inbox Placement' },
+  { id: 'blacklist',        icon: Shield,        label: 'Blacklist Check' },
+  { id: 'ai-agents',        icon: Bot,           label: 'AI Agents' },
 ];
 
 const WINDOW_W = 1152; // native width of the window (max-w-6xl)
@@ -2216,11 +2431,11 @@ const ProductShowcase = () => {
         <div className="mb-8 md:mb-10 grid lg:grid-cols-2  items-end">
           <div>
             <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-              <div className="w-5 h-1 bg-[#2663eb] rounded-xl" />
-              <span>the platform</span>
+              <div className="w-5 h-1 bg-[#695AF2] rounded-xl" />
+              <span>a look inside</span>
             </div>
             <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight">
-              Every tool your outbound team needs. One platform.
+              Everything your outbound team needs, under one roof.
             </h2>
           </div>
 
@@ -2236,7 +2451,7 @@ const ProductShowcase = () => {
                 onClick={() => handlePillClick(id)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13px] font-medium whitespace-nowrap border transition-[background-color,color,border-color] duration-200 ${
                   isActive
-                    ? 'bg-[#2663eb] text-white border-transparent'
+                    ? 'bg-[#695AF2] text-white border-transparent'
                     : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700'
                 }`}
               >
@@ -2256,7 +2471,7 @@ const ProductShowcase = () => {
           {/* Dashboard content */}
           <div className="h-[680px] overflow-hidden">
             <div style={{ transform: 'scale(0.88)', transformOrigin: 'top left', width: `${100/0.88}%`, height: `${680/0.88}px` }} className="flex h-full bg-white">
-              <DashboardSidebar activePage={activeTab} />
+              <DashboardSidebar activePage={activeTab} onSelectPage={handlePillClick} />
               <div className="flex-1 relative overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -2275,6 +2490,9 @@ const ProductShowcase = () => {
                     {activeTab === 'crm'       && <CRMMockup />}
                     {activeTab === 'inbox'     && <InboxMockup />}
                     {activeTab === 'dialer'    && <DialerMockup />}
+                    {activeTab === 'inbox-placement' && <InboxPlacementMockup />}
+                    {activeTab === 'blacklist'       && <BlacklistMockup />}
+                    {activeTab === 'ai-agents'       && <AIAgentsMockup />}
                   </motion.div>
                 </AnimatePresence>
               </div>

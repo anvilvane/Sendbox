@@ -19,10 +19,19 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: "frame-ancestors 'self'",
           },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload',
-          },
+          // Only send HSTS in production. Chrome treats localhost as a trustworthy
+          // origin and DOES honor this header there -- sending it in `next dev`
+          // makes the browser force-upgrade http://localhost:PORT to https, which
+          // has no TLS listener, causing a real ERR_TOO_MANY_REDIRECTS loop that
+          // persists (via Chrome's cached HSTS policy) across restarts until the
+          // site's HSTS entry is manually cleared. Pre-existing in the original
+          // SendKit clone, caught while verifying the Sendbox rebrand locally.
+          ...(process.env.NODE_ENV === 'production'
+            ? [{
+                key: 'Strict-Transport-Security',
+                value: 'max-age=63072000; includeSubDomains; preload',
+              }]
+            : []),
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
@@ -67,13 +76,12 @@ const nextConfig = {
     return [
       // www -> apex is otherwise served as a temporary (307) redirect at the
       // Vercel domain layer, before requests reach the app. This app-level
-      // rule only takes effect once www.sendbox.ai is added as a serving
+      // rule only takes effect once www.sendboxes.tech is added as a serving
       // domain (not a Vercel "Redirect" domain) - see ACTION-PLAN item 8.
-      // TODO(user): replace with real production domain once chosen
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.sendbox.ai' }],
-        destination: 'https://sendbox.ai/:path*',
+        has: [{ type: 'host', value: 'www.sendboxes.tech' }],
+        destination: 'https://sendboxes.tech/:path*',
         permanent: true,
       },
       // old competitor teardown URLs moved to clean root URLs

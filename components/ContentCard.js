@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Gradient variants. Palette colors only: primary blue (#2663eb),
-// primary hover (#1d4ed8), dark (#1a1a1a).
+// Gradient variants. Palette colors only: primary blue (#695AF2),
+// primary hover (#5847E0), dark (#1a1a1a).
 const GRADIENTS = [
-  'from-[#2663eb] to-[#1d4ed8]',
-  'from-[#1a1a1a] to-[#2663eb]',
-  'from-[#1d4ed8] to-[#1a1a1a]',
-  'from-[#2663eb] to-[#1a1a1a]',
+  'from-[#695AF2] to-[#5847E0]',
+  'from-[#1a1a1a] to-[#695AF2]',
+  'from-[#5847E0] to-[#1a1a1a]',
+  'from-[#695AF2] to-[#1a1a1a]',
 ];
 
 // Pick a gradient from a stable hash of the href, so cards in a grid get a
@@ -65,11 +65,11 @@ export default function ContentCard({
       {/* Body */}
       <div className="p-5">
         {category && (
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2663eb]">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#695AF2]">
             {category}
           </span>
         )}
-        <h3 className="text-[15px] font-semibold text-black group-hover:text-[#2663eb] transition-colors leading-snug mt-1.5 mb-2">
+        <h3 className="text-[15px] font-semibold text-black group-hover:text-[#695AF2] transition-colors leading-snug mt-1.5 mb-2">
           {title}
         </h3>
         {excerpt && (

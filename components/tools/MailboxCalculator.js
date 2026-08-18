@@ -1,5 +1,6 @@
 'use client';
 
+import { APP_LOGIN_URL } from "@/lib/app-url";
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@phosphor-icons/react';
@@ -27,7 +28,7 @@ const PRICING = {
 };
 
 const PROVIDERS = {
-  google: { label: 'Google Workspace', billing: 'mailbox', block: 3, epd: 15, logo: '/icons/providers/google.png', color: '#2663eb', text: '#ffffff' },
+  google: { label: 'Google Workspace', billing: 'mailbox', block: 3, epd: 15, logo: '/icons/providers/google.png', color: '#695AF2', text: '#ffffff' },
   microsoft: { label: 'Microsoft 365', billing: 'mailbox', block: 3, epd: 5, logo: '/icons/providers/outlook.png', color: '#7ea2f2', text: '#0a0a0a' },
   azure: { label: 'Azure', billing: 'tenant', block: 50, epd: 3, logo: '/icons/providers/azure.png', color: '#c8d7fa', text: '#0a0a0a' },
 };
@@ -173,7 +174,7 @@ function Toggle({ label, sub, checked, onChange, last }) {
         aria-checked={checked}
         aria-label={`Enable ${label} add-on`}
         onClick={() => onChange(!checked)}
-        className={`relative inline-flex h-6 w-11 flex-none items-center rounded-full transition-colors ${checked ? 'bg-[#2663eb]' : 'bg-gray-200'}`}
+        className={`relative inline-flex h-6 w-11 flex-none items-center rounded-full transition-colors ${checked ? 'bg-[#695AF2]' : 'bg-gray-200'}`}
       >
         <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${checked ? 'translate-x-[22px]' : 'translate-x-0.5'}`} />
       </button>
@@ -184,7 +185,7 @@ function Toggle({ label, sub, checked, onChange, last }) {
 function FunnelStep({ v, k, emphasize }) {
   return (
     <span className="inline-flex flex-col">
-      <span className={`font-semibold tabular-nums leading-tight ${emphasize ? 'text-lg text-[#2663eb]' : 'text-black'}`}>{v}</span>
+      <span className={`font-semibold tabular-nums leading-tight ${emphasize ? 'text-lg text-[#695AF2]' : 'text-black'}`}>{v}</span>
       <span className="text-[0.65rem] text-[#6b7280]">{k}</span>
     </span>
   );
@@ -350,7 +351,7 @@ export default function MailboxCalculator() {
                 value={Math.min(monthlyVolume, 300000)}
                 onChange={(e) => setMonthlyVolume(Number(e.target.value))}
                 aria-label="Monthly send volume slider"
-                style={{ accentColor: '#2663eb' }}
+                style={{ accentColor: '#695AF2' }}
                 className="w-full"
               />
               <input
@@ -386,7 +387,7 @@ export default function MailboxCalculator() {
                 value={Math.min(meetings, 200)}
                 onChange={(e) => setMeetings(Number(e.target.value))}
                 aria-label="Meetings booked per month slider"
-                style={{ accentColor: '#2663eb' }}
+                style={{ accentColor: '#695AF2' }}
                 className="w-full"
               />
               <input
@@ -563,7 +564,7 @@ export default function MailboxCalculator() {
                 key={p.label}
                 type="button"
                 onClick={() => setMix({ ...p.mix })}
-                className="rounded-full border border-[#e5e5e5] bg-white px-3 py-1.5 text-sm font-medium text-[#6b7280] transition-all hover:border-[#2663eb] hover:text-[#2663eb]"
+                className="rounded-full border border-[#e5e5e5] bg-white px-3 py-1.5 text-sm font-medium text-[#6b7280] transition-all hover:border-[#695AF2] hover:text-[#695AF2]"
               >
                 {p.label}
               </button>
@@ -588,7 +589,7 @@ export default function MailboxCalculator() {
                 onClick={() => setCycle(c)}
                 className={`flex-1 min-w-max text-center rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
                   cycle === c
-                    ? 'border-[#2663eb] bg-[#2663eb] text-white'
+                    ? 'border-[#695AF2] bg-[#695AF2] text-white'
                     : 'border-[#e5e5e5] text-[#6b7280] hover:border-gray-300 hover:text-black'
                 }`}
               >
@@ -671,7 +672,7 @@ export default function MailboxCalculator() {
       </div>
 
       {/* ── Results ── */}
-      <div className="border border-[#e5e5e5] border-l-4 border-l-[#2663eb] rounded-xl bg-white p-5 sm:p-6 lg:sticky lg:top-8">
+      <div className="border border-[#e5e5e5] border-l-4 border-l-[#695AF2] rounded-xl bg-white p-5 sm:p-6 lg:sticky lg:top-8">
 
         {invalid && (
           <div role="alert" className="mb-4 rounded-md bg-amber-50 px-3.5 py-3 text-sm text-amber-700">
@@ -682,8 +683,8 @@ export default function MailboxCalculator() {
         )}
 
         {volumeQuote ? (
-          <div className="mb-5 rounded-xl border border-[#2663eb]/20 bg-[#2663eb]/5 p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#2663eb]">Custom volume pricing</p>
+          <div className="mb-5 rounded-xl border border-[#695AF2]/20 bg-[#695AF2]/5 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#695AF2]">Custom volume pricing</p>
             <p className="mt-1.5 text-xl font-semibold leading-snug text-black">
               At {count(results.totalMailboxes)} mailboxes, you get custom pricing.
             </p>
@@ -692,8 +693,8 @@ export default function MailboxCalculator() {
               around your exact setup instead of list pricing. Get started and we will size it with you.
             </p>
             <a
-              href="https://app.sendbox.ai/login"
-              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#2663eb] px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group no-underline"
+              href={APP_LOGIN_URL}
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#695AF2] px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group no-underline"
             >
               Get Started
               <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />
@@ -827,11 +828,11 @@ export default function MailboxCalculator() {
             </div>
             <div className={`flex justify-between gap-4 py-1.5 text-sm ${results.discount === 0 ? 'text-[#9ca3af]' : ''}`}>
               <span className={results.discount === 0 ? '' : 'text-[#6b7280]'}>Cycle discount ({pct(results.discount)}%)</span>
-              <span className={`tabular-nums font-medium ${results.discount > 0 ? 'text-[#2663eb]' : ''}`}>
+              <span className={`tabular-nums font-medium ${results.discount > 0 ? 'text-[#695AF2]' : ''}`}>
                 {(results.discount > 0 ? '-' : '') + money(results.recurringFull * results.discount)}
               </span>
             </div>
-            <div className="my-2 flex justify-between gap-4 rounded-md bg-[#2663eb]/5 px-2.5 py-2 text-sm font-semibold text-[#2663eb]">
+            <div className="my-2 flex justify-between gap-4 rounded-md bg-[#695AF2]/5 px-2.5 py-2 text-sm font-semibold text-[#695AF2]">
               <span>Effective monthly</span>
               <span className="tabular-nums">{money(results.effMonthly)}</span>
             </div>
@@ -845,8 +846,8 @@ export default function MailboxCalculator() {
             </div>
 
             <a
-              href="https://app.sendbox.ai/login"
-              className="mt-5 inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group no-underline"
+              href={APP_LOGIN_URL}
+              className="mt-5 inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group no-underline"
             >
               Get Started
               <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />

@@ -16,7 +16,7 @@ function buildSignatureHTML(fields, layout) {
   const nameStyle = `margin:0;font-size:16px;font-weight:700;color:#000000;font-family:${FONT_STACK};`;
   const titleStyle = `margin:0;font-size:14px;color:#6b7280;font-family:${FONT_STACK};line-height:1.4;`;
   const companyStyle = `margin:0;font-size:14px;color:#000000;font-family:${FONT_STACK};line-height:1.4;`;
-  const linkStyle = `color:#2663eb;text-decoration:none;font-size:13px;font-family:${FONT_STACK};`;
+  const linkStyle = `color:#695AF2;text-decoration:none;font-size:13px;font-family:${FONT_STACK};`;
   const separatorStyle = `color:#9ca3af;font-size:13px;font-family:${FONT_STACK};`;
 
   const contactParts = [];
@@ -233,7 +233,7 @@ export default function SignatureGenerator() {
               onClick={() => setLayout(l.id)}
               className={`text-left px-4 py-3 rounded-lg border transition-all ${
                 layout === l.id
-                  ? 'border-[#2663eb] bg-[#2663eb]/[0.03]'
+                  ? 'border-[#695AF2] bg-[#695AF2]/[0.03]'
                   : 'border-[#e5e5e5] hover:border-[#d1d5db]'
               }`}
             >
@@ -262,7 +262,7 @@ export default function SignatureGenerator() {
           type="button"
           onClick={handleCopy}
           disabled={!signatureHTML}
-          className="relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none min-w-[130px]"
+          className="relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none min-w-[130px]"
         >
           <span className={copied ? 'opacity-0' : ''}>Copy HTML</span>
           <span className={`absolute inset-0 inline-flex items-center justify-center transition-opacity ${copied ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>

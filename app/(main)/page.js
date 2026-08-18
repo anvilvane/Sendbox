@@ -18,9 +18,9 @@ export const metadata = getSEOTags({
 
 export default function Page() {
   const faqSchema = getFAQPageSchema(homepageFAQs);
-  const speakableSchema = getSpeakableSchema("https://sendbox.ai/", ["h1", "#faq"]);
+  const speakableSchema = getSpeakableSchema("https://sendboxes.tech/", ["h1", "#faq"]);
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Sendbox", url: "https://sendbox.ai" },
+    { name: "Sendbox", url: "https://sendboxes.tech" },
   ]);
 
   return (

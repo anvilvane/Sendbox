@@ -28,6 +28,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { motion, AnimatePresence } from 'framer-motion';
 import RequestDemoModal from '@/components/RequestDemoModal';
+import { APP_LOGIN_URL } from "@/lib/app-url";
 
 const platformCategories = [
   {
@@ -199,7 +200,7 @@ function MegaPanel({ categories, footerNote, footerHref, onMouseEnter, onMouseLe
                       className="flex items-start justify-between gap-4 px-3 py-2.5 rounded-lg hover:bg-[#f7f9ff] transition-colors group/item"
                     >
                       <div className="flex flex-col gap-0.5 min-w-0">
-                        <span className="text-[13px] font-medium text-black group-hover/item:text-[#2663eb] transition-colors leading-snug">
+                        <span className="text-[13px] font-medium text-black group-hover/item:text-[#695AF2] transition-colors leading-snug">
                           {item.name}
                         </span>
                         <span className="text-[11.5px] text-[#9ca3af] leading-relaxed">
@@ -207,7 +208,7 @@ function MegaPanel({ categories, footerNote, footerHref, onMouseEnter, onMouseLe
                         </span>
                       </div>
                       <Icon
-                        className="w-[18px] h-[18px] text-[#d1d5db] group-hover/item:text-[#2663eb] transition-colors shrink-0 mt-0.5"
+                        className="w-[18px] h-[18px] text-[#d1d5db] group-hover/item:text-[#695AF2] transition-colors shrink-0 mt-0.5"
                         weight="duotone"
                       />
                     </Link>
@@ -223,7 +224,7 @@ function MegaPanel({ categories, footerNote, footerHref, onMouseEnter, onMouseLe
           <span className="text-[11.5px] text-[#9ca3af]">{footerNote}</span>
           <Link
             href={footerHref}
-            className="inline-flex items-center gap-1 text-[12px] font-medium text-[#2663eb] hover:gap-1.5 transition-all shrink-0"
+            className="inline-flex items-center gap-1 text-[12px] font-medium text-[#695AF2] hover:gap-1.5 transition-all shrink-0"
           >
             See all features
             <ArrowRightIcon size={11} />
@@ -274,11 +275,11 @@ function MobileAccordion({ label, categories, isExpanded, onToggle, onNavigate }
                           className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f7f9ff] transition-colors group/item"
                         >
                           <Icon
-                            className="w-4 h-4 text-[#d1d5db] group-hover/item:text-[#2663eb] transition-colors shrink-0"
+                            className="w-4 h-4 text-[#d1d5db] group-hover/item:text-[#695AF2] transition-colors shrink-0"
                             weight="duotone"
                           />
                           <div className="flex flex-col gap-0 min-w-0">
-                            <span className="text-[13px] font-medium text-black group-hover/item:text-[#2663eb] transition-colors leading-snug">
+                            <span className="text-[13px] font-medium text-black group-hover/item:text-[#695AF2] transition-colors leading-snug">
                               {item.name}
                             </span>
                             <span className="text-[11px] text-[#9ca3af] leading-relaxed line-clamp-1">
@@ -330,7 +331,7 @@ const Header = () => {
     const handleKeyDown = (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key === 'Enter') {
         window?.datafast("click_login", { location: "keyboard_shortcut" });
-        window.location.href = 'https://app.sendbox.ai/login';
+        window.location.href = APP_LOGIN_URL;
       }
     };
     document.addEventListener('keydown', handleKeyDown);
@@ -348,8 +349,9 @@ const Header = () => {
       <div className="max-w-[80rem] mx-auto flex items-center h-16 px-6">
         {/* Logo - flex-1 left */}
         <div className="flex-1">
-          <Link href="/" scroll={false}>
-            <Image src="/logo-full.png" alt="Sendbox" className="h-7 w-auto" width={200} height={200} />
+          <Link href="/" scroll={false} className="flex items-center gap-2">
+            <Image src="/logo-icon.png" alt="" className="h-9 w-9" width={128} height={128} />
+            <span className="text-lg font-semibold text-gray-900 tracking-tight">Sendbox</span>
           </Link>
         </div>
 
@@ -362,7 +364,7 @@ const Header = () => {
             onMouseLeave={handleLeave}
           />
           <a
-            href="https://docs.sendbox.ai"
+            href="https://docs.sendboxes.tech"
             target="_blank"
             rel="noopener noreferrer"
             data-fast-goal="click_nav_docs"
@@ -392,7 +394,7 @@ const Header = () => {
         {/* Right side buttons - flex-1 right */}
         <div className="flex-1 flex justify-end gap-2 lg:gap-3 items-center">
           <a
-            href="https://app.sendbox.ai/login"
+            href={APP_LOGIN_URL}
             data-fast-goal="click_login"
             data-fast-goal-location="header"
             className="hidden lg:inline-flex items-center gap-2 px-3 lg:px-4 py-2 text-[13px] lg:text-[14px] font-medium rounded-lg border border-gray-200 text-gray-600 cursor-pointer transition-all hover:bg-gray-50 hover:-translate-y-0.5"
@@ -406,7 +408,7 @@ const Header = () => {
           <RequestDemoModal
             dataFastGoal="click_book_demo"
             dataFastGoalLocation="header"
-            className="inline-flex items-center gap-1.5 px-3 lg:px-4 py-2 text-[13px] lg:text-[14px] font-medium rounded-lg border-none cursor-pointer transition-all hover:-translate-y-0.5 bg-[#2663eb] text-white hover:bg-[#2663eb]/90 group"
+            className="inline-flex items-center gap-1.5 px-3 lg:px-4 py-2 text-[13px] lg:text-[14px] font-medium rounded-lg border-none cursor-pointer transition-all hover:-translate-y-0.5 bg-[#695AF2] text-white hover:bg-[#695AF2]/90 group"
           >
             <span className="lg:hidden whitespace-nowrap">Book Demo</span>
             <span className="hidden lg:inline">Book a demo</span>
@@ -458,7 +460,7 @@ const Header = () => {
               />
               {/* Documentation link */}
               <a
-                href="https://docs.sendbox.ai"
+                href="https://docs.sendboxes.tech"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}

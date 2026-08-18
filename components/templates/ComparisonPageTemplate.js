@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRightIcon, ArrowSquareOut } from '@phosphor-icons/react/dist/ssr';
@@ -37,7 +39,7 @@ function InlineCTA({ heading = 'Switch to Sendbox', sub = 'Dedicated IPs. Isolat
         <p className="text-[15px] font-semibold text-white mb-0.5">{heading}</p>
         <p className="text-sm text-gray-400">{sub}</p>
       </div>
-      <a href="https://app.sendbox.ai/login" data-fast-goal="click_dark_cta" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2663eb] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0">
+      <a href={APP_LOGIN_URL} data-fast-goal="click_dark_cta" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#695AF2] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0">
         {cta} <ArrowRightIcon size={14} className="transition-transform group-hover:translate-x-0.5" />
       </a>
     </div>
@@ -80,7 +82,7 @@ function PricingComparison({ data, competitorName, competitorLogo }) {
         <p className="text-[12px] text-[#9ca3af] mt-0.5">{plan.emails} emails &middot; {plan.leads} leads</p>
         <p className="text-[12px] text-[#6b7280] mt-0.5">{plan.highlight}</p>
       </div>
-      <span className={`text-[15px] font-semibold flex-shrink-0 ml-4 ${accent ? 'text-[#2663eb]' : 'text-[#6b7280]'}`}>{plan.price}</span>
+      <span className={`text-[15px] font-semibold flex-shrink-0 ml-4 ${accent ? 'text-[#695AF2]' : 'text-[#6b7280]'}`}>{plan.price}</span>
     </div>
   );
 
@@ -129,7 +131,7 @@ function ContentSection({ section }) {
           <ul className="space-y-2">
             {section.highlights.map((h, i) => (
               <li key={i} className="flex items-start gap-2.5 text-[14px] text-[#374151] leading-relaxed">
-                <span className="w-1 h-1 rounded-full bg-[#2663eb] flex-shrink-0 mt-[9px]" />
+                <span className="w-1 h-1 rounded-full bg-[#695AF2] flex-shrink-0 mt-[9px]" />
                 <span>{h}</span>
               </li>
             ))}
@@ -165,7 +167,7 @@ function KeepReading({ links }) {
       <ul className="space-y-1.5">
         {links.map((link, i) => (
           <li key={i}>
-            <a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#2663eb] font-medium hover:underline">
+            <a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#695AF2] font-medium hover:underline">
               {link.title} <ArrowSquareOut size={13} />
             </a>
           </li>

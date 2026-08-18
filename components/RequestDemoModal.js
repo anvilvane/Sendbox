@@ -154,7 +154,7 @@ export default function RequestDemoModal({
                     <button
                       type="button"
                       onClick={close}
-                      className="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-[14px] font-medium bg-[#2663eb] text-white hover:bg-[#2663eb]/90 transition-all"
+                      className="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-[14px] font-medium bg-[#695AF2] text-white hover:bg-[#695AF2]/90 transition-all"
                     >
                       Close
                     </button>
@@ -223,7 +223,7 @@ export default function RequestDemoModal({
                       <button
                         type="submit"
                         disabled={status === 'submitting'}
-                        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2663eb] text-white rounded-lg text-[15px] font-medium hover:bg-[#2663eb]/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#695AF2] text-white rounded-lg text-[15px] font-medium hover:bg-[#695AF2]/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {status === 'submitting' ? 'Sending...' : 'Request a demo'}
                       </button>

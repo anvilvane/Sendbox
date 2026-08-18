@@ -11,12 +11,12 @@ function ValueCell({ value, detail, winner, side }) {
     <td className={`px-4 py-3.5 text-[13px] ${isWinner ? 'bg-gray-50' : ''}`}>
       <div className="flex items-start gap-2">
         {value === true ? (
-          <Check size={14} weight="bold" className={`flex-shrink-0 mt-[2px] ${isSendbox ? 'text-[#2663eb]' : 'text-black'}`} />
+          <Check size={14} weight="bold" className={`flex-shrink-0 mt-[2px] ${isSendbox ? 'text-[#695AF2]' : 'text-black'}`} />
         ) : value === false ? (
           <X size={14} weight="bold" className="text-[#d4d4d4] flex-shrink-0 mt-[2px]" />
         ) : null}
         <div>
-          <span className={`${isSendbox && isWinner ? 'font-semibold text-[#2663eb]' : isWinner ? 'font-semibold text-black' : 'text-[#374151]'} ${isNumericValue ? 'font-numeric' : ''}`}>
+          <span className={`${isSendbox && isWinner ? 'font-semibold text-[#695AF2]' : isWinner ? 'font-semibold text-black' : 'text-[#374151]'} ${isNumericValue ? 'font-numeric' : ''}`}>
             {typeof value === 'boolean' ? (value ? 'Yes' : 'No') : value}
           </span>
           {detail && <p className="text-[#9ca3af] text-[11px] mt-0.5 leading-snug">{detail}</p>}

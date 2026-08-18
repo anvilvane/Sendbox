@@ -44,7 +44,7 @@ export default function ToolsPage() {
             </nav>
 
             <div className="inline-flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6 text-sm sm:text-[15px] font-medium text-black">
-              <div className="w-3 sm:w-4 md:w-5 h-0.5 sm:h-1 md:h-1.5 bg-[#2663eb] rounded-xl" />
+              <div className="w-3 sm:w-4 md:w-5 h-0.5 sm:h-1 md:h-1.5 bg-[#695AF2] rounded-xl" />
               <span>free tools</span>
             </div>
 
@@ -64,12 +64,12 @@ export default function ToolsPage() {
                   className="flex items-center justify-between py-5 border-b border-gray-200 group no-underline transition-colors hover:bg-gray-50/50 -mx-2 px-2 rounded"
                 >
                   <div className="min-w-0 mr-4">
-                    <p className="text-base md:text-lg font-medium text-black group-hover:text-[#2663eb] transition-colors">
+                    <p className="text-base md:text-lg font-medium text-black group-hover:text-[#695AF2] transition-colors">
                       {tool.name}
                     </p>
                     <p className="text-sm text-[#9ca3af] mt-0.5">{tool.description}</p>
                   </div>
-                  <ArrowRightIcon size={18} className="text-[#9ca3af] group-hover:text-[#2663eb] transition-all shrink-0 group-hover:translate-x-0.5" />
+                  <ArrowRightIcon size={18} className="text-[#9ca3af] group-hover:text-[#695AF2] transition-all shrink-0 group-hover:translate-x-0.5" />
                 </Link>
               ))}
             </div>

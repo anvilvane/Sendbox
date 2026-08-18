@@ -70,7 +70,7 @@ export default function BestHubPage() {
             </nav>
 
             <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-              <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+              <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
               <span>best-of guides</span>
             </div>
 

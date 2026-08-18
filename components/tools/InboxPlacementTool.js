@@ -1,5 +1,6 @@
 'use client';
 
+import { APP_LOGIN_URL } from "@/lib/app-url";
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import {
@@ -28,7 +29,7 @@ function CopyBtn({ text, label = 'Copy', className = '' }) {
   const copy = () => { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 1600); };
   return (
     <button onClick={copy}
-      className={`inline-flex items-center gap-1 text-xs font-medium transition-colors ${copied ? 'text-[#2663eb]' : 'text-[#9ca3af] hover:text-[#6b7280]'} ${className}`}>
+      className={`inline-flex items-center gap-1 text-xs font-medium transition-colors ${copied ? 'text-[#695AF2]' : 'text-[#9ca3af] hover:text-[#6b7280]'} ${className}`}>
       {copied ? <CheckIcon size={12} weight="bold" /> : <CopyIcon size={12} />}
       {copied ? 'Copied' : label}
     </button>
@@ -120,7 +121,7 @@ export default function InboxPlacementTool() {
   const allEmails = testData?.receiver_mailboxes?.map(m => m.email || m).join(', ') || '';
 
   // Shared button classes matching site design
-  const primaryBtn = 'relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none';
+  const primaryBtn = 'relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none';
   const secondaryBtn = 'inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-transparent text-[#6b7280] border border-[#e5e5e5] rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#f5f5f5] hover:text-black hover:-translate-y-0.5';
 
   return (
@@ -132,12 +133,12 @@ export default function InboxPlacementTool() {
           return (
             <div key={n} className="flex items-center flex-1 last:flex-none">
               <div className="flex items-center gap-1.5">
-                <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-semibold transition-all ${done || active ? 'bg-[#2663eb] text-white' : 'bg-gray-100 text-[#9ca3af]'}`}>
+                <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-semibold transition-all ${done || active ? 'bg-[#695AF2] text-white' : 'bg-gray-100 text-[#9ca3af]'}`}>
                   {done ? <CheckIcon size={10} weight="bold" /> : n}
                 </div>
                 <span className={`text-xs font-medium hidden sm:block transition-colors ${done || active ? 'text-black' : 'text-[#9ca3af]'}`}>{l}</span>
               </div>
-              {i < 3 && <div className={`flex-1 h-px mx-2.5 transition-colors ${done ? 'bg-[#2663eb]' : 'bg-gray-200'}`} />}
+              {i < 3 && <div className={`flex-1 h-px mx-2.5 transition-colors ${done ? 'bg-[#695AF2]' : 'bg-gray-200'}`} />}
             </div>
           );
         })}
@@ -162,7 +163,7 @@ export default function InboxPlacementTool() {
                 <button key={p.value} onClick={() => setProvider(p.value)}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all border ${
                     active
-                      ? 'border-[#2663eb] bg-[#2663eb]/[0.04] text-black'
+                      ? 'border-[#695AF2] bg-[#695AF2]/[0.04] text-black'
                       : 'border-[#e5e5e5] text-[#6b7280] hover:border-gray-300 hover:text-black'
                   }`}>
                   <Image src={p.logo} alt={p.label} width={16} height={16} className="w-4 h-4" />
@@ -228,14 +229,14 @@ export default function InboxPlacementTool() {
       {/* Step 3: Waiting */}
       {step === 3 && (
         <div className="text-center py-10 space-y-4">
-          <svg className="animate-spin h-7 w-7 text-[#2663eb] mx-auto" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
+          <svg className="animate-spin h-7 w-7 text-[#695AF2] mx-auto" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
           <div>
             <p className="text-[15px] font-semibold text-black">Checking placement</p>
             <p className="text-sm text-[#9ca3af] mt-0.5">Usually 2-5 minutes</p>
           </div>
           <div className="max-w-[220px] mx-auto">
             <div className="w-full h-[3px] bg-gray-100 rounded-full overflow-hidden">
-              <div className="h-full bg-[#2663eb] rounded-full transition-all duration-1000 ease-linear" style={{ width: `${Math.min((elapsed / 300) * 100, 95)}%` }} />
+              <div className="h-full bg-[#695AF2] rounded-full transition-all duration-1000 ease-linear" style={{ width: `${Math.min((elapsed / 300) * 100, 95)}%` }} />
             </div>
             <p className="text-xs text-[#9ca3af] mt-1.5 tabular-nums">{fmt(elapsed)}</p>
           </div>
@@ -352,7 +353,7 @@ export default function InboxPlacementTool() {
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            <a href="https://app.sendbox.ai/login" className={`${primaryBtn} no-underline`}>
+            <a href={APP_LOGIN_URL} className={`${primaryBtn} no-underline`}>
               Get Started
               <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />
             </a>

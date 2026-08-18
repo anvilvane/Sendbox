@@ -1,5 +1,6 @@
 'use client';
 
+import { APP_LOGIN_URL } from "@/lib/app-url";
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
@@ -45,7 +46,7 @@ export default function TableOfContents({ sections, showCta = true }) {
                 href={`#${id}`}
                 className={`block text-[13px] py-1 transition-colors ${
                   activeId === id
-                    ? 'text-[#2663eb] font-medium'
+                    ? 'text-[#695AF2] font-medium'
                     : 'text-[#9ca3af] hover:text-[#6b7280]'
                 }`}
               >
@@ -62,9 +63,9 @@ export default function TableOfContents({ sections, showCta = true }) {
           <p className="text-[12px] text-gray-400 whitespace-nowrap mb-1">Dedicated IPs. Isolated infrastructure.</p>
           <p className="text-[12px] text-gray-400 mb-4">From $99/mo.</p>
           <a
-            href="https://app.sendbox.ai/login"
+            href={APP_LOGIN_URL}
             data-fast-goal="click_sidebar_cta"
-            className="flex items-center justify-center gap-1.5 w-full text-[13px] font-medium text-white bg-[#2663eb] px-4 py-2 rounded-lg transition-all hover:bg-[#1d4ed8] group"
+            className="flex items-center justify-center gap-1.5 w-full text-[13px] font-medium text-white bg-[#695AF2] px-4 py-2 rounded-lg transition-all hover:bg-[#5847E0] group"
           >
             Get Started
             <ArrowRightIcon size={12} className="transition-transform group-hover:translate-x-0.5" />

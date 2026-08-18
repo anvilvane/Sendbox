@@ -37,7 +37,7 @@ function AlternativeCard({ alternative }) {
           />
         </div>
         <div>
-          <h3 className="text-[15px] font-semibold text-black group-hover:text-[#2663eb] transition-colors">
+          <h3 className="text-[15px] font-semibold text-black group-hover:text-[#695AF2] transition-colors">
             {alternative.competitorName} Alternatives
           </h3>
           <p className="text-[12px] text-[#9ca3af]">{alternative.alternatives.length} tools compared</p>
@@ -62,7 +62,7 @@ function AlternativeCard({ alternative }) {
       </div>
 
       {/* Link */}
-      <div className="pt-3 border-t border-gray-100 flex items-center gap-1 text-[13px] font-medium text-[#2663eb]">
+      <div className="pt-3 border-t border-gray-100 flex items-center gap-1 text-[13px] font-medium text-[#695AF2]">
         View alternatives
         <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
       </div>
@@ -85,7 +85,7 @@ export default function AlternativesHubTemplate({ alternatives }) {
           </nav>
 
           <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>alternatives</span>
           </div>
 
@@ -127,7 +127,7 @@ export default function AlternativesHubTemplate({ alternatives }) {
             </div>
             <a
               href="/compare"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2663eb] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#695AF2] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0"
             >
               View Comparisons
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />

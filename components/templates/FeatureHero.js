@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,7 +31,7 @@ export default function FeatureHero({ eyebrow, headline, description, breadcrumb
           )}
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6 md:mb-8 text-sm sm:text-[15px] md:text-base font-medium text-black">
-            <div className="w-3 sm:w-4 md:w-5 h-0.5 sm:h-1 md:h-1.5 bg-[#2663eb] rounded-xl"></div>
+            <div className="w-3 sm:w-4 md:w-5 h-0.5 sm:h-1 md:h-1.5 bg-[#695AF2] rounded-xl"></div>
             <span>{eyebrow}</span>
           </div>
 
@@ -46,10 +48,10 @@ export default function FeatureHero({ eyebrow, headline, description, breadcrumb
           {/* CTA Buttons */}
           <div className="flex flex-row items-center justify-center gap-3">
             <a
-              href="https://app.sendbox.ai/login"
+              href={APP_LOGIN_URL}
               data-fast-goal="click_start_sending"
               data-fast-goal-location="feature_hero"
-              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group"
             >
               Start Sending
               <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />

@@ -6,7 +6,7 @@ export default function NotFoundContent() {
       <div className="max-w-6xl mx-auto w-full">
         <div className="max-w-xl">
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>error 404</span>
           </div>
 
@@ -21,7 +21,7 @@ export default function NotFoundContent() {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg no-underline"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg no-underline"
             >
               Back to homepage
             </Link>
@@ -35,9 +35,9 @@ export default function NotFoundContent() {
 
           <p className="mt-6 text-[14px] text-[#9ca3af]">
             Or head to{' '}
-            <Link href="/tools" className="text-[#2663eb] hover:underline no-underline">free tools</Link>,{' '}
-            <Link href="/alternatives" className="text-[#2663eb] hover:underline no-underline">alternatives</Link>, or{' '}
-            <Link href="/what-is-sendbox" className="text-[#2663eb] hover:underline no-underline">what is Sendbox</Link>.
+            <Link href="/tools" className="text-[#695AF2] hover:underline no-underline">free tools</Link>,{' '}
+            <Link href="/alternatives" className="text-[#695AF2] hover:underline no-underline">alternatives</Link>, or{' '}
+            <Link href="/what-is-sendbox" className="text-[#695AF2] hover:underline no-underline">what is Sendbox</Link>.
           </p>
         </div>
       </div>

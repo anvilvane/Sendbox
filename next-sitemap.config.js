@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://sendbox.ai",
+  siteUrl: process.env.SITE_URL || "https://sendboxes.tech",
   generateRobotsTxt: false,
   exclude: ["/twitter-image.*", "/opengraph-image.*", "/icon.*", "/apple-icon.*"],
   robotsTxtOptions: {

@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 import React from 'react';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 
@@ -21,7 +23,7 @@ export default function FeatureWhySection({ items, eyebrow = 'how it works', hea
         <div className="mb-12 md:mb-20">
           <div className="mb-10 md:mb-16">
             <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-              <div className="w-5 h-1 bg-[#2663eb] rounded-xl" />
+              <div className="w-5 h-1 bg-[#695AF2] rounded-xl" />
               <span>{eyebrow}</span>
             </div>
 
@@ -59,7 +61,7 @@ export default function FeatureWhySection({ items, eyebrow = 'how it works', hea
             </p>
           )}
 
-          <a href="https://app.sendbox.ai/login" data-fast-goal="click_start_sending" data-fast-goal-location="why_section" className="inline-flex items-center gap-2 text-[#2663eb] bg-transparent border-none cursor-pointer text-base font-medium transition-all hover:gap-3 group">
+          <a href={APP_LOGIN_URL} data-fast-goal="click_start_sending" data-fast-goal-location="why_section" className="inline-flex items-center gap-2 text-[#695AF2] bg-transparent border-none cursor-pointer text-base font-medium transition-all hover:gap-3 group">
             Start sending
             <ArrowRightIcon size={20} className="transition-transform group-hover:translate-x-0.5" />
           </a>

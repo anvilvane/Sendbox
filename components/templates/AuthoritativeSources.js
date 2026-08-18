@@ -14,7 +14,7 @@ export default function AuthoritativeSources({ keys = [] }) {
       <ul className="space-y-1.5">
         {sources.map((s) => (
           <li key={s.key} className="text-[12px] text-[#9ca3af]">
-            <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#2663eb] transition-colors">
+            <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-[#6b7280] hover:text-[#695AF2] transition-colors">
               {s.publisher} &mdash; {s.name}
             </a>
           </li>

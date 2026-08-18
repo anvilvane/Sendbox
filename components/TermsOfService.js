@@ -24,7 +24,7 @@ const TermsOfService = () => {
           className="mb-16 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl"></div>
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
             <span>terms</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-tight">
@@ -64,7 +64,7 @@ const TermsOfService = () => {
             <h2 className="text-xl font-semibold text-black mb-3">3. Acceptable Use</h2>
             <p className="text-[#6b7280] leading-relaxed">
               Sendbox is designed for legitimate B2B email outreach. You agree to use the Service only for lawful purposes and in accordance with all applicable laws, including but not limited to email marketing regulations in your jurisdiction. You are solely responsible for the content of your emails and the quality of your recipient lists. Usage caps for each plan are listed in our{' '}
-              <a href="/fair-usage-policy" className="text-[#2663eb] hover:underline">Fair Usage Policy</a>.
+              <a href="/fair-usage-policy" className="text-[#695AF2] hover:underline">Fair Usage Policy</a>.
             </p>
           </div>
 
@@ -177,8 +177,8 @@ const TermsOfService = () => {
             <h2 className="text-xl font-semibold text-black mb-3">13. Contact</h2>
             <p className="text-[#6b7280] leading-relaxed">
               If you have questions about these Terms of Service, contact us at{' '}
-              <a href="mailto:support@sendbox.ai" className="text-[#2663eb] hover:underline">
-                support@sendbox.ai
+              <a href="mailto:support@sendboxes.tech" className="text-[#695AF2] hover:underline">
+                support@sendboxes.tech
               </a>.
             </p>
           </div>

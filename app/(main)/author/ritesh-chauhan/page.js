@@ -82,7 +82,7 @@ export default function AuthorPage() {
 
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-8 text-[15px] font-medium text-black">
-              <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+              <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
               <span>author</span>
             </div>
 
@@ -107,7 +107,7 @@ export default function AuthorPage() {
                       target="_blank"
                       rel="noopener noreferrer me"
                       aria-label={`${author.name} on LinkedIn`}
-                      className="text-[#9ca3af] hover:text-[#2663eb] transition-colors"
+                      className="text-[#9ca3af] hover:text-[#695AF2] transition-colors"
                     >
                       <LinkedinIcon />
                     </a>
@@ -137,7 +137,7 @@ export default function AuthorPage() {
                       key={item}
                       className="flex items-center gap-2.5 rounded-lg border border-gray-200 px-4 py-3"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2663eb] flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#695AF2] flex-shrink-0" />
                       <span className="text-[14px] text-black">{item}</span>
                     </div>
                   ))}
@@ -161,10 +161,10 @@ export default function AuthorPage() {
                     className="group rounded-xl border border-gray-200 p-5 hover:border-gray-300 hover:shadow-sm transition-all no-underline"
                   >
                     <div className="flex items-center justify-between gap-3 mb-1.5">
-                      <p className="text-[15px] font-semibold text-black group-hover:text-[#2663eb] transition-colors">
+                      <p className="text-[15px] font-semibold text-black group-hover:text-[#695AF2] transition-colors">
                         {hub.name}
                       </p>
-                      <ArrowRightIcon className="text-[#9ca3af] group-hover:text-[#2663eb] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                      <ArrowRightIcon className="text-[#9ca3af] group-hover:text-[#695AF2] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                     </div>
                     <p className="text-[13px] text-[#6b7280] leading-relaxed">{hub.desc}</p>
                   </Link>

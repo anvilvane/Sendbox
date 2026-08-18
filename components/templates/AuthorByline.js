@@ -26,7 +26,7 @@ export default function AuthorByline({ author, publishedDate, updatedDate, readT
           By{' '}
           <Link
             href={authorUrl}
-            className="font-medium text-black hover:text-[#2663eb] transition-colors no-underline"
+            className="font-medium text-black hover:text-[#695AF2] transition-colors no-underline"
           >
             {author.name}
           </Link>

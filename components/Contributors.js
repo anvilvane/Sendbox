@@ -47,7 +47,7 @@ const ContributorRow = ({ contributor, index }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="text-[#9ca3af] hover:text-[#2663eb] transition-colors"
+                        className="text-[#9ca3af] hover:text-[#695AF2] transition-colors"
                       >
                         <LinkedinLogoIcon size={16} />
                       </a>
@@ -88,7 +88,7 @@ const ContributorRow = ({ contributor, index }) => {
                     key={c.feature}
                     className="inline-flex items-center gap-1.5 text-sm text-[#6b7280] bg-gray-50 px-3 py-1.5 rounded-full"
                   >
-                    <span className={`w-1.5 h-1.5 rounded-full ${c.status === 'live' ? 'bg-[#2663eb]' : 'bg-amber-500'}`}></span>
+                    <span className={`w-1.5 h-1.5 rounded-full ${c.status === 'live' ? 'bg-[#695AF2]' : 'bg-amber-500'}`}></span>
                     {c.feature}
                   </span>
                 ))}
@@ -137,7 +137,7 @@ const Contributors = () => {
             <HeartIcon weight="fill" className="w-8 h-8 md:w-10 md:h-10 text-red-500 mt-2 md:mt-3" />
           </div>
           <p className="text-xl text-[#6b7280] max-w-2xl leading-relaxed">
-            The early believers shaping Sendbox. They spot bugs, suggest features, and push us to ship faster. {totalLive} features shipped and counting.
+            The people shaping Sendbox before almost anyone else does — flagging bugs, pitching features, and keeping our shipping pace honest. {totalLive} features live so far.
           </p>
         </motion.div>
 

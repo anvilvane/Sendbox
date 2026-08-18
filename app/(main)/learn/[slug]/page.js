@@ -109,7 +109,7 @@ export default async function GuidePage({ params }) {
             </nav>
 
             <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-              <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+              <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
               <span>{eyebrow}</span>
             </div>
 
@@ -151,7 +151,7 @@ export default async function GuidePage({ params }) {
                       <li key={g.slug}>
                         <Link
                           href={`/learn/${g.slug}`}
-                          className="text-[14px] font-medium text-[#2663eb] hover:underline no-underline"
+                          className="text-[14px] font-medium text-[#695AF2] hover:underline no-underline"
                         >
                           {g.title}
                         </Link>

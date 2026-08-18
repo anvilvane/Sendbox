@@ -62,7 +62,7 @@ const ContributorProfile = ({ contributor }) => {
                     href={contributor.links.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#9ca3af] hover:text-[#2663eb] transition-colors"
+                    className="text-[#9ca3af] hover:text-[#695AF2] transition-colors"
                   >
                     <LinkedinLogoIcon size={16} />
                   </a>
@@ -85,7 +85,7 @@ const ContributorProfile = ({ contributor }) => {
           {/* Stats as pills */}
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-2 text-sm bg-gray-50 px-4 py-2 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-[#2663eb]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#695AF2]"></span>
               <span className="text-[#6b7280]"><span className="font-medium text-black">{liveCount}</span> shipped</span>
             </span>
             {inProgressCount > 0 && (
@@ -119,7 +119,7 @@ const ContributorProfile = ({ contributor }) => {
               >
                 <div className="flex items-start gap-3">
                   <span className={`w-2 h-2 rounded-full mt-2.5 flex-shrink-0 ${
-                    contribution.status === 'live' ? 'bg-[#2663eb]' : 'bg-amber-500'
+                    contribution.status === 'live' ? 'bg-[#695AF2]' : 'bg-amber-500'
                   }`}></span>
                   <div>
                     <h3 className="text-lg font-medium text-black mb-2">

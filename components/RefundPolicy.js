@@ -24,7 +24,7 @@ const RefundPolicy = () => {
           className="mb-16 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl"></div>
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
             <span>refunds</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-tight">
@@ -98,8 +98,8 @@ const RefundPolicy = () => {
             <h2 className="text-xl font-semibold text-black mb-3">6. How to Request a Refund</h2>
             <p className="text-[#6b7280] leading-relaxed">
               To request a refund, email us at{' '}
-              <a href="mailto:support@sendbox.ai" className="text-[#2663eb] hover:underline">
-                support@sendbox.ai
+              <a href="mailto:support@sendboxes.tech" className="text-[#695AF2] hover:underline">
+                support@sendboxes.tech
               </a>{' '}
               with your account email, a description of the issue, and any relevant details. We will review your request and respond within 5 business days. Approved refunds are processed to the original payment method and may take 5 to 10 business days to appear on your statement.
             </p>
@@ -110,8 +110,8 @@ const RefundPolicy = () => {
             <h2 className="text-xl font-semibold text-black mb-3">7. Contact</h2>
             <p className="text-[#6b7280] leading-relaxed">
               If you have questions about this Refund Policy, contact us at{' '}
-              <a href="mailto:support@sendbox.ai" className="text-[#2663eb] hover:underline">
-                support@sendbox.ai
+              <a href="mailto:support@sendboxes.tech" className="text-[#695AF2] hover:underline">
+                support@sendboxes.tech
               </a>.
             </p>
           </div>

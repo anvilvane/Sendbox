@@ -23,13 +23,13 @@ export default function ExternalSources({ tools = [] }) {
           <div key={link.key} className="flex items-center gap-2 text-[12px] text-[#9ca3af]">
             <span className="text-[#6b7280] font-medium capitalize">{link.key === 'replyio' ? 'Reply.io' : link.key === 'apollo' ? 'Apollo.io' : link.key}</span>
             {link.g2 && (
-              <a href={link.g2} target="_blank" rel="noopener noreferrer" className="hover:text-[#2663eb] transition-colors">G2</a>
+              <a href={link.g2} target="_blank" rel="noopener noreferrer" className="hover:text-[#695AF2] transition-colors">G2</a>
             )}
             {link.capterra && (
-              <a href={link.capterra} target="_blank" rel="noopener noreferrer" className="hover:text-[#2663eb] transition-colors">Capterra</a>
+              <a href={link.capterra} target="_blank" rel="noopener noreferrer" className="hover:text-[#695AF2] transition-colors">Capterra</a>
             )}
             {link.website && (
-              <a href={link.website} target="_blank" rel="noopener noreferrer" className="hover:text-[#2663eb] transition-colors">Website</a>
+              <a href={link.website} target="_blank" rel="noopener noreferrer" className="hover:text-[#695AF2] transition-colors">Website</a>
             )}
           </div>
         ))}

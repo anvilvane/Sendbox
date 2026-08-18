@@ -248,7 +248,7 @@ export default function HeaderAnalyzer() {
         <button
           onClick={handleAnalyze}
           disabled={!rawHeaders.trim()}
-          className="relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
+          className="relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
         >
           <ArrowRightIcon size={16} weight="bold" />
           Analyze Headers
@@ -270,7 +270,7 @@ export default function HeaderAnalyzer() {
           {/* Summary */}
           <div>
             <h3 className="text-sm font-semibold text-black mb-3 flex items-center gap-2">
-              <ClockIcon size={16} weight="duotone" className="text-[#2663eb]" />
+              <ClockIcon size={16} weight="duotone" className="text-[#695AF2]" />
               Summary
             </h3>
             <div className="border border-gray-200 rounded-lg divide-y divide-gray-100">
@@ -296,7 +296,7 @@ export default function HeaderAnalyzer() {
           {/* Authentication */}
           <div>
             <h3 className="text-sm font-semibold text-black mb-3 flex items-center gap-2">
-              <ShieldCheckIcon size={16} weight="duotone" className="text-[#2663eb]" />
+              <ShieldCheckIcon size={16} weight="duotone" className="text-[#695AF2]" />
               Authentication
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -310,7 +310,7 @@ export default function HeaderAnalyzer() {
           {analysis.spam && (
             <div>
               <h3 className="text-sm font-semibold text-black mb-3 flex items-center gap-2">
-                <WarningIcon size={16} weight="duotone" className="text-[#2663eb]" />
+                <WarningIcon size={16} weight="duotone" className="text-[#695AF2]" />
                 Spam Score
               </h3>
               <div className="border border-gray-200 rounded-lg px-4 py-3">
@@ -336,7 +336,7 @@ export default function HeaderAnalyzer() {
           {/* Routing / Hops */}
           <div>
             <h3 className="text-sm font-semibold text-black mb-3 flex items-center gap-2">
-              <ArrowRightIcon size={16} weight="duotone" className="text-[#2663eb]" />
+              <ArrowRightIcon size={16} weight="duotone" className="text-[#695AF2]" />
               Routing ({analysis.hops.length} hop{analysis.hops.length !== 1 ? 's' : ''})
             </h3>
             {analysis.hops.length > 0 ? (

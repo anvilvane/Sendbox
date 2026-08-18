@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -56,7 +58,7 @@ export default function ToolPageTemplate({ tool, children }) {
           </nav>
 
           <div className="inline-flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6 text-sm sm:text-[15px] font-medium text-black">
-            <div className="w-3 sm:w-4 md:w-5 h-0.5 sm:h-1 md:h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-3 sm:w-4 md:w-5 h-0.5 sm:h-1 md:h-1.5 bg-[#695AF2] rounded-xl" />
             <span>free tool</span>
           </div>
 
@@ -99,7 +101,7 @@ export default function ToolPageTemplate({ tool, children }) {
             const s = typeof item === 'string' ? { step: item, detail: '' } : item;
             return (
               <div key={i}>
-                <span className="text-sm font-semibold text-[#2663eb] tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-sm font-semibold text-[#695AF2] tabular-nums">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="text-[15px] font-semibold text-black mt-2 leading-snug">{s.step}</h3>
                 {s.detail && <p className="text-sm text-[#6b7280] leading-relaxed mt-1.5">{s.detail}</p>}
               </div>
@@ -125,7 +127,7 @@ export default function ToolPageTemplate({ tool, children }) {
       {/* ── Sendbox CTA card ─────────────────────────────── */}
       {tool.proFeatures && (
         <Section className="py-12 md:py-16 border-b border-gray-100">
-          <div className="rounded-xl bg-[#2663eb] p-6 md:p-10">
+          <div className="rounded-xl bg-[#695AF2] p-6 md:p-10">
             <div className="md:flex md:gap-10">
               <div className="md:flex-1 mb-6 md:mb-0">
                 <Image src="/icon.png" alt="Sendbox" className="h-5 w-auto brightness-0 invert mb-4" width={280} height={57} />
@@ -137,10 +139,10 @@ export default function ToolPageTemplate({ tool, children }) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href="https://app.sendbox.ai/login"
+                    href={APP_LOGIN_URL}
                     data-fast-goal="click_tool_cta"
                     data-fast-goal-location={`tool_${tool.slug}`}
-                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-[#2663eb] rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:-translate-y-0.5 hover:shadow-lg group no-underline"
+                    className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-[#695AF2] rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:-translate-y-0.5 hover:shadow-lg group no-underline"
                   >
                     Get Started
                     <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />
@@ -187,10 +189,10 @@ export default function ToolPageTemplate({ tool, children }) {
                 className="flex items-center justify-between py-4 border-b border-gray-200 group no-underline transition-colors hover:bg-gray-50/50 -mx-2 px-2 rounded"
               >
                 <div className="min-w-0 mr-4">
-                  <p className="text-[15px] font-medium text-black group-hover:text-[#2663eb] transition-colors">{t.name}</p>
+                  <p className="text-[15px] font-medium text-black group-hover:text-[#695AF2] transition-colors">{t.name}</p>
                   <p className="text-sm text-[#9ca3af] mt-0.5 truncate">{t.description}</p>
                 </div>
-                <ArrowRightIcon size={16} className="text-[#9ca3af] group-hover:text-[#2663eb] transition-all shrink-0 group-hover:translate-x-0.5" />
+                <ArrowRightIcon size={16} className="text-[#9ca3af] group-hover:text-[#695AF2] transition-all shrink-0 group-hover:translate-x-0.5" />
               </Link>
             ))}
           </div>

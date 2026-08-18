@@ -1,5 +1,6 @@
 'use client';
 
+import { APP_LOGIN_URL } from "@/lib/app-url";
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { PaperPlaneTilt, EnvelopeSimple, Tray, ChartBar, Phone, ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
@@ -8,27 +9,27 @@ const tools = [
   {
     icon: PaperPlaneTilt,
     name: 'Campaigns',
-    description: 'Multi-step sequences with smart sending windows. Pauses automatically when a mailbox gets flagged.',
+    description: 'Build multi-step sequences that send inside smart windows, and pause on their own the moment a mailbox gets flagged.',
   },
   {
     icon: EnvelopeSimple,
     name: 'Mailboxes',
-    description: 'Dedicated IPs, isolated infrastructure. Warmup that looks human because it is.',
+    description: 'Each mailbox runs on a dedicated IP in its own isolated environment, warmed up in a way that reads as human because real activity drives it.',
   },
   {
     icon: Tray,
     name: 'Inbox',
-    description: 'Every reply in one place. Respond from Slack. No more losing hot leads in tab hell.',
+    description: 'Every reply lands in a single inbox you can answer straight from Slack, so hot leads stop getting buried across a dozen open tabs.',
   },
   {
     icon: ChartBar,
     name: 'Analytics',
-    description: 'Opens, replies, clicks - across every campaign. The signal, not a dashboard full of noise.',
+    description: 'Opens, replies, and clicks roll up across every campaign into the numbers that actually matter, not a dashboard drowning in noise.',
   },
   {
     icon: Phone,
     name: 'Dialer',
-    description: 'Call the leads who opened. Mix calls and emails in the same sequence. One workflow, not two.',
+    description: "Call the leads who opened your emails and blend calls with email inside a single sequence, so you're running one workflow instead of two.",
   },
 ];
 
@@ -62,25 +63,25 @@ const PlatformSection = () => {
           {/* Header */}
           <div className="mb-12 md:mb-20">
             <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-white">
-              <div className="w-5 h-1 bg-[#2663eb] rounded-xl"></div>
-              <span>the platform</span>
+              <div className="w-5 h-1 bg-[#695AF2] rounded-xl"></div>
+              <span>one platform</span>
             </div>
 
             <div className="grid lg:grid-cols-2 items-end">
               <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-white tracking-tight">
-                Every tool your outbound team needs. One platform.
+                One platform with every tool your outbound team needs.
               </h2>
               <div>
                 <p className="text-base leading-relaxed text-[#9ca3af] mb-6">
-                  Campaigns, mailboxes, unified inbox, analytics, dialer - all connected. No stitching five tools together.
+                  Campaigns, mailboxes, a unified inbox, analytics, and a dialer all live under one roof, so you're not duct-taping five separate tools together.
                 </p>
                 <a
-                  href="https://app.sendbox.ai/login"
+                  href={APP_LOGIN_URL}
                   data-fast-goal="click_start_sending"
                   data-fast-goal-location="platform_section"
-                  className="inline-flex items-center gap-2 text-[#2663eb] cursor-pointer text-base font-medium transition-all hover:gap-3 group"
+                  className="inline-flex items-center gap-2 text-[#695AF2] cursor-pointer text-base font-medium transition-all hover:gap-3 group"
                 >
-                  Get started free
+                  Create a free account
                   <ArrowRightIcon size={20} className="transition-transform group-hover:translate-x-0.5" />
                 </a>
               </div>
@@ -107,7 +108,7 @@ const PlatformSection = () => {
                   viewport={{ once: false, margin: '-80px' }}
                   transition={{ duration: 0.4, delay: index * 0.08, ease: 'easeOut' }}
                 >
-                  <Icon size={22} weight="duotone" className="text-[#2663eb] flex-shrink-0" />
+                  <Icon size={22} weight="duotone" className="text-[#695AF2] flex-shrink-0" />
                   <div>
                     <div className="text-white text-[15px] font-medium mb-2">{tool.name}</div>
                     <p className="text-[#9ca3af] text-sm leading-relaxed">{tool.description}</p>

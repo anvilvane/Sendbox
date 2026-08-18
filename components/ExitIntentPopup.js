@@ -20,9 +20,9 @@ const MOUSEOUT_DEBOUNCE_MS = 400;
 const TAB_SWITCH_DEBOUNCE_MS = 2000;
 const TITLE_ALERT_INTERVAL_MS = 1500;
 const TITLE_ALERT_MESSAGES = [
-  '👋 Come back',
-  '👀 Hey...',
-  '🫣 Still here',
+  '👋 Hold up a sec',
+  '👀 Your spot is still here',
+  '🫣 We\'re still around...',
 ];
 
 export default function ExitIntentPopup() {
@@ -214,9 +214,9 @@ export default function ExitIntentPopup() {
   }, [open]);
 
   const bullets = [
-    'Your own isolated infra and IP, starting at $99.',
-    'Unlimited AI warmup. No reward-based pools.',
-    'Dialer, unlimited validation, placement tests, blacklist checks and more.',
+    'Your own dedicated IP on isolated infrastructure, so nobody else\'s sending habits become your problem.',
+    'Warmup runs on AI with no volume cap, and it skips the reward-pool gimmicks entirely.',
+    'A dialer, validation with no meter running, placement checks, blacklist monitoring, and more, all included.',
   ];
 
   const migrationSources = [
@@ -259,7 +259,7 @@ export default function ExitIntentPopup() {
 
             <div className="grid md:grid-cols-[1fr_1fr]">
               {/* Left - copy + CTA */}
-              <div className="px-6 pt-8 pb-6 md:pl-8 md:pr-6 md:py-8 flex flex-col bg-[#2663eb] text-white">
+              <div className="px-6 pt-8 pb-6 md:pl-8 md:pr-6 md:py-8 flex flex-col bg-[#695AF2] text-white">
                 <div className="mb-7">
                   <Image src="/icon.png" alt="Sendbox" className="h-8 w-auto brightness-0 invert" width={280} height={57} />
                 </div>
@@ -293,16 +293,16 @@ export default function ExitIntentPopup() {
                   ))}
                 </div>
                 <p className="text-[13px] text-white/75 leading-relaxed mb-5">
-                  Switching usually takes weeks. We do it in hours. Free.
+                  What usually takes weeks to migrate, we get done in hours — free of charge.
                 </p>
 
                 <RequestDemoModal
                   dataFastGoal="click_book_demo"
                   dataFastGoalLocation="exit_intent"
                   onOpen={() => setOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#2663eb] rounded-lg text-[15px] font-medium"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#695AF2] rounded-lg text-[15px] font-medium"
                 >
-                  Book a demo
+                  Get a demo
                   <ArrowUpRightIcon size={16} />
                 </RequestDemoModal>
 

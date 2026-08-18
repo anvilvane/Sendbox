@@ -139,7 +139,7 @@ function ContentSection({ section }) {
           <ul className="space-y-2">
             {section.highlights.map((h, i) => (
               <li key={i} className="flex items-start gap-2.5 text-[14px] text-[#374151] leading-relaxed">
-                <span className="w-1 h-1 rounded-full bg-[#2663eb] flex-shrink-0 mt-[9px]" />
+                <span className="w-1 h-1 rounded-full bg-[#695AF2] flex-shrink-0 mt-[9px]" />
                 <span>{h}</span>
               </li>
             ))}
@@ -161,7 +161,7 @@ function CompareToSendbox({ competitorName, compareHref }) {
         </p>
       </div>
       <div className="flex flex-wrap gap-2.5 flex-shrink-0">
-        <a href="/pricing" className="inline-flex items-center justify-center px-4 py-2 bg-[#2663eb] text-white rounded-lg text-[13px] font-medium transition-all hover:bg-[#1d4ed8]">
+        <a href="/pricing" className="inline-flex items-center justify-center px-4 py-2 bg-[#695AF2] text-white rounded-lg text-[13px] font-medium transition-all hover:bg-[#5847E0]">
           View Sendbox Pricing
         </a>
         <a href={compareHref} className="inline-flex items-center justify-center px-4 py-2 bg-white text-[#374151] border border-[#e5e5e5] rounded-lg text-[13px] font-medium transition-all hover:bg-[#f5f5f5]">
@@ -182,7 +182,7 @@ function KeepReading({ links }) {
       <p className="text-sm font-semibold text-black mb-3">Keep reading</p>
       <ul className="space-y-1.5">
         {links.map((link, i) => (
-          <li key={i}><a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#2663eb] font-medium hover:underline">{link.title} <ArrowSquareOut size={13} /></a></li>
+          <li key={i}><a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#695AF2] font-medium hover:underline">{link.title} <ArrowSquareOut size={13} /></a></li>
         ))}
       </ul>
     </div>

@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 
 import React from 'react';
 
@@ -6,8 +8,8 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
     // Sending limits
     { category: "Sending & leads" },
     { name: "Emails per month", essential: "75,000", plus: "250,000", pro: "500,000", agency: "2,500,000", power: "10,000,000" },
-    { name: "Lead storage", essential: "30,000", plus: "100,000", pro: "Unlimited*", agency: "Unlimited*", power: "Unlimited*", tooltip: "Plans with unlimited leads can request a limit increase for free when they reach 90% of their current limit" },
-    { name: "Credits", essential: "500", plus: "1,000", pro: "2,000", agency: "4,000", power: "10,000", tooltip: "Credits are used for AI features and enrichment" },
+    { name: "Lead storage", essential: "30,000", plus: "100,000", pro: "Unlimited*", agency: "Unlimited*", power: "Unlimited*", tooltip: "Get within 90% of your unlimited-lead cap and we'll raise it at no charge — just ask" },
+    { name: "Credits", essential: "500", plus: "1,000", pro: "2,000", agency: "4,000", power: "10,000", tooltip: "Spent on AI features and enriching lead data" },
 
     // Infrastructure
     { category: "Infrastructure" },
@@ -49,14 +51,14 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
         {/* Pricing Header */}
         <div className="max-w-4xl pb-12 mx-auto text-center">
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl"></div>
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
             <span>pricing</span>
           </div>
           <HeadingTag className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight mb-6 text-balance">
-            Built for serious senders
+            Room to grow, built in from the first mailbox
           </HeadingTag>
           <p className="text-lg md:text-xl leading-relaxed text-[#6b7280] max-w-2xl mx-auto">
-            Premium infrastructure. Transparent pricing. Limitless scale.
+            Every tier runs on the same dedicated infrastructure — pick the one sized for your team, not a stripped-down version of it.
           </p>
         </div>
         <div className="w-full overflow-x-auto">
@@ -64,7 +66,7 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
             {/* Header */}
             <div className="grid grid-cols-6 border-b border-gray-200">
               <div className="p-4 sm:p-6 flex flex-col justify-center">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-black">Choose your plan</h2>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-black">Choose a plan</h2>
               </div>
 
               {/* Essential */}
@@ -77,14 +79,13 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
                 </h3>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">$99</span>
-                    <span className="text-sm sm:text-base text-[#6b7280]">/month</span>
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">Custom</span>
+                    <span className="text-sm sm:text-base text-[#6b7280]">pricing</span>
                   </div>
                   <a
-                    href="https://app.sendbox.ai/login"
+                    href={APP_LOGIN_URL}
                     data-fast-goal="click_get_started"
                     data-fast-goal-plan="essential"
-                    data-fast-goal-price="99"
                     className="py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#e5e5e5] text-black hover:bg-[#d4d4d4] transition-colors text-center no-underline"
                   >
                     Get Started
@@ -102,14 +103,13 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
                 </h3>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">$249</span>
-                    <span className="text-sm sm:text-base text-[#6b7280]">/month</span>
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">Custom</span>
+                    <span className="text-sm sm:text-base text-[#6b7280]">pricing</span>
                   </div>
                   <a
-                    href="https://app.sendbox.ai/login"
+                    href={APP_LOGIN_URL}
                     data-fast-goal="click_get_started"
                     data-fast-goal-plan="plus"
-                    data-fast-goal-price="249"
                     className="py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#e5e5e5] text-black hover:bg-[#d4d4d4] transition-colors text-center no-underline"
                   >
                     Get Started
@@ -120,21 +120,20 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
               {/* Pro */}
               <div className="p-4 sm:p-6 border-l border-gray-200 flex flex-col">
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-medium mb-2 tracking-tight flex items-center gap-1.5 sm:gap-2 text-black">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#2663eb] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#695AF2] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                     <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
                   </svg>
                   Pro
                 </h3>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">$499</span>
-                    <span className="text-sm sm:text-base text-[#6b7280]">/month</span>
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">Custom</span>
+                    <span className="text-sm sm:text-base text-[#6b7280]">pricing</span>
                   </div>
                   <a
-                    href="https://app.sendbox.ai/login"
+                    href={APP_LOGIN_URL}
                     data-fast-goal="click_get_started"
                     data-fast-goal-plan="pro"
-                    data-fast-goal-price="499"
                     className="py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#e5e5e5] text-black hover:bg-[#d4d4d4] transition-colors text-center no-underline"
                   >
                     Get Started
@@ -152,14 +151,13 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
                 </h3>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">$899</span>
-                    <span className="text-sm sm:text-base text-[#6b7280]">/month</span>
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">Custom</span>
+                    <span className="text-sm sm:text-base text-[#6b7280]">pricing</span>
                   </div>
                   <a
-                    href="https://app.sendbox.ai/login"
+                    href={APP_LOGIN_URL}
                     data-fast-goal="click_get_started"
                     data-fast-goal-plan="agency"
-                    data-fast-goal-price="899"
                     className="relative py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#e5e5e5] text-black hover:bg-[#d4d4d4] transition-colors overflow-hidden text-center no-underline"
                   >
                     Get Started
@@ -177,15 +175,14 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
                 </h3>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">$2,499</span>
-                    <span className="text-sm sm:text-base text-[#6b7280]">/month</span>
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-black font-numeric">Custom</span>
+                    <span className="text-sm sm:text-base text-[#6b7280]">pricing</span>
                   </div>
                   <a
-                    href="https://app.sendbox.ai/login"
+                    href={APP_LOGIN_URL}
                     data-fast-goal="click_get_started"
                     data-fast-goal-plan="power"
-                    data-fast-goal-price="2499"
-                    className="relative py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#2663eb] text-white hover:bg-[#1e4ed8] transition-colors overflow-hidden text-center no-underline"
+                    className="relative py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium bg-[#695AF2] text-white hover:bg-[#1e4ed8] transition-colors overflow-hidden text-center no-underline"
                   >
                     Get Started
                   </a>
@@ -242,12 +239,11 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
             ))}
           </div>
           <p className="text-xs text-gray-400 mt-3 pl-4">
-            * Generous Fair Use caps apply. See our{' '}
-            <a href="/fair-usage-policy" className="text-[#2663eb] hover:underline">Fair Usage Policy</a>{' '}
-            for the exact limits behind each &quot;Unlimited.&quot;
+            * "Unlimited" is capped by a generous fair-use limit, not a marketing word with no meaning — the exact thresholds live in our{' '}
+            <a href="/fair-usage-policy" className="text-[#695AF2] hover:underline">Fair Usage Policy</a>.
           </p>
           <p className="text-xs text-gray-400 mt-1 pl-4">
-            ** Phone number purchase &amp; top-up billed separately
+            ** Phone numbers and call minutes are charged separately from your plan
           </p>
         </div>
       </div>

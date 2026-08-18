@@ -6,788 +6,788 @@ import { motion } from 'framer-motion';
 const changelogData = [
   {
     date: 'June 17, 2026',
-    title: 'Email Attachments in Sequencer',
+    title: 'Attachments Land in the Sequencer',
     tag: 'New',
-    description: "Send proposals, decks, one-pagers, and contracts straight from your sequence. Attachments are now first-class citizens in the email sequencer.",
+    description: "Proposals, decks, one-pagers, contracts — attach them directly to a sequence step instead of promising to follow up later. Files are now a native part of how the sequencer works.",
     features: [
       {
-        name: 'Attachments in Email Sequencer',
+        name: 'Sequence-Level File Attachments',
         bullets: [
-          'Attach files directly to any step in your sequence builder',
-          'PDFs, decks, contracts, images, and GIFs all supported. Drop in product screenshots or a quick GIF demo right inside the email',
-          'Attachments deliver through the same warmed mailboxes your campaigns already use',
-          'View attachments your leads sent back inside the conversation thread'
+          "Drop a file onto any step while you're building the sequence",
+          'Works with PDFs, slide decks, contracts, screenshots, and GIFs, so a product demo clip can ride along inside the email itself',
+          'Delivery still runs through the same warmed mailboxes powering the rest of your campaign',
+          'Anything a lead sends back shows up right in that conversation thread'
         ],
-        description: "No more 'I'll send the deck after they reply' workflows. Put the file in the email and let your sequence do the work."
+        description: "Skip the \"I'll send the deck once they reply\" step entirely — the file goes out with the email and the sequence keeps moving."
       }
     ]
   },
   {
     date: 'June 17, 2026',
-    title: 'Import Mailboxes from Icemail',
+    title: 'Icemail Mailboxes, Imported in One Click',
     tag: 'New',
-    description: "Icemail joins Zapmail and Maildoso in our one-click mailbox import lineup. Connect your account and pull every mailbox into Sendbox in seconds.",
+    description: "Icemail is now the third provider in our one-click import lineup alongside Zapmail and Maildoso — link your account and every mailbox lands in Sendbox within seconds.",
     features: [
       {
-        name: 'Icemail Mailbox Import',
+        name: 'One-Click Icemail Import',
         bullets: [
-          'Paste your Icemail API key and we sync every mailbox automatically',
-          'No more reconnecting accounts one at a time',
-          'Warmup status, settings, and configurations carry over intact',
-          'Re-sync anytime you provision new mailboxes from Icemail'
+          'Drop in your Icemail API key and the sync pulls every mailbox in automatically',
+          'No need to reconnect each account individually anymore',
+          'Warmup progress, settings, and configuration all come across untouched',
+          'Trigger a re-sync whenever you spin up new mailboxes on Icemail'
         ],
-        description: "If you buy mailboxes from Icemail, they now flow straight into Sendbox. One API key, all your mailboxes, zero manual work."
+        description: "Buying mailboxes through Icemail now means they show up in Sendbox on their own — one key connects the whole batch, no manual setup required."
       }
     ]
   },
   {
     date: 'May 29, 2026',
-    title: 'Add Leads and Steps to Completed Campaigns',
+    title: 'Completed Campaigns Can Grow Again',
     tag: 'New',
-    description: "Your campaign finished, then you found 200 more perfect leads. Or you want to add one more follow-up. You can now do both without cloning the campaign.",
+    description: "Found another batch of great-fit leads after a campaign already wrapped? Want to tack on one more follow-up step? Both are now possible without duplicating the campaign from scratch.",
     features: [
       {
-        name: 'Resume Completed Campaigns',
+        name: 'Reopen Finished Campaigns',
         bullets: [
-          'Push new leads into a campaign that already finished and they pick up the sequence from step one',
-          'Append new follow-up steps to a completed sequence and existing leads continue right where they left off',
-          'No more duplicating campaigns just to add a handful of leads or one extra touch',
-          'All your stats, replies, and history stay attached to the original campaign'
+          'New leads added to a completed campaign start the sequence fresh from step one',
+          'Tack a new follow-up step onto a finished sequence and existing leads pick it up exactly where they stopped',
+          'No need to clone a whole campaign just to squeeze in a few extra leads or one more touch',
+          'Every stat, reply, and past interaction stays tied to the original campaign'
         ],
-        description: "Completed doesn't mean closed. Treat your campaigns as living things and keep adding to them as your outreach evolves."
+        description: "\"Completed\" no longer means \"locked.\" Campaigns can keep growing as your outreach strategy changes."
       }
     ]
   },
   {
     date: 'May 10, 2026',
-    title: 'Unlimited Template-Based Replies & Follow-ups',
+    title: 'Template Replies Are Now Unlimited',
     tag: 'New',
-    description: "Reply Agents just got a whole lot more generous. Send template-based replies and follow-ups completely free with no credits, no limits, and no usage caps.",
+    description: "Reply Agents just got a lot less stingy: template-based replies and follow-ups now go out for free, with no credits spent and no cap on volume.",
     features: [
       {
-        name: 'Free Template-Based Reply Agents',
+        name: 'Unmetered Template Replies',
         bullets: [
-          'Send unlimited template-based replies and follow-ups directly from Reply Agents',
-          'Zero credits consumed for template responses, no matter how many you send',
-          'Build your own library of templates for objections, pricing questions, demo requests, and follow-ups',
-          'Keep AI credits for the conversations that actually need them'
+          'Fire off as many template replies and follow-ups from Reply Agents as you need',
+          "Template responses don't touch your credit balance, no matter the volume",
+          'Build a personal library covering objections, pricing questions, demo requests, and standard follow-ups',
+          'Save your AI credits for the replies that genuinely require them'
         ],
-        description: "Most replies you send are variations of the same handful of responses. Now those cost you nothing. Use AI when you need it, templates when you don't."
+        description: "Most of what you type back is a variation on a handful of stock answers — those are now free. Save the AI for the messages that actually need it."
       }
     ]
   },
   {
     date: 'May 5, 2026',
-    title: 'Sendbox Profile Email Finder Chrome Extension',
+    title: 'A Chrome Extension for Finding Profile Emails',
     tag: 'New',
-    description: "Find emails from professional profiles and push leads straight to Sendbox. Our new Chrome extension is now live on the Chrome Web Store.",
+    description: "Our Chrome extension just went live on the Web Store — pull an email off a professional profile and send that lead into Sendbox in the same motion.",
     features: [
       {
-        name: 'Profile Email Finder Extension',
+        name: 'Profile-to-Lead Chrome Extension',
         bullets: [
-          'Capture emails from public profile pages with a single click',
-          'Push leads directly into your Sendbox campaigns without leaving the page',
-          'Skip the manual research and CSV exports. Clean, ready-to-use data lands in your workspace',
-          'Qualify leads faster and kick off outreach the moment you find them'
+          'One click on a public profile page captures the email',
+          'Send that lead straight into a Sendbox campaign without ever tabbing away',
+          'No manual research, no CSV exports — clean data lands directly in your workspace',
+          'Qualify faster and start outreach the moment you spot someone worth contacting'
         ],
-        description: "Stop bouncing between tabs and spreadsheets. Find the email, send it to Sendbox, start the sequence. All from one place."
+        description: "One flow instead of five tabs: spot the email, send it over, launch the sequence."
       }
     ],
-    link: { label: 'Install the extension', url: 'https://chromewebstore.google.com/detail/sendbox-profile-email-fin/oifenlanjioiokdgcedhefhnonlmcmgf' }
+    link: { label: 'Get the extension', url: 'https://chromewebstore.google.com/detail/sendbox-profile-email-fin/oifenlanjioiokdgcedhefhnonlmcmgf' }
   },
   {
     date: 'May 4, 2026',
-    title: 'Sendbox Partner Program Is Live',
+    title: 'The Partner Program Is Open',
     tag: 'New',
-    description: "Refer Sendbox and get paid for life. Our partner program is now open with lifetime recurring commissions up to 20% and tier-based rewards that grow as you do.",
+    description: "Referrals now pay indefinitely. The partner program is open, offering recurring commissions of up to 20% for the life of the customer, with reward tiers that scale as your referral volume does.",
     features: [
       {
-        name: 'Lifetime Recurring Commissions',
+        name: 'Recurring Referral Payouts',
         bullets: [
-          'Earn up to 20% recurring commission on every customer you refer, for as long as they stay',
-          'Tier-based reward structure that scales your payout as your referrals grow',
-          'Track clicks, signups, conversions, and earnings in real time from your partner dashboard',
-          'Built for agencies, creators, and consultants who already recommend Sendbox'
+          'Every customer you bring in earns up to 20% recurring commission for as long as they remain a customer',
+          'Payout tiers climb automatically as your referral count grows',
+          'A partner dashboard shows clicks, signups, conversions, and earnings live',
+          'Designed with agencies, creators, and consultants who were already recommending Sendbox in mind'
         ],
-        description: "You bring the customers, we handle the rest. Get paid every month they stay on Sendbox, with bigger rewards as you climb the tiers."
+        description: "Bring the customer, we handle billing and payouts — commissions land every month they stay subscribed, and the reward grows as you move up a tier."
       }
     ]
   },
   {
     date: 'May 2, 2026',
-    title: 'Sending Schedule Page Is Live',
+    title: 'A New Sending Schedule Page',
     tag: 'New',
-    description: "See your entire sending operation at a glance. The new Sending Schedule page shows your capacity limits, available slots, and campaign distribution in one view.",
+    description: "A new Sending Schedule page puts your entire sending operation on one screen — capacity limits, open slots, and how campaigns are splitting the volume.",
     features: [
       {
-        name: 'Sending Schedule Overview',
+        name: 'Sending Capacity Dashboard',
         bullets: [
-          'View your total daily and weekly sending capacity across every connected mailbox',
-          'See exactly how many slots are working, available, and reserved for each campaign',
-          'Visualize campaign distribution so you know which campaigns are eating your capacity',
-          'Spot bottlenecks before they slow down your outreach'
+          'See total daily and weekly capacity summed across every connected mailbox',
+          'Check exactly how many slots are in use, open, or reserved per campaign',
+          'A visual breakdown shows which campaigns are consuming the most capacity',
+          'Catch a bottleneck before it slows your outreach down'
         ],
-        description: "No more guessing whether your mailboxes are maxed out or wondering why a campaign is sending slowly. Everything you need to know about your sending capacity, in one place."
+        description: "Stop guessing whether mailboxes are maxed out or why a campaign has slowed down — the capacity picture now lives in one place."
       }
     ]
   },
   {
     date: 'April 4, 2026',
-    title: 'Subsequences Within a Campaign',
+    title: 'Campaigns Can Now Branch',
     tag: 'New',
-    description: "Your campaigns just got a lot smarter. Build subsequences inside any campaign to branch your outreach based on lead behavior, tags, or reply type without creating a separate campaign.",
+    description: "Campaigns can now branch. Build a subsequence inside any campaign that routes leads down a different path based on their behavior, tags, or reply type, no separate campaign required.",
     features: [
       {
-        name: 'Campaign Subsequences',
+        name: 'Branching Subsequences',
         bullets: [
-          'Create branching sequences inside a single campaign based on lead actions',
-          'Route leads into different follow-up paths depending on opens, replies, or tags',
-          'Keep everything organized in one campaign instead of juggling multiple',
-          'Full control over timing, conditions, and messaging for each branch'
+          'Set up branches inside one campaign that trigger off lead actions',
+          'Send leads down different follow-up paths based on opens, replies, or tags',
+          'Everything stays inside a single campaign instead of spread across several',
+          'Each branch gets its own timing, conditions, and messaging, fully configurable'
         ],
-        description: "One campaign, multiple paths. Your outreach adapts to how each lead responds instead of blasting everyone with the same follow-ups."
+        description: "A single campaign, several paths through it — outreach adjusts to how each lead actually responds instead of sending everyone the same follow-up."
       }
     ]
   },
   {
     date: 'March 24, 2026',
-    title: 'Import Mailboxes from Zapmail & Maildoso',
+    title: 'One-Click Import from Zapmail and Maildoso',
     tag: 'New',
-    description: "Stop adding mailboxes one by one. Connect your Zapmail or Maildoso account with an API key and import all your mailboxes into Sendbox instantly.",
+    description: "No more one-by-one mailbox entry — link a Zapmail or Maildoso account with an API key and every mailbox imports into Sendbox at once.",
     features: [
       {
-        name: 'Zapmail & Maildoso API Import',
+        name: 'Bulk Provider Import',
         bullets: [
-          'Paste your Zapmail or Maildoso API key and we pull in every mailbox automatically',
-          'No more connecting accounts one at a time. Import dozens of mailboxes in seconds',
-          'Warmup status, settings, and configurations carry over',
-          'Add new mailboxes from your provider anytime with a single re-sync'
+          'Drop in the API key from either provider and every mailbox pulls in automatically',
+          'Dozens of mailboxes import in seconds instead of connecting each one by hand',
+          'Warmup status and configuration transfer along with them',
+          'Newly provisioned mailboxes get picked up with a single re-sync'
         ],
-        description: "If you're buying mailboxes from Zapmail or Maildoso, they now flow straight into Sendbox. One API key, all your mailboxes, zero manual work."
+        description: "Mailboxes purchased from Zapmail or Maildoso now land in Sendbox on their own — a single key, no manual setup."
       }
     ]
   },
   {
     date: 'March 18, 2026',
-    title: 'Sendbox Platform API & MCP',
+    title: 'A Platform API and an MCP Server',
     tag: 'Beta',
-    description: "Build on top of Sendbox. Our Platform API and MCP server are now live. Manage campaigns, sync leads, and control your workspace programmatically.",
+    description: "Sendbox is now programmable. The Platform API and an MCP server are live, letting you manage campaigns, sync leads, and control a workspace entirely from code.",
     features: [
       {
         name: 'Platform API',
         bullets: [
-          'Manage campaigns, leads, and mailboxes programmatically',
-          'Trigger sequences and push leads from your own code',
-          'API keys available at workspace level or for all workspaces under your account'
+          'Handle campaigns, leads, and mailboxes through code',
+          'Kick off sequences and push leads in from your own systems',
+          'Generate keys scoped to a single workspace or to every workspace on the account'
         ],
-        description: "Everything you can do in the dashboard, you can now do via API."
+        description: "Whatever's possible in the dashboard is now possible through the API too."
       },
       {
         name: 'MCP Server',
         bullets: [
-          'Connect Sendbox to AI clients like Claude, Cursor, or Windsurf',
-          'Manage campaigns and pull analytics with natural language',
-          'Perfect for AI-powered sales workflows and outreach agents'
+          'Hook Sendbox up to AI clients such as Claude, Cursor, or Windsurf',
+          'Manage campaigns and pull analytics just by describing what you want',
+          'Built for AI-driven sales workflows and autonomous outreach agents'
         ],
-        description: "Your AI tools can now talk directly to Sendbox. Launch a campaign, check reply rates, or manage leads without leaving your editor."
+        description: "AI tools can talk to Sendbox directly now — launch a campaign, check reply rates, or manage leads without leaving your editor."
       }
     ],
-    link: { label: 'Read the docs', url: 'https://docs.sendbox.ai' }
+    link: { label: 'Browse the docs', url: 'https://docs.sendboxes.tech' }
   },
   {
     date: 'March 10, 2026',
-    title: 'Supabase Integration',
-    description: "Your Supabase tables are now a direct pipeline for your outreach. Push and pull leads to and from your Supabase database without leaving Sendbox.",
+    title: 'Supabase Now Connects Directly',
+    description: "Supabase tables now double as a pipeline for outreach — leads can move to and from your database without leaving Sendbox.",
     features: [
       {
         name: 'Supabase Integration',
         bullets: [
-          'Connect your Supabase project to Sendbox in seconds',
-          'Push enriched leads directly into your Supabase tables',
-          'Pull leads from Supabase into your campaigns automatically',
-          'Two-way sync keeps your data consistent across both platforms'
+          'Link a Supabase project to Sendbox in seconds',
+          'Send enriched leads straight into your Supabase tables',
+          'Pull leads from Supabase into a campaign automatically',
+          'A two-way sync keeps both platforms in agreement'
         ],
-        description: "If Supabase is your backend, your lead data now flows seamlessly between your database and your outreach. No more manual imports or exports."
+        description: "If Supabase is already your backend, lead data now moves between it and your outreach without manual import/export work."
       }
     ]
   },
   {
     date: 'March 10, 2026',
-    title: 'Phone Number Enrichment',
-    description: "Find direct phone numbers for your leads without leaving the platform. Enrich your lead lists with verified mobile and direct dial numbers in bulk.",
+    title: 'Phone Numbers, Enriched in Bulk',
+    description: "Direct phone numbers for your leads are now available without leaving Sendbox — enrich a list in bulk with verified mobile and direct-dial numbers.",
     features: [
       {
         name: 'Phone Number Enrichment',
         bullets: [
-          'Enrich your entire lead list with verified phone numbers in one click',
-          'Get direct dials and mobile numbers, not just company switchboards',
-          'Works alongside your existing email enrichment workflow',
-          'Higher connect rates when you combine cold email with cold calling'
+          'One click enriches an entire lead list with verified phone numbers',
+          'Returns direct dials and mobile numbers instead of a generic company switchboard',
+          'Runs alongside whatever email enrichment workflow you already use',
+          'Pairing cold email with cold calling lifts connect rates'
         ],
-        description: "Your leads now come with phone numbers attached. Pair it with our dialer and you have a complete multichannel outreach machine."
+        description: "Leads now arrive with a phone number attached — combine it with the dialer for a full multichannel outreach setup."
       }
     ]
   },
   {
     date: 'February 27, 2026',
-    title: 'Ring Enrichment',
+    title: 'Know Who Picks Up Before You Dial',
     tag: 'Invite Only',
-    description: "Stop calling wrong numbers. We run line intelligence on your entire lead list so you know exactly who picks up before you ever dial.",
+    description: "Line intelligence now runs across your whole lead list, so you know who's likely to pick up before a single call goes out.",
     features: [
       {
         name: 'Ring Enrichment',
         bullets: [
-          'We categorize every number in your list within 24 hours into picks up, no answer, voicemail, call screening, or identity verification',
-          'Filter out the bad numbers before your team ever touches the dialer',
-          'Your reps only call leads that actually answer the phone',
-          'Higher connect rates because every dial is worth making'
+          'Within 24 hours, every number in the list gets sorted into picks up, no answer, voicemail, call screening, or identity verification',
+          'Bad numbers get filtered out before your reps ever pick up the dialer',
+          "Reps only dial the leads who are actually likely to answer",
+          'Connect rates climb because every dial is a dial worth making'
         ],
-        description: "Fewer dials, more conversations. Your team stops wasting time on numbers that were never going to pick up."
+        description: "Fewer dials, more actual conversations — no more burning time on numbers that were never going to answer."
       }
     ]
   },
   {
     date: 'February 27, 2026',
-    title: 'Ringless Voicemail Drops in Your Own Voice',
+    title: 'Voicemail Drops in a Cloned Voice',
     tag: 'Invite Only',
-    description: "Clone your voice in 15 seconds. Drop personalized voicemails to your leads without their phone ever ringing. Each one sounds like you recorded it yourself.",
+    description: "A 15-second sample is enough to clone your voice and start dropping personalized voicemails that never make the recipient's phone ring — and sound like you actually recorded them.",
     features: [
       {
-        name: 'AI Voice Clone Voicemail Drops',
+        name: 'AI Voice Clone Voicemails',
         bullets: [
-          'Record a short sample and your voice clone is ready in 15 seconds',
-          'Each voicemail is personalized with your lead\'s name, company, or any variable you have',
-          'Voicemails land in their inbox ringless so their phone never rings',
-          'Select your leads, click drop, and forget it. We deliver them all for you'
+          'A short recorded sample is all it takes; the clone is ready in 15 seconds',
+          "Every drop gets personalized with the lead's name, company, or any variable in your data",
+          'Voicemails land directly in their inbox, ringless, so the phone stays silent',
+          'Pick the leads, click drop, walk away — delivery happens on its own'
         ],
-        description: "Every lead gets a voicemail that sounds like you personally called them. You were closing deals while we dropped hundreds of personalized VMs for you."
+        description: "Each lead hears a voicemail that sounds like a personal call, while you're free to focus on closing instead of recording hundreds of messages yourself."
       }
     ]
   },
   {
     date: 'February 22, 2026',
-    title: 'Salesforce CRM Integration',
-    description: "Connect your Salesforce CRM to Sendbox and keep your outreach and pipeline in sync.",
+    title: 'Salesforce, Now Connected',
+    description: "Salesforce now connects directly to Sendbox, keeping outreach activity and pipeline data aligned.",
     features: [
       {
         name: 'Salesforce CRM Integration',
         bullets: [
-          'Connect your Salesforce account in a few clicks',
-          'Sync leads and contacts between Salesforce and Sendbox',
-          'Engagement data flows back to Salesforce automatically',
-          'Map custom fields for personalized outreach'
+          'A few clicks link a Salesforce account',
+          'Leads and contacts sync in both directions between the two systems',
+          'Engagement data reports back to Salesforce on its own',
+          'Custom fields map over so personalization carries through'
         ],
-        description: "No more manual exports. Your CRM and outreach stay in sync."
+        description: "Manual exports are no longer necessary — CRM and outreach stay aligned automatically."
       }
     ]
   },
   {
     date: 'February 21, 2026',
-    title: 'Bring Your Own Email Validation Provider',
-    description: "Already have an email validation provider you trust? Bring your own API key and use it directly inside Sendbox. No switching tools, no exports.",
+    title: 'Pick Your Own Validation Provider',
+    description: "Already paying for a validation provider you trust? Plug in your own API key and use it from inside Sendbox instead of switching tools or exporting data.",
     features: [
       {
-        name: 'Choose Your Email Validation Provider',
+        name: 'Bring Your Own Validation Provider',
         bullets: [
-          'Enrich.so is our official partner and included free with your Sendbox plan',
-          'Bring your own API key for Enrow, Leadmagic, Enrichley, Reeon, Fullenrich, Bettercontact, ALeads, Hunter, Wiza, or Icypeas',
-          'Use the provider you already pay for and trust. We charge through your API key',
-          'Validate leads right inside Sendbox without jumping between platforms'
+          'Enrich.so ships as our official partner, included at no extra cost on every plan',
+          'Or connect your own key from Enrow, Leadmagic, Enrichley, Reeon, Fullenrich, Bettercontact, ALeads, Hunter, Wiza, or Icypeas',
+          'Stick with the provider you already trust — billing runs through your own API key',
+          'Validation now happens inside Sendbox instead of bouncing between platforms'
         ],
-        description: "Your provider, your API key, your workflow. We just plug it in so everything stays in one place."
+        description: "It's your provider and your key — we just wire it in so the whole workflow stays in one place."
       }
     ]
   },
   {
     date: 'February 14, 2026',
-    title: 'Smarter Webhook Controls',
-    description: "Your webhooks were firing for everything. Now they only fire when it actually matters.",
+    title: 'Webhooks Get More Selective',
+    description: "Webhooks used to fire for every event. Now they only fire for the ones that matter.",
     features: [
       {
         name: 'Advanced Webhook Options',
         bullets: [
-          'Trigger webhooks only on positive replies so your CRM stays clean',
-          'Get notified when lead tags change so your automations stay in sync',
-          'Fire a webhook only once per lead to avoid duplicate processing downstream',
-          'Mix and match these options per webhook endpoint for full control'
+          'Restrict a webhook to positive replies only, keeping the CRM free of noise',
+          "Get pinged whenever a lead's tag changes so downstream automations stay current",
+          'Cap a webhook to once per lead to stop duplicate processing on the other end',
+          'Combine these settings differently for each endpoint'
         ],
-        description: "Less noise, more signal. Your downstream systems get exactly the data they need and nothing they don't."
+        description: "Less noise, more signal — downstream systems get only the events they actually need."
       }
     ]
   },
   {
     date: 'February 8, 2026',
-    title: 'Airtable Integration Is Now Live',
-    description: "Your Airtable bases just became a direct pipeline into your outreach. Push leads, sync data, and keep everything in one place without lifting a finger.",
+    title: 'Airtable Now Feeds In Directly',
+    description: "Airtable bases now feed directly into outreach — leads and data sync over without any manual push.",
     features: [
       {
         name: 'Airtable Integration',
         bullets: [
-          'Connect your Airtable workspace to Sendbox in seconds',
-          'Sync leads directly from your Airtable bases into campaigns automatically',
-          'All your custom fields and data come through intact',
-          'Add to our growing collection of native integrations alongside Clay, Slack, and webhooks'
+          'Link an Airtable workspace to Sendbox in seconds',
+          'Leads sync from Airtable bases straight into campaigns automatically',
+          'Custom fields and data come through untouched',
+          'Joins the native integration lineup next to Clay, Slack, and webhooks'
         ],
-        description: "No more exporting CSVs from Airtable and importing them manually. Your data flows where it needs to go, automatically."
+        description: "CSV exports and manual imports are no longer part of the workflow — data now moves on its own."
       }
     ]
   },
   {
     date: 'February 3, 2026',
-    title: 'Bulk Import Outlook Accounts',
-    description: "Adding Outlook accounts one by one? That's a thing of the past. Now you can import all your Outlook mailboxes at once with a simple CSV upload.",
+    title: 'Outlook Accounts, Imported in Bulk',
+    description: "One-by-one Outlook setup is over — a single CSV upload now imports the whole batch of mailboxes at once.",
     features: [
       {
-        name: 'CSV Import for Outlook Accounts',
+        name: 'Bulk CSV Import for Outlook',
         bullets: [
-          'Upload a CSV file with all your Outlook account credentials in one go',
-          'Nothing to install or run on your end. Everything happens on our servers',
-          'We validate each account during import so you know exactly what connected',
-          'Perfect for agencies onboarding new clients with large mailbox pools'
+          'One CSV upload carries every Outlook credential you need to import',
+          'No install, no local process — the import runs entirely on our servers',
+          'Each account gets validated during import so you know precisely what connected',
+          'Built for agencies onboarding clients that come with large mailbox pools'
         ],
-        description: "No technical setup, no manual work. Just upload your CSV and we take care of the rest."
+        description: "No technical setup required — upload the CSV and the rest happens automatically."
       }
     ]
   },
   {
     date: 'January 29, 2026',
-    title: "Reply When They're Awake",
-    description: "You write a great reply and hit send. It's 4am their time. Now it's buried under 30 emails by the time they wake up. That's not happening anymore.",
+    title: 'Replies Now Wait for Business Hours',
+    description: "A great reply sent at 4am their time used to get buried under 30 other emails before they ever woke up. Not anymore.",
     features: [
       {
         name: "Smart Send Timing in Unibox",
         bullets: [
-          "You can see your lead's local time right in the Unibox reply window",
-          "If it's a bad time to send, the send button automatically becomes a schedule button",
-          "We figure out when they'll actually see it and queue it for then",
-          "If you still want to send right now, you can force send. Your call"
+          "The lead's local time now shows right inside the Unibox reply window",
+          "Send at a bad hour and the button switches itself to a schedule option",
+          "We work out when they'll actually see it and queue delivery for that moment",
+          "A force-send option is still there if you want to send immediately anyway"
         ],
-        description: "You don't change how you work. You still hit the same button. We just make sure it arrives when someone's actually there to read it."
+        description: "Your workflow doesn't change — same button, same click. We just make sure it lands when someone's actually around to read it."
       }
     ]
   },
   {
     date: 'January 25, 2026',
-    title: 'Skip National Holidays',
-    description: "You know what's annoying? Writing a great email and having it land on Thanksgiving. Now it's sitting under a pile of OOO replies and nobody's ever going to see it.",
+    title: 'Sending Now Skips National Holidays',
+    description: "A carefully written email landing on Thanksgiving used to disappear under a stack of out-of-office replies. Not anymore.",
     features: [
       {
         name: 'Holiday-Aware Sending',
         bullets: [
-          "We check if it's a national holiday in your lead's country before sending",
-          'If it is, we skip them that day and send the next working day instead',
-          'Everyone else in your campaign still gets their emails on schedule',
-          'Fewer OOO replies, more actual humans reading your stuff'
+          "Before sending, we check whether it's a national holiday where the lead lives",
+          'On a holiday, that send gets pushed to the next working day',
+          'The rest of the campaign keeps sending on schedule regardless',
+          'Fewer auto-replies, more real people actually reading what you sent'
         ],
-        description: "Pretty simple. Don't email people who aren't at work. Your reply rates will thank you."
+        description: "Simple logic: don't email someone who isn't at their desk. Reply rates benefit."
       }
     ]
   },
   {
     date: 'January 21, 2026',
-    title: 'A/B Testing on Autopilot',
-    description: 'We got tired of seeing teams pick "winners" based on gut feeling. Now your cold email A/B tests run themselves and actually improve your results.',
+    title: 'A/B Tests That Run Themselves',
+    description: 'Picking a "winning" variant by gut feeling is no longer necessary — A/B tests now run and optimize themselves.',
     features: [
       {
         name: 'A/B Threshold Optimization',
         bullets: [
-          'Set it and forget it. Our statistical engine watches your open rates, reply rates, and conversions automatically',
-          'Underperforming variants get disabled the moment we have enough data',
-          'Winning variants get more volume without you lifting a finger',
-          'Teams see 30% higher reply rates on average after enabling this'
+          'A statistical engine tracks open rates, reply rates, and conversions on its own once turned on',
+          "A variant that's underperforming gets shut off as soon as there's enough data to be sure",
+          'The winning variant automatically gets more volume, no manual reallocation needed',
+          'Teams see reply rates rise 30% on average once this is switched on'
         ],
-        description: 'No more guessing, no more manual checks, no more wasted sends on losing variants. Your cold email campaigns finally optimize themselves.'
+        description: "No guessing, no manual checking, no sends wasted on a variant that's already lost — the campaign tunes itself."
       }
     ]
   },
   {
     date: 'January 17, 2026',
-    title: "Spintax That Doesn't Sound Like Spintax",
-    description: 'Traditional spintax creates emails that read like a mad lib gone wrong. Our AI generates variations that actually sound human.',
+    title: "Spintax Without the Mad-Lib Sound",
+    description: 'Old-school spintax tends to read like a mad-lib gone wrong. Our AI generates variations that actually sound like a person wrote them.',
     features: [
       {
         name: 'AI Spintax Generation',
         bullets: [
-          'Give us one email and get dozens of natural variations automatically',
-          'Not just swapping synonyms. We rewrite sentences and restructure paragraphs',
-          "ESPs can't detect patterns because there aren't any",
-          'Higher engagement because nobody gets the same templated email'
+          'One source email turns into dozens of natural-sounding variations automatically',
+          'This goes beyond synonym swaps — sentences get rewritten and paragraphs restructured',
+          "There's no repeating pattern left for an ESP to detect",
+          'Engagement improves because no two recipients see an identical template'
         ],
-        description: 'Your cold outreach finally scales without sounding scaled.'
+        description: 'Outreach volume can finally scale up without sounding like it did.'
       }
     ]
   },
   {
     date: 'January 14, 2026',
-    title: 'Cold Calling, Meet Cold Email',
-    description: "Sometimes email isn't enough. Now you can call prospects directly from Sendbox with full recording and logging.",
+    title: 'Calling Joins Email in One Platform',
+    description: "Email alone isn't always enough — prospects can now be called directly from Sendbox, with every call recorded and logged.",
     features: [
       {
         name: 'Built-in Phone Dialer',
         bullets: [
-          'Provision phone numbers in seconds',
-          'Make calls with one click from any lead profile',
-          'Automatic call recording for training and compliance',
-          'Call logs sync with email threads so you see the full picture'
+          'New phone numbers provision in seconds',
+          'One click from any lead profile starts a call',
+          'Calls record automatically for training and compliance needs',
+          'Call logs sync into the same thread as the email history for a complete view'
         ],
-        description: "No more switching between five different tools. Whether your prospect prefers email or phone, you've got them covered in one platform."
+        description: "One platform now covers both channels — whether a prospect prefers email or the phone, there's no more juggling five separate tools."
       }
     ]
   },
   {
     date: 'January 10, 2026',
-    title: 'Reports Your Clients Will Actually Love',
-    description: "Agencies, this one's for you. Custom-branded reports that make you look like a million bucks.",
+    title: 'Client-Ready Reports, Fully Branded',
+    description: "Built with agencies in mind: campaign reports that carry your own branding instead of ours.",
     features: [
       {
         name: 'Advanced Reporting with Custom Branding',
         bullets: [
-          'Generate beautiful campaign reports at workspace, campaign, or organization level',
-          'Add your logo and customize colors to match your brand',
-          'Send reports directly to clients with your branding, not ours',
-          'Stop spending hours building reports in spreadsheets'
+          'Generate polished reports at the workspace, campaign, or organization level',
+          'Drop in your logo and match the color palette to your brand',
+          'Send reports to clients carrying your branding, with no trace of ours',
+          'Hours spent assembling reports in spreadsheets are no longer necessary'
         ],
-        description: 'Your clients get transparency. You get happy renewals.'
+        description: 'Clients get visibility into results, you get an easier renewal conversation.'
       }
     ]
   },
   {
     date: 'January 6, 2026',
-    title: 'Your Brand, Your Platform',
-    description: 'Run Sendbox under your own domain with your own branding. Your clients never need to know we exist.',
+    title: 'Run Sendbox Under Your Own Brand',
+    description: "Sendbox can now run entirely under your own domain and branding — your clients never have to know it's Sendbox underneath.",
     features: [
       {
         name: 'Full Whitelabel with Custom Domains',
         bullets: [
-          'Set up your own custom domain',
-          'Upload your logo and pick your colors',
-          'Create client portals where customers see their campaigns under your brand',
-          'Perfect for agencies and resellers who want to offer cold email infrastructure without building it'
+          'Point the platform at a custom domain of your choice',
+          'Upload a logo and set a color scheme',
+          'Give clients their own portal showing campaigns under your brand, not ours',
+          'Built for agencies and resellers who want to offer cold email infrastructure without building it themselves'
         ],
-        description: 'Enterprise-grade outreach platform, your name on the door.'
+        description: 'The infrastructure is enterprise-grade; the name on the door is yours.'
       }
     ]
   },
   {
     date: 'January 2, 2026',
-    title: 'Slack Just Became Your Inbox',
-    description: 'Your team lives in Slack. Now your lead replies live there too.',
+    title: 'Lead Replies Now Land in Slack',
+    description: 'If your team already lives in Slack, lead replies now show up there too.',
     features: [
       {
         name: 'Slack Unibox Bot',
         bullets: [
-          'Get notified in Slack the moment a lead replies',
-          'Read full conversations and send responses without leaving Slack',
-          'Tag teammates and handle objections collaboratively',
-          'Set up channels per campaign or per team member'
+          'A Slack notification fires the moment a lead replies',
+          'Full conversation threads are readable, and replies can be sent, without leaving Slack',
+          'Teammates can be tagged in to help work through an objection together',
+          'Channels can be organized per campaign or per rep'
         ],
-        description: 'Your SDRs can manage their entire pipeline from the tool they already have open all day. Response times drop, deals close faster.'
+        description: "SDRs can now run their whole pipeline from the tool that's already open all day, which tends to shorten response times and speed up deals."
       }
     ]
   },
   {
     date: 'December 28, 2025',
-    title: 'Clay + Sendbox Integration',
-    description: "If you're using Clay for enrichment, this integration is about to save you hours.",
+    title: 'Clay Connects Directly to Sendbox',
+    description: "Teams enriching leads through Clay are about to get hours back with this integration.",
     features: [
       {
         name: 'Clay Table HTTP Integration',
         bullets: [
-          'Push enriched leads directly from Clay into Sendbox campaigns',
-          'All your Clay data fields come through automatically',
-          'No manual CSV exports or imports',
-          'Build sophisticated enrichment workflows that execute perfectly'
+          'Enriched leads move directly from a Clay table into a Sendbox campaign',
+          'Every field from Clay carries over automatically',
+          'No CSV export or import step required',
+          'Complex enrichment workflows run through without manual intervention'
         ],
-        description: "Your data stays fresh, your campaigns stay targeted, and you stop manually moving data around like it's 2019."
+        description: "Data stays current, targeting stays sharp, and manually shuffling data between tools becomes unnecessary."
       }
     ]
   },
   {
     date: 'December 24, 2025',
-    title: 'Webhooks for Everything',
-    description: 'Connect Sendbox to literally anything. If it can send a webhook, it can add leads to your campaigns.',
+    title: 'A Webhook for Nearly Anything',
+    description: 'Anything capable of sending a webhook can now add leads into a Sendbox campaign.',
     features: [
       {
         name: 'Webhook Lead Ingestion',
         bullets: [
-          'Typeform submission? Add to campaign',
-          'Calendly booking? Add to nurture sequence',
-          'CRM stage change? Trigger outreach',
-          'Our webhook endpoint accepts leads from any source with all their data intact'
+          'A Typeform submission can drop straight into a campaign',
+          'A Calendly booking can trigger a nurture sequence',
+          'A CRM stage change can kick off outreach',
+          'The webhook endpoint accepts leads from any source with all their data preserved'
         ],
-        description: 'Build automation flows that would make Zapier jealous. Your entire tech stack now feeds directly into your outreach engine.'
+        description: 'The kind of automation flow that would impress Zapier — the whole tech stack can now feed directly into outreach.'
       }
     ]
   },
   {
     date: 'December 20, 2025',
-    title: 'Match Your ESP to Theirs',
-    description: 'Gmail to Gmail. Outlook to Outlook. The deliverability hack that actually works.',
+    title: "Sending Now Matches the Recipient's ESP",
+    description: 'Gmail-to-Gmail, Outlook-to-Outlook — a deliverability trick that genuinely moves the needle.',
     features: [
       {
         name: 'ESP Matching Strategy',
         bullets: [
-          'Email providers trust their own. Gmail to Gmail gets treated better than Outlook to Gmail',
-          "We automatically detect your recipient's email provider",
-          'Your emails route through a matching mailbox automatically',
-          'Higher inbox placement rates, better engagement, more replies'
+          'Providers trust their own network more — a Gmail-to-Gmail send gets better treatment than Gmail-to-Outlook',
+          "The recipient's email provider gets detected automatically",
+          'The send routes through a matching mailbox without manual routing',
+          'Better inbox placement follows, along with stronger engagement and more replies'
         ],
-        description: 'Your emails look more legitimate because they ARE more legitimate. Simple concept, massive impact on your cold email deliverability.'
+        description: 'The emails read as more legitimate because, structurally, they are — a simple idea with an outsized effect on deliverability.'
       }
     ]
   },
   {
     date: 'December 16, 2025',
-    title: 'Navigate Corporate Email Security',
-    description: 'Sending to enterprise leads? Their security gateways are watching. Now you can adapt.',
+    title: 'Adapting to Corporate Email Security',
+    description: 'Enterprise leads sit behind security gateways that scrutinize every send — sending strategy can now adapt to that automatically.',
     features: [
       {
         name: 'SEG Protected Leads Handling',
         bullets: [
-          'We detect when a lead is behind Proofpoint, Mimecast, or other Secure Email Gateways',
-          'Sending strategy adjusts automatically: slower cadence, cleaner templates, verified domains',
-          'Your emails reach the actual inbox instead of getting quarantined',
-          'Enterprise leads are often the biggest deals. Now you can actually reach them'
+          'Detects when a lead sits behind Proofpoint, Mimecast, or another Secure Email Gateway',
+          'Sending strategy shifts on its own — slower cadence, cleaner templates, verified sending domains',
+          'Emails land in the actual inbox rather than getting quarantined',
+          "Enterprise leads are often the largest deals on the table, and now they're actually reachable"
         ],
-        description: 'Stop losing enterprise opportunities to overzealous spam filters.'
+        description: 'Enterprise opportunities stop getting lost to overcautious spam filters.'
       }
     ]
   },
   {
     date: 'December 12, 2025',
-    title: 'Perfect Timing, Every Time',
-    description: 'Sending an email at 3am their time is a great way to get ignored. We fixed that.',
+    title: 'Every Send Lands at the Right Local Hour',
+    description: 'An email that lands at 3am their time is easy to ignore — that timing problem is fixed now.',
     features: [
       {
         name: 'Automatic Timezone Matching',
         bullets: [
-          "We detect each lead's timezone automatically",
-          "Your 9am email hits their inbox at 9am, whether they're in New York, London, or Sydney",
-          'No manual timezone math or spreadsheet gymnastics',
-          'Set your preferred send time once and we handle the rest'
+          "Each lead's timezone gets detected automatically",
+          'A 9am send lands at 9am local time, whether the lead is in New York, London, or Sydney',
+          'No spreadsheet math or manual timezone conversion required',
+          'Set a preferred send time once and the rest is handled automatically'
         ],
-        description: 'Better open rates, better response rates, less work for you.'
+        description: "Open rates improve, response rates improve, and there's less manual work involved."
       }
     ]
   },
   {
     date: 'December 8, 2025',
-    title: 'Visual Pipeline Management',
-    description: 'Finally, a CRM view built for cold outreach. See every deal at a glance.',
+    title: 'A Visual Pipeline, Finally',
+    description: 'A CRM view actually built for cold outreach, showing the whole pipeline at a glance.',
     features: [
       {
         name: 'CRM Boards',
         bullets: [
-          'Drag-and-drop kanban boards that show your entire pipeline visually',
-          "Move leads between stages and see who's stuck",
-          'Set reminders, add notes, track deal values',
-          'Updates automatically as your campaigns run'
+          'Kanban-style boards lay the pipeline out visually, drag-and-drop included',
+          "Move leads between stages and spot exactly who's stalled",
+          'Set reminders, leave notes, and track deal values right on the board',
+          'The board updates on its own as campaigns run'
         ],
-        description: "It's the bird's eye view you've been building in spreadsheets. No more wondering where that hot lead went. Your sales pipeline, organized at last."
+        description: "The bird's-eye view that used to live in a spreadsheet now lives here — no more wondering where a hot lead disappeared to."
       }
     ]
   },
   {
     date: 'December 4, 2025',
-    title: 'Copy Protection That Thinks for You',
-    description: 'ESPs are constantly scanning for patterns. The moment they flag your copy, your deliverability tanks. Unless you catch it first.',
+    title: 'Copy That Rewrites Itself Before It Gets Flagged',
+    description: 'ESPs scan constantly for repeating patterns, and once your copy gets flagged, deliverability drops fast — unless the flag gets caught before that happens.',
     features: [
       {
         name: 'Copy Fatigue Protection',
         bullets: [
-          'Monitors ESP signals in real-time for signs your copy got flagged',
-          'Auto-activates the moment we detect deliverability drops',
-          'Automatically rewrites your copy just enough to pass filters while keeping your message intact',
-          'Your campaigns keep delivering to inboxes without you doing anything'
+          'ESP signals get monitored in real time for early signs of a flag',
+          'Kicks in automatically the moment deliverability starts to slip',
+          'Rewrites the copy just enough to clear filters while keeping the original message intact',
+          'Campaigns keep reaching inboxes without any manual intervention'
         ],
-        description: 'Set it and forget it. We handle the copy rotation so you can focus on closing deals instead of rewriting emails.'
+        description: 'Turn it on and move on — copy rotation happens automatically, leaving more time for closing instead of rewriting emails.'
       }
     ]
   },
   {
     date: 'November 30, 2025',
-    title: 'The Warmup That Actually Works',
-    description: 'Most warmup tools send fake emails to fake inboxes. Ours builds real reputation with real engagement.',
+    title: 'Warmup Built on Real Engagement',
+    description: 'Most warmup tools bounce fake emails between fake inboxes. Ours builds reputation through genuine engagement instead.',
     features: [
       {
         name: 'Mailbox Warmup',
         bullets: [
-          'Real accounts with real engagement patterns in our warmup network',
-          'Your emails get opened, replied to, and marked as important',
-          'ESPs see genuine positive signals and reward you with better inbox placement',
-          'Warm up new mailboxes in days, not weeks'
+          'The warmup network runs on real accounts with real engagement patterns',
+          'Emails get opened, replied to, and marked important, not just delivered',
+          'ESPs pick up on those genuine positive signals and reward it with better inbox placement',
+          'New mailboxes reach warm status in days instead of weeks'
         ],
-        description: 'The best email warmup solution on the market. This is what "set and forget" actually looks like.'
+        description: '"Set it and forget it" as email warmup is genuinely supposed to work.'
       }
     ]
   },
   {
     date: 'November 26, 2025',
-    title: 'Switching from InboxKit? One Click.',
-    description: 'We made migrating dead simple. All your mailboxes, all your settings, zero downtime.',
+    title: 'Migrating from InboxKit Takes One Click',
+    description: 'Migration got a lot simpler — every mailbox and setting moves over with zero downtime.',
     features: [
       {
         name: '1-Click InboxKit Import',
         bullets: [
-          'Connect your InboxKit account and we pull everything over automatically',
-          'Mailboxes, warmup progress, settings. The works',
-          'No re-authenticating dozens of email accounts',
-          'Fully operational on Sendbox within minutes'
+          'Connecting an InboxKit account pulls everything over automatically',
+          'Mailboxes, warmup progress, settings — the entire setup comes across',
+          'No need to re-authenticate a long list of email accounts one by one',
+          'Fully up and running on Sendbox within minutes'
         ],
-        description: "No losing your warmup reputation. No campaign downtime. Migrations shouldn't be painful. This one isn't."
+        description: "Warmup reputation carries over intact and campaigns don't pause — migration shouldn't hurt, and this one doesn't."
       }
     ]
   },
   {
     date: 'November 22, 2025',
-    title: "Bounce Problems? We'll Wake You Up.",
-    description: "High bounce rates can tank your deliverability overnight. Now you'll know the second something's wrong.",
+    title: 'Bounce Spikes Now Trigger Instant Alerts',
+    description: "A spike in bounces can wreck deliverability overnight — now that spike gets flagged the instant it happens.",
     features: [
       {
         name: '24/7 Bounce Monitoring & Alerts',
         bullets: [
-          'We watch your bounce rates around the clock',
-          'Instant alerts via email or Slack the moment rates spike',
-          'Catch bad lists before they destroy your sender reputation',
-          'Identify problematic mailboxes before ESPs flag them'
+          'Bounce rates get watched around the clock',
+          'An alert fires over email or Slack the moment rates spike',
+          'Catch a bad list before it does lasting damage to sender reputation',
+          'Flag a problem mailbox before an ESP does'
         ],
-        description: "Peace of mind that your outreach is running clean, even when you're not watching."
+        description: "Confidence that outreach is running clean, even during the hours nobody's actively watching it."
       }
     ]
   },
   {
     date: 'November 18, 2025',
-    title: 'Test Every Inbox. No Limits.',
-    description: 'Where do your emails actually land? Now you can find out as many times as you want.',
+    title: 'Inbox Placement Testing, Without Limits',
+    description: 'Finding out exactly where an email lands is no longer rationed — test it as often as needed.',
     features: [
       {
         name: 'Unlimited Inbox Placement Tests',
         bullets: [
-          'Test deliverability across Gmail, Outlook, Yahoo, and every major provider',
-          "See exactly where you're landing: primary inbox, promotions, spam, or nowhere",
-          "Run tests before every campaign, after every change, whenever you're curious",
-          'No per-test fees eating into your budget'
+          'Deliverability tests run across Gmail, Outlook, Yahoo, and every other major provider',
+          'See precisely where a send landed: primary inbox, promotions, spam, or nowhere at all',
+          "Run a test before a campaign launches, after any change, or just out of curiosity",
+          'No per-test charge nibbling at the budget'
         ],
-        description: 'Finally understand your deliverability without rationing your tests.'
+        description: 'Deliverability finally becomes something you can understand, without rationing how often you check it.'
       }
     ]
   },
   {
     date: 'November 14, 2025',
-    title: 'Blacklist Monitoring That Never Sleeps',
-    description: 'Getting blacklisted happens. Not knowing about it for weeks is what kills you.',
+    title: 'Blacklist Monitoring, Round the Clock',
+    description: 'Landing on a blacklist happens to everyone eventually — not finding out for weeks is what actually does the damage.',
     features: [
       {
         name: 'Unlimited Blacklist Monitoring',
         bullets: [
-          'We check your domains and IPs against 100+ blacklists continuously',
-          'The moment you appear on one, you know',
-          'We tell you which list, why it probably happened, and exactly how to get delisted',
-          'Monitor unlimited domains and IPs'
+          'Domains and IPs get checked against 100+ blacklists on a continuous basis',
+          'Landing on any of them triggers an immediate alert',
+          'You get told which list, a likely reason why, and the exact steps to get delisted',
+          'Monitoring covers an unlimited number of domains and IPs'
         ],
-        description: 'Your sender reputation is too important to leave to chance. Stop finding out about blacklisting from your clients.'
+        description: "Sender reputation is too important to leave to chance — hearing about a blacklisting from a client is no longer how this gets discovered."
       }
     ]
   },
   {
     date: 'November 10, 2025',
-    title: 'Validate Every Email. Unlimited.',
-    description: "Bad emails mean bounces. Bounces mean reputation damage. We're removing that problem entirely.",
+    title: 'Email Validation, Without a Cap',
+    description: "A bad email leads to a bounce, and a bounce chips away at reputation — this removes that chain entirely.",
     features: [
       {
         name: 'Unlimited Email Validation',
         bullets: [
-          'Validate every email address before you send',
-          'Catch typos, spam traps, invalid domains, and risky addresses',
-          'Unlimited validations included with all paid plans',
-          'Clean lists mean better deliverability. Better deliverability means more replies'
+          'Every address gets validated before a single send goes out',
+          'Typos, spam traps, invalid domains, and risky addresses all get caught',
+          'Validation runs without a cap on every paid plan',
+          'A clean list improves deliverability, and better deliverability means more replies'
         ],
-        description: 'No per-validation costs eating into your budget. Just clean data and better results.'
+        description: 'No per-check fee working against the budget — just cleaner data and better results.'
       }
     ]
   },
   {
     date: 'November 6, 2025',
-    title: '700 Million Leads. Seriously.',
-    description: "Need B2B contacts? We've got the biggest database you'll find anywhere. Search, filter, export, send.",
+    title: '700 Million Leads to Search',
+    description: "Looking for B2B contacts? This is one of the largest databases available — search it, filter it, export it, and start sending.",
     features: [
       {
         name: '350M+ Lead Database & Bulk Export',
         bullets: [
-          'Over 350 million verified B2B contacts with emails, phone numbers, job titles, and company info',
-          'Search by industry, company size, location, technology used, or any criteria that matters for your ICP',
-          'Bulk export thousands of leads directly into your campaigns',
-          'Stop paying for multiple data providers'
+          'More than 350 million verified B2B contacts, complete with emails, phone numbers, job titles, and company details',
+          'Search by industry, company size, location, tech stack, or whatever criteria defines your ICP',
+          'Export thousands of leads at once directly into a campaign',
+          'Paying for multiple separate data providers is no longer necessary'
         ],
-        description: 'Your entire prospecting workflow now lives in one place.'
+        description: 'Prospecting, start to finish, now lives in a single place.'
       }
     ]
   },
   {
     date: 'October 28, 2025',
-    title: 'Enterprise Infrastructure in 5 Minutes',
-    description: 'Dedicated IPs. Dedicated domains. Full reputation control. Set up before your coffee gets cold.',
+    title: 'Dedicated Infrastructure, Live in 5 Minutes',
+    description: "Dedicated IPs, dedicated domains, complete control over reputation — and it's all set up before your coffee even cools down.",
     features: [
       {
         name: 'Dedicated Client Infrastructure',
         bullets: [
-          'Get your own isolated sending infrastructure with dedicated IPs and domains',
-          'Complete separation from other senders. Your reputation is YOUR reputation',
-          "Bad actors on shared infrastructure can't touch you",
-          'Setup takes 5 minutes, not the weeks it used to require'
+          'Spin up isolated sending infrastructure with dedicated IPs and domains',
+          'Fully separated from every other sender — reputation belongs to you alone',
+          'A bad actor on shared infrastructure has no way to affect you',
+          'Setup now takes 5 minutes instead of the weeks it once required'
         ],
-        description: 'Enterprise-grade cold email infrastructure, startup-speed deployment. Scale with confidence.'
+        description: 'Enterprise-grade infrastructure that deploys at startup speed — built to scale with confidence.'
       }
     ]
   },
   {
     date: 'October 18, 2025',
-    title: 'Smarter Lead Organization',
-    description: "When you're running 50 campaigns, knowing who said what becomes impossible. Unless you have AI doing the sorting for you.",
+    title: 'Replies Now Sort Themselves',
+    description: "Running 50 campaigns at once makes it nearly impossible to remember who said what — unless AI is sorting it for you.",
     features: [
       {
         name: 'Unlimited AI Tagging',
         bullets: [
-          'Every reply gets automatically categorized: interested, not interested, out of office, wrong person, asking for pricing, wants a demo, has objections',
-          'No limits on how many leads we process',
-          'Filter by tag and build follow-up sequences for specific responses',
-          'Zero manual work. Just open your dashboard and see where every conversation stands'
+          'Every reply gets sorted automatically into categories like interested, not interested, out of office, wrong person, pricing question, demo request, or objection',
+          "There's no cap on how many leads get processed",
+          'Filter by tag to build a follow-up sequence around a specific type of response',
+          'No manual sorting required — the dashboard already shows where every conversation stands'
         ],
-        description: 'Never let a hot lead slip through the cracks again.'
+        description: 'A hot lead is far less likely to slip through the cracks now.'
       }
     ]
   },
   {
     date: 'October 8, 2025',
-    title: 'Reply Handling Made Simple',
-    description: 'Your inbox is probably a mess. Hundreds of "not interested" replies mixed with hot leads asking questions. We built a better way to handle it.',
+    title: 'A Simpler Way to Handle Replies',
+    description: "Hundreds of \"not interested\" replies tend to bury the hot leads asking real questions — this was built to sort through that mess.",
     features: [
       {
         name: 'Reply Agents',
         bullets: [
-          'Generate perfect replies in one click. No more switching to ChatGPT',
-          'Built-in grammar and tone checking. No more Grammarly tabs',
-          'Context-aware suggestions based on the full conversation thread',
-          'Handles objections, follow-ups, and meeting requests intelligently'
+          'A single click generates a solid reply, no tab switch to ChatGPT required',
+          "Grammar and tone checking are built in, so a separate Grammarly tab isn't needed",
+          'Suggestions take the entire conversation thread into account, not just the last message',
+          'Objections, follow-ups, and meeting requests all get handled intelligently'
         ],
-        description: "Your hot leads get faster responses because you're not spending time crafting each reply from scratch. Just review, tweak if needed, and send."
+        description: "Hot leads hear back faster since replies no longer get built from a blank page — just review, adjust if needed, and send."
       }
     ]
   },
   {
     date: 'September 28, 2025',
-    title: 'Your Sequences, Analyzed by AI',
-    description: 'Wrote a 5-step sequence but not sure if step 3 is killing your momentum? Our AI analyzer has opinions (good ones).',
+    title: 'AI Now Reviews Your Sequences',
+    description: "Not sure if step 3 of a 5-step sequence is quietly killing momentum? The AI analyzer has opinions on that, and they're usually right.",
     features: [
       {
         name: 'AI Sequence Analyzer',
         bullets: [
-          'Catches overly salesy language that triggers spam filters',
-          'Identifies weak CTAs and suggests stronger alternatives',
-          'Flags missing personalization opportunities',
-          'Tells you when emails are too long (and what to cut)'
+          'Flags language that reads too salesy and risks tripping spam filters',
+          'Spots a weak call-to-action and proposes a stronger one',
+          'Points out where personalization is missing',
+          'Calls out when an email runs too long, and suggests exactly what to trim'
         ],
-        description: 'Think of it as a senior sales rep reviewing your outreach before you hit send. Except it never sleeps and checks every single sequence.'
+        description: 'It functions like a senior rep proofing every sequence before it goes out, except it never sleeps and reviews all of them, not just a sample.'
       }
     ]
   }
@@ -812,7 +812,7 @@ const ChangelogEntry = ({ entry, isLast }) => {
       {/* Content */}
       <div className="max-w-3xl">
         {entry.tag && (
-          <span className="inline-block mb-3 px-3 py-1 text-xs font-medium uppercase tracking-wide text-[#2663eb] bg-blue-50 rounded-full">
+          <span className="inline-block mb-3 px-3 py-1 text-xs font-medium uppercase tracking-wide text-[#695AF2] bg-violet-50 rounded-full">
             {entry.tag}
           </span>
         )}
@@ -841,7 +841,7 @@ const ChangelogEntry = ({ entry, isLast }) => {
                 <ul className="space-y-2 mb-4">
                   {feature.bullets.map((bullet, bulletIdx) => (
                     <li key={bulletIdx} className="flex items-start gap-3 text-[#6b7280] text-base leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2663eb] mt-2 flex-shrink-0"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#695AF2] mt-2 flex-shrink-0"></span>
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -859,7 +859,7 @@ const ChangelogEntry = ({ entry, isLast }) => {
             href={entry.link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-8 px-5 py-2.5 bg-[#2663eb] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg"
+            className="inline-flex items-center gap-2 mt-8 px-5 py-2.5 bg-[#695AF2] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg"
           >
             {entry.link.label}
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -895,7 +895,7 @@ const Changelog = () => {
             Changelog
           </h1>
           <p className="mt-4 text-lg text-[#6b7280] max-w-3xl">
-            Here&apos;s everything new in Sendbox, from major features to quality-of-life improvements.
+            A running record of what&apos;s shipped in Sendbox, from headline features down to the small quality-of-life fixes.
           </p>
         </motion.div>
 

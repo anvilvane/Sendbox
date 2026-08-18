@@ -33,7 +33,7 @@ function linkifyParagraph(text, linkedInThisPage) {
 
     // Add linked text
     parts.push(
-      <a key={match.index} href={url} className="text-[#2663eb] hover:underline underline-offset-2">
+      <a key={match.index} href={url} className="text-[#695AF2] hover:underline underline-offset-2">
         {matchedText}
       </a>
     );

@@ -22,7 +22,7 @@ export default function RelatedLinks({ eyebrow = 'keep exploring', heading = 'Re
   return (
     <Section className="py-14 md:py-20 border-t border-gray-100">
       <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-        <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+        <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
         <span>{eyebrow}</span>
       </div>
       <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold text-black tracking-tight leading-[1.2] mb-8">
@@ -39,7 +39,7 @@ export default function RelatedLinks({ eyebrow = 'keep exploring', heading = 'Re
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center gap-1.5 text-[14px] text-[#2663eb] font-medium hover:underline no-underline"
+                    className="group inline-flex items-center gap-1.5 text-[14px] text-[#695AF2] font-medium hover:underline no-underline"
                   >
                     {link.name}
                     <ArrowRight

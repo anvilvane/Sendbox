@@ -121,7 +121,7 @@ export default async function BlogArticlePage({ params }) {
               {article.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[12px] font-medium text-[#7196f4] bg-[#2663eb]/10 px-2 py-0.5 rounded"
+                  className="text-[12px] font-medium text-[#7196f4] bg-[#695AF2]/10 px-2 py-0.5 rounded"
                 >
                   {tag}
                 </span>
@@ -168,7 +168,7 @@ export default async function BlogArticlePage({ params }) {
         <div className="mt-16 pt-8 border-t border-gray-100">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[14px] font-medium text-[#2663eb] hover:gap-3 transition-all no-underline"
+            className="inline-flex items-center gap-2 text-[14px] font-medium text-[#695AF2] hover:gap-3 transition-all no-underline"
           >
             ← Back to blog
           </Link>

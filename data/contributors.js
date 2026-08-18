@@ -7,34 +7,34 @@ export const contributorsData = [
     avatar: '/cody.jpeg',
     badge: { label: 'Power Contributor', icon: 'flame' },
     joinedDate: 'December 8, 2025',
-    bio: 'One of our high-volume players pushing Sendbox to its limits. Cody shows us what power users look for when running thousands of mailboxes at scale.',
+    bio: 'Cody is among the heaviest senders on the platform, routinely testing what Sendbox can handle. His experience running mailboxes by the thousand shows us exactly what power users need at that scale.',
     links: {
       linkedin: 'https://www.linkedin.com/in/dotcomcj/',
     },
     contributions: [
       {
         feature: 'Advanced Webhook Options',
-        description: 'Recommended adding smarter webhook controls: trigger only on positive replies, fire on tag changes, and limit to once per lead. All three shipped.',
+        description: 'Suggested finer-grained webhook controls, firing only on positive replies, triggering on tag changes, and capping delivery to once per lead. We built all three.',
         status: 'live',
       },
       {
         feature: 'Inbox Live Refresh',
-        description: 'Recommended real-time inbox updates so new messages show up instantly without manual refreshing. No more hitting reload to see replies.',
+        description: 'Pushed for the inbox to update in real time rather than making users refresh to catch new messages. Replies now show up the instant they arrive.',
         status: 'live',
       },
       {
         feature: 'Conversations CSV Export',
-        description: 'Requested the ability to export full conversation threads from Unibox as CSV. Pull your data out whenever you need it.',
+        description: 'Asked for a way to pull complete conversation threads out of Unibox as CSV. That data is now exportable whenever you want it.',
         status: 'live',
       },
       {
         feature: 'Bulk Outlook/Azure Import',
-        description: 'Showed us the need for in-platform support for bulk importing thousands of Outlook and Azure mailboxes. A game-changer for teams running at scale.',
+        description: 'Made the case for native support to bulk import thousands of Outlook and Azure mailboxes at once, a huge unlock for teams operating at scale.',
         status: 'live',
       },
       {
         feature: 'Nested Spintax Support',
-        description: 'Spotted that we needed spintax inside spintax for more natural variations. Shipped same day.',
+        description: 'Noticed we needed spintax that could nest inside other spintax for more natural-sounding variation. We shipped it the same day.',
         status: 'live',
       },
     ],
@@ -46,29 +46,29 @@ export const contributorsData = [
     avatar: '/harvey.jpeg',
     badge: { label: 'Power Sender', icon: 'flame' },
     joinedDate: 'April 2026',
-    bio: 'Runs campaigns at scale and knows exactly where the rough edges are. Harvey has a talent for spotting the details most people miss, from analytics gaps to UX friction that only shows up when you manage a lot of campaigns at once.',
+    bio: 'Harvey runs campaigns at real scale, which means he runs straight into the rough edges most people never hit. He has a knack for catching what others miss, analytics gaps included, along with UX friction that only surfaces once you\'re juggling a lot of campaigns at once.',
     links: {
       linkedin: 'https://www.linkedin.com/in/harveylecoldoutbound/',
     },
     contributions: [
       {
         feature: 'Dynamic Time Variables',
-        description: 'Suggested liquid variables that adapt to send time: good morning, good afternoon, day of week, time of day. Your sequences now feel written for the moment the lead opens them.',
+        description: 'Proposed liquid variables that shift with send time, good morning versus good afternoon, day of week, time of day. Sequences now read like they were written for the exact moment a lead opens them.',
         status: 'live',
       },
       {
         feature: 'Positive Reply Breakdown',
-        description: 'Spotted that our analytics were missing a deeper breakdown of positive replies. Now you can see exactly what kind of interest is coming back, not just that interest exists.',
+        description: 'Flagged a gap in our analytics: positive replies were reported as a single number with no breakdown. Now you can see exactly what kind of interest is coming back, not just that it is.',
         status: 'live',
       },
       {
         feature: 'Multi-Campaign UX Polish',
-        description: 'Pointed out friction points that only show up when you manage a large volume of campaigns. Shipped UX changes that make day-to-day campaign management actually pleasant.',
+        description: 'Called out friction that only appears once you\'re managing a large volume of campaigns. The resulting UX changes made day-to-day campaign management something people actually don\'t mind doing.',
         status: 'live',
       },
       {
         feature: 'Unibox & AI Tagging Fixes',
-        description: 'Helped us identify bugs and gaps in our unibox and AI tagging. The kind of issues you only catch if you actually live in the inbox every day.',
+        description: 'Helped surface bugs and gaps in Unibox and AI tagging, the kind of issues that only turn up if you\'re actually living in the inbox every single day.',
         status: 'live',
       },
     ],
@@ -79,14 +79,14 @@ export const contributorsData = [
     role: 'Founder & GTM Builder',
     avatar: '/adnan.png',
     joinedDate: 'May 2026',
-    bio: 'Has a sharp eye for the friction most people learn to tolerate. Adnan called out a UX problem in mailbox management most would have just worked around, and his feedback reshaped how it works.',
+    bio: 'Adnan notices the friction most people would just quietly put up with. He flagged a UX problem in mailbox management that most users would have simply worked around, and his feedback ended up reshaping how the whole thing works.',
     links: {
       linkedin: 'https://www.linkedin.com/in/adnanmanna/',
     },
     contributions: [
       {
         feature: 'Mailbox Management UX Rework',
-        description: 'Flagged that managing mailboxes inside a campaign was clunkier than it needed to be. We took the feedback, reworked the flow, and added options that make selecting and managing mailboxes far simpler.',
+        description: 'Pointed out that managing mailboxes from within a campaign was more cumbersome than it needed to be. We took that feedback, rebuilt the flow, and added options that make selecting and managing mailboxes far more straightforward.',
         status: 'live',
       },
     ],
@@ -97,34 +97,34 @@ export const contributorsData = [
     role: 'Early Adopter',
     avatar: '/bojan.png',
     joinedDate: 'December 23, 2025',
-    bio: 'An early adopter who immediately started making Sendbox better. Bojan has a sharp eye for UX friction and edge cases that slip through the cracks.',
+    bio: 'Bojan started improving Sendbox almost as soon as he adopted it. He has a sharp eye for UX friction and the edge cases that tend to slip through the cracks.',
     links: {
       linkedin: 'https://www.linkedin.com/in/bojan-najdov/',
     },
     contributions: [
       {
         feature: 'Do Not Contact Domains',
-        description: 'Suggested adding entire domains to the do not contact list, not just individual emails. Essential for keeping outreach clean.',
+        description: 'Suggested letting the do-not-contact list block entire domains, not just individual addresses, essential for keeping outreach lists clean.',
         status: 'live',
       },
       {
         feature: 'Warmup Health Score Filtering',
-        description: 'Ability to select email inboxes based on their warmup health score. Send from your healthiest mailboxes first.',
+        description: 'Requested the ability to select mailboxes by their warmup health score, so sends go out from the healthiest inboxes first.',
         status: 'live',
       },
       {
         feature: 'Lead Enrichment Bug Fix',
-        description: 'Reported a bug with enriching leads, specifically around email address verification. Fixed same day.',
+        description: 'Reported a bug in lead enrichment tied to email address verification. We fixed it the same day.',
         status: 'live',
       },
       {
         feature: 'Leads Filter Bug Fix',
-        description: 'Found an issue where filtered leads would disappear even after clearing filters. Caught an edge case we missed.',
+        description: 'Caught an issue where filtered leads stayed hidden even after clearing the filter, an edge case we\'d missed entirely.',
         status: 'live',
       },
       {
         feature: 'Bulk Lead Deletion',
-        description: 'Wanted a faster way to clean up leads. Now you can select one or multiple campaigns and delete all leads at once. No more 5 clicks per campaign.',
+        description: 'Wanted a quicker way to clean up leads. You can now select one campaign or several and clear all their leads in a single action, instead of five clicks per campaign.',
         status: 'live',
       },
     ],
@@ -135,19 +135,19 @@ export const contributorsData = [
     role: 'Early User',
     avatar: '/floris.png',
     joinedDate: 'December 2025',
-    bio: 'Puts our warmup through its paces. Floris recovered his SMTP mailboxes from 98% spam rate to 95% inbox rate in just 30 days.',
+    bio: 'Floris has stress-tested our warmup thoroughly. He took his SMTP mailboxes from a 98% spam rate to a 95% inbox rate in just 30 days.',
     links: {
       linkedin: 'https://www.linkedin.com/in/floris-jansen-%F0%9F%91%95-364426185/',
     },
     contributions: [
       {
         feature: 'Warmup Validation',
-        description: 'Tested our warmup end-to-end on SMTP mailboxes and proved the system works. Went from 98% spam to 95% inbox in 30 days.',
+        description: 'Ran our warmup end-to-end on SMTP mailboxes and proved out the system, going from 98% spam to 95% inbox placement in 30 days.',
         status: 'live',
       },
       {
         feature: 'Campaign Subsequences',
-        description: 'Suggested adding subsequences within campaigns so you can branch follow-ups based on lead behavior without creating separate campaigns.',
+        description: 'Suggested letting campaigns branch into subsequences, so follow-ups can adapt to lead behavior without spinning up a whole separate campaign.',
         status: 'live',
       },
     ],
@@ -158,24 +158,24 @@ export const contributorsData = [
     role: 'Power User',
     avatar: '/ahmad.jpeg',
     joinedDate: 'January 16, 2026',
-    bio: 'Knows exactly where the friction is. Ahmad points out the small annoyances that slow down real workflows and helps us fix them fast.',
+    bio: 'Ahmad has a clear read on where the friction lives. He surfaces the small annoyances that slow down real workflows and helps get them fixed quickly.',
     links: {
       linkedin: 'https://www.linkedin.com/in/coldemailcopywriter/',
     },
     contributions: [
       {
         feature: 'Filter Untagged Mailboxes',
-        description: 'Added ability to filter for mailboxes with no tags. Sometimes you need to find what isn\'t organized yet. Live in under 4 hours.',
+        description: 'Requested a filter for mailboxes without any tags, useful for finding what hasn\'t been organized yet. Live in under 4 hours.',
         status: 'live',
       },
       {
         feature: 'Auto-Populate Custom Field Names',
-        description: 'Custom fields now automatically pull names from your CSV column headers. No more manually typing each one. Live in under 4 hours.',
+        description: 'Custom fields now pull their names straight from your CSV column headers automatically, no more typing each one by hand. Live in under 4 hours.',
         status: 'live',
       },
       {
         feature: 'Live Sequence Preview',
-        description: 'Preview your sequence edits without saving first. Edit, preview, edit, preview. No more waiting 3-4 seconds between each change. Live in under 4 hours.',
+        description: 'Sequence edits can now be previewed without saving first, edit, preview, edit, preview, with no 3-4 second wait between each change. Live in under 4 hours.',
         status: 'live',
       },
     ],
@@ -186,19 +186,19 @@ export const contributorsData = [
     role: 'High-Volume Operator',
     avatar: '/nick-block.jpeg',
     joinedDate: 'December 8, 2025',
-    bio: 'A power user who helps stress-test our infrastructure. Nick has an eye for the small details that make a big difference in day-to-day operations.',
+    bio: 'Nick is a power user who helps push our infrastructure to its limits. He has an eye for the small details that end up making a real difference day to day.',
     links: {
       linkedin: 'https://www.linkedin.com/in/nick-block-bb0741243/',
     },
     contributions: [
       {
         feature: 'Bulk Outlook/Azure Import',
-        description: 'Partnered with Cody to show us the need for robust bulk import for thousands of Outlook and Azure mailboxes. Their feedback made this feature rock solid.',
+        description: 'Worked alongside Cody to make the case for robust bulk import of thousands of Outlook and Azure mailboxes. Their combined feedback made the feature rock solid.',
         status: 'live',
       },
       {
         feature: 'Signature Spintax',
-        description: 'Noticed signatures were a blind spot for variation. Now you can spin your signatures too. Shipped same day.',
+        description: 'Noticed email signatures were a blind spot when it came to variation. Signatures can now be spun too. Shipped the same day.',
         status: 'live',
       },
     ],

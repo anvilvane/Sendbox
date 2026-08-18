@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
           className="mb-16 md:mb-20"
         >
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl"></div>
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
             <span>privacy</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-tight">
@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
           <div>
             <h2 className="text-xl font-semibold text-black mb-3">1. Introduction</h2>
             <p className="text-[#6b7280] leading-relaxed">
-              Sendbox (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the sendbox.ai website and the Sendbox platform. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our services. By using Sendbox, you agree to the practices described in this policy.
+              Sendbox (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the sendboxes.tech website and the Sendbox platform. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our services. By using Sendbox, you agree to the practices described in this policy.
             </p>
           </div>
 
@@ -144,7 +144,7 @@ const PrivacyPolicy = () => {
               <li><strong className="text-black">Restriction:</strong> Request restriction of processing in certain circumstances</li>
             </ul>
             <p className="text-[#6b7280] leading-relaxed mt-3">
-              For GDPR (EU/EEA) and CCPA (California) requests, contact us at support@sendbox.ai. We will respond within 30 days.
+              For GDPR (EU/EEA) and CCPA (California) requests, contact us at support@sendboxes.tech. We will respond within 30 days.
             </p>
           </div>
 
@@ -177,8 +177,8 @@ const PrivacyPolicy = () => {
             <h2 className="text-xl font-semibold text-black mb-3">11. Contact</h2>
             <p className="text-[#6b7280] leading-relaxed">
               If you have questions about this Privacy Policy or wish to exercise your data rights, contact us at{' '}
-              <a href="mailto:support@sendbox.ai" className="text-[#2663eb] hover:underline">
-                support@sendbox.ai
+              <a href="mailto:support@sendboxes.tech" className="text-[#695AF2] hover:underline">
+                support@sendboxes.tech
               </a>.
             </p>
           </div>

@@ -1,6 +1,7 @@
 import { getSEOTags, getBreadcrumbSchema } from '@/libs/seo';
 import config from '@/config';
 import RequestDemoModal from '@/components/RequestDemoModal';
+import { APP_LOGIN_URL } from "@/lib/app-url";
 
 export const metadata = getSEOTags({
   title: 'Sendbox University — every guide, playbook, and comparison',
@@ -236,7 +237,7 @@ export default function UniversityPage() {
               Book a 15-minute walkthrough
             </RequestDemoModal>{' '}
             or{' '}
-            <a href="https://app.sendbox.ai/login" className="link link-primary">
+            <a href={APP_LOGIN_URL} className="link link-primary">
               start in the app
             </a>
             .

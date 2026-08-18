@@ -44,7 +44,7 @@ export default function BlogIndex() {
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-          <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl"></div>
+          <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
           <span>blog</span>
         </div>
 
@@ -83,13 +83,13 @@ export default function BlogIndex() {
                     {article.tags?.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="text-[12px] font-medium text-[#7196f4] bg-[#2663eb]/10 px-2 py-0.5 rounded"
+                        className="text-[12px] font-medium text-[#7196f4] bg-[#695AF2]/10 px-2 py-0.5 rounded"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h2 className="text-[18px] font-semibold tracking-tight text-black group-hover:text-[#2663eb] transition-colors leading-snug mb-2">
+                  <h2 className="text-[18px] font-semibold tracking-tight text-black group-hover:text-[#695AF2] transition-colors leading-snug mb-2">
                     {article.title}
                   </h2>
                   <p className="text-[14px] text-[#6b7280] leading-relaxed line-clamp-2 mb-3">

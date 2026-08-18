@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 import TableOfContents from './TableOfContents';
 import FeatureFAQ from './FeatureFAQ';
@@ -42,7 +44,7 @@ export default function WhatIsSendboxTemplate({ data }) {
           </nav>
 
           <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>about sendbox</span>
           </div>
 
@@ -90,7 +92,7 @@ export default function WhatIsSendboxTemplate({ data }) {
                 <p className="text-[15px] font-semibold text-white mb-0.5">Ready to try Sendbox?</p>
                 <p className="text-sm text-gray-400">Dedicated IPs and isolated infrastructure on every plan.</p>
               </div>
-              <a href="https://app.sendbox.ai/login" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2663eb] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0">
+              <a href={APP_LOGIN_URL} className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#695AF2] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0">
                 Get Started <ArrowRightIcon size={14} className="transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>

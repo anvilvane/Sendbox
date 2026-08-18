@@ -118,7 +118,7 @@ function ContentSection({ section }) {
           <ul className="space-y-2">
             {section.highlights.map((h, i) => (
               <li key={i} className="flex items-start gap-2.5 text-[14px] text-[#374151] leading-relaxed">
-                <span className="w-1 h-1 rounded-full bg-[#2663eb] flex-shrink-0 mt-[9px]" />
+                <span className="w-1 h-1 rounded-full bg-[#695AF2] flex-shrink-0 mt-[9px]" />
                 <span>{h}</span>
               </li>
             ))}
@@ -137,7 +137,7 @@ function KeepReading({ links }) {
       <ul className="space-y-1.5">
         {links.map((link, i) => (
           <li key={i}>
-            <a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#2663eb] font-medium hover:underline">
+            <a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#695AF2] font-medium hover:underline">
               {link.title} <ArrowSquareOut size={13} />
             </a>
           </li>

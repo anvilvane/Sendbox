@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 import React from 'react';
 import { ArrowRightIcon } from '@phosphor-icons/react/dist/ssr';
 
@@ -23,7 +25,7 @@ export default function FeatureBento({ competitorCallout, howItWorks, detailBloc
         {/* Section Header */}
         <div className="mb-10 md:mb-14">
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>why sendbox</span>
           </div>
 
@@ -132,7 +134,7 @@ export default function FeatureBento({ competitorCallout, howItWorks, detailBloc
                 <div key={i} className={`p-6 md:p-8 ${i < useCases.length - 1 ? 'md:border-r border-gray-200' : ''} border-b md:border-b-0 border-gray-200`}>
                   <h3 className="text-[15px] font-medium text-black tracking-tight">{useCase.title}</h3>
                   <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed mb-4">{useCase.description}</p>
-                  <a href="https://app.sendbox.ai/login" className="inline-flex items-center gap-2 text-[#2663eb] bg-transparent border-none cursor-pointer text-sm font-medium transition-all hover:gap-3 group">
+                  <a href={APP_LOGIN_URL} className="inline-flex items-center gap-2 text-[#695AF2] bg-transparent border-none cursor-pointer text-sm font-medium transition-all hover:gap-3 group">
                     Start sending
                     <ArrowRightIcon size={14} className="transition-transform group-hover:translate-x-0.5" />
                   </a>

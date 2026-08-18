@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 const inputClass = 'w-full py-2.5 sm:py-3 px-4 rounded-lg border border-[#e5e5e5] text-sm sm:text-[15px] text-black placeholder:text-[#9ca3af] focus:outline-none transition-all';
-const btnClass = 'relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50';
+const btnClass = 'relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50';
 
 function getColor(rate) {
   if (rate > 40) return { color: '#16a34a', label: 'Excellent', context: 'Your open rate is well above average.' };

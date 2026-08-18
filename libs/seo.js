@@ -142,7 +142,7 @@ export const getOrganizationSchema = () => ({
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
-    email: config.mailgun?.supportEmail || "support@sendbox.ai",
+    email: config.mailgun?.supportEmail || "support@sendboxes.tech",
     availableLanguage: ["English"],
   },
   ...(config.socialLinks?.length > 0 && { sameAs: config.socialLinks }),

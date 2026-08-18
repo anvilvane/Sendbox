@@ -23,13 +23,13 @@ function HubCard({ item }) {
       href={item.href}
       className="group rounded-xl border border-gray-200 p-5 hover:border-gray-300 hover:shadow-sm transition-all flex flex-col"
     >
-      <h3 className="text-[15px] font-semibold text-black group-hover:text-[#2663eb] transition-colors mb-1.5">
+      <h3 className="text-[15px] font-semibold text-black group-hover:text-[#695AF2] transition-colors mb-1.5">
         {item.title}
       </h3>
       <p className="text-[13px] text-[#6b7280] leading-relaxed line-clamp-3 flex-1">
         {item.description}
       </p>
-      <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-1 text-[13px] font-medium text-[#2663eb]">
+      <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-1 text-[13px] font-medium text-[#695AF2]">
         {item.cta || 'Learn more'}
         <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
       </div>
@@ -49,7 +49,7 @@ export default function HubTemplate({ eyebrow, breadcrumb, title, description, s
           </nav>
 
           <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>{eyebrow}</span>
           </div>
 

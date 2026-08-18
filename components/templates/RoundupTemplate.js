@@ -1,3 +1,5 @@
+import { APP_LOGIN_URL } from "@/lib/app-url";
+
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRightIcon, ArrowSquareOut, CheckCircle, Crown } from '@phosphor-icons/react/dist/ssr';
@@ -33,7 +35,7 @@ function InlineCTA() {
         <p className="text-[15px] font-semibold text-white mb-0.5">Try Sendbox</p>
         <p className="text-sm text-gray-400">Dedicated IPs. Isolated infrastructure. From $99/mo.</p>
       </div>
-      <a href="https://app.sendbox.ai/login" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2663eb] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0">
+      <a href={APP_LOGIN_URL} className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#695AF2] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0">
         Get Started <ArrowRightIcon size={14} className="transition-transform group-hover:translate-x-0.5" />
       </a>
     </div>
@@ -49,15 +51,15 @@ function ToolCard({ tool }) {
   }, []);
 
   return (
-    <div id={`tool-${tool.rank}`} className={`scroll-mt-24 rounded-xl border p-5 md:p-6 ${tool.isSendbox ? 'border-[#2663eb]/20 bg-[#2663eb]/[0.015]' : 'border-gray-200'}`}>
+    <div id={`tool-${tool.rank}`} className={`scroll-mt-24 rounded-xl border p-5 md:p-6 ${tool.isSendbox ? 'border-[#695AF2]/20 bg-[#695AF2]/[0.015]' : 'border-gray-200'}`}>
       {/* Header */}
       <div className="flex items-center gap-3 mb-1">
-        <span className={`text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${tool.isSendbox ? 'bg-[#2663eb] text-white' : 'bg-gray-100 text-[#6b7280]'}`}>{tool.rank}</span>
+        <span className={`text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${tool.isSendbox ? 'bg-[#695AF2] text-white' : 'bg-gray-100 text-[#6b7280]'}`}>{tool.rank}</span>
         {tool.logo && (
           <Image src={tool.logo} alt={tool.name} width={80} height={20} className={`h-5 w-auto flex-shrink-0 ${tool.isSendbox ? '' : 'rounded'}`} />
         )}
         {!tool.isSendbox && <h3 className="text-lg font-semibold text-black">{tool.name}</h3>}
-        {tool.isSendbox && <span className="text-[11px] font-medium text-[#2663eb] bg-[#2663eb]/10 px-2 py-0.5 rounded-full flex-shrink-0">Our Pick</span>}
+        {tool.isSendbox && <span className="text-[11px] font-medium text-[#695AF2] bg-[#695AF2]/10 px-2 py-0.5 rounded-full flex-shrink-0">Our Pick</span>}
         <span className="text-[12px] text-[#9ca3af] ml-auto whitespace-nowrap">{tool.startingPrice}</span>
       </div>
       <p className="text-[13px] text-[#9ca3af] mb-4 ml-[32px]">{tool.tagline}</p>
@@ -98,12 +100,12 @@ function ToolCard({ tool }) {
       {tool.links && (tool.links.vs || tool.links.alt) && (
         <div className="flex items-center gap-4 mt-3 text-[13px]">
           {tool.links.vs && (
-            <a href={tool.links.vs} className="inline-flex items-center gap-1 text-[#2663eb] font-medium hover:underline">
+            <a href={tool.links.vs} className="inline-flex items-center gap-1 text-[#695AF2] font-medium hover:underline">
               Sendbox vs {tool.name} <ArrowSquareOut size={12} />
             </a>
           )}
           {tool.links.alt && (
-            <a href={tool.links.alt} className="inline-flex items-center gap-1 text-[#2663eb] font-medium hover:underline">
+            <a href={tool.links.alt} className="inline-flex items-center gap-1 text-[#695AF2] font-medium hover:underline">
               {tool.name} Alternatives <ArrowSquareOut size={12} />
             </a>
           )}
@@ -113,7 +115,7 @@ function ToolCard({ tool }) {
       {/* CTA for Sendbox */}
       {tool.isSendbox && (
         <div className="mt-4">
-          <a href="https://app.sendbox.ai/login" className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2663eb] text-white rounded-lg text-[13px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg">
+          <a href={APP_LOGIN_URL} className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#695AF2] text-white rounded-lg text-[13px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg">
             Get Started
           </a>
         </div>
@@ -129,7 +131,7 @@ function KeepReading({ links }) {
       <p className="text-sm font-semibold text-black mb-3">Keep reading</p>
       <ul className="space-y-1.5">
         {links.map((link, i) => (
-          <li key={i}><a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#2663eb] font-medium hover:underline">{link.title} <ArrowSquareOut size={13} /></a></li>
+          <li key={i}><a href={link.url} className="inline-flex items-center gap-1.5 text-[14px] text-[#695AF2] font-medium hover:underline">{link.title} <ArrowSquareOut size={13} /></a></li>
         ))}
       </ul>
     </div>
@@ -163,7 +165,7 @@ export default function RoundupTemplate({
           </nav>
 
           <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>roundup</span>
           </div>
 
@@ -195,7 +197,7 @@ export default function RoundupTemplate({
                 <ul className="space-y-2">
                   {d.methodology.criteria.map((c, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-[14px] text-[#374151] leading-relaxed">
-                      <CheckCircle size={15} weight="fill" className="text-[#2663eb] flex-shrink-0 mt-[3px]" />
+                      <CheckCircle size={15} weight="fill" className="text-[#695AF2] flex-shrink-0 mt-[3px]" />
                       <span>{c}</span>
                     </li>
                   ))}

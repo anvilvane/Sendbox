@@ -1,5 +1,6 @@
 'use client';
 
+import { default as APP_URL } from "@/lib/app-url";
 import { useCallback, useRef, useEffect, useState } from 'react';
 import { GoogleOAuthProvider, useGoogleOneTapLogin } from '@react-oauth/google';
 
@@ -30,7 +31,7 @@ function GoogleOneTap() {
     try {
       window?.datafast("google_one_tap_signup");
       const credential = encodeURIComponent(credentialResponse.credential);
-      window.location.href = `https://app.sendbox.ai/api/auth/google-credential?credential=${credential}`;
+      window.location.href = `${APP_URL}/api/auth/google-credential?credential=${credential}`;
     } catch (err) {
       console.error('Google One-Tap error:', err);
       isLoadingRef.current = false;

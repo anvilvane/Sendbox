@@ -18,7 +18,7 @@ export default function FeatureDetails({ competitorCallout, detailBlocks, eyebro
       <div className="max-w-6xl mx-auto">
         <div className="mb-10 md:mb-14">
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>{eyebrow}</span>
           </div>
 

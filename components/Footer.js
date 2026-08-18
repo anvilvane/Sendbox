@@ -60,8 +60,8 @@ const footerColumns = [
       { name: 'What is Sendbox?', href: '/what-is-sendbox' },
       { name: 'Changelog', href: '/changelog' },
       { name: 'Contributors', href: '/contributors' },
-      { name: 'Documentation', href: 'https://docs.sendbox.ai' },
-      { name: 'Support', href: 'mailto:support@sendbox.ai' },
+      { name: 'Documentation', href: 'https://docs.sendboxes.tech' },
+      { name: 'Support', href: 'mailto:support@sendboxes.tech' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
       { name: 'Fair Usage Policy', href: '/fair-usage-policy' },
@@ -101,8 +101,9 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mb-10 md:mb-12">
           {/* Logo & tagline */}
           <div className="lg:w-[240px] shrink-0">
-            <Link href="/" scroll={false}>
-              <Image src="/logo-full.png" alt="Sendbox" className="h-8 w-auto" width={200} height={200} />
+            <Link href="/" scroll={false} className="flex items-center gap-2">
+              <Image src="/logo-icon.png" alt="" className="h-10 w-10" width={128} height={128} />
+              <span className="text-xl font-semibold text-gray-900 tracking-tight">Sendbox</span>
             </Link>
             <p className="mt-3 text-sm text-[#6b7280] leading-relaxed">
               <Link href="/features/campaigns" className="hover:text-black transition-colors">Sendbox cold email platform</Link> with <Link href="/deliverability/human-like-warmup" className="hover:text-black transition-colors">Sendbox warmup</Link> and <Link href="/deliverability/dedicated-ips" className="hover:text-black transition-colors">Sendbox dedicated IPs</Link>.

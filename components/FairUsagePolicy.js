@@ -111,7 +111,7 @@ const FairUsagePolicy = () => {
           className="mb-12 md:mb-16 max-w-4xl"
         >
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl"></div>
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
             <span>fair usage</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-tight">
@@ -161,7 +161,7 @@ const FairUsagePolicy = () => {
                         >
                           <div>{isObject ? cell.value : cell}</div>
                           {isObject && (
-                            <div className="text-[11.5px] text-[#2663eb] mt-1">{cell.note}</div>
+                            <div className="text-[11.5px] text-[#695AF2] mt-1">{cell.note}</div>
                           )}
                         </div>
                       );
@@ -209,7 +209,7 @@ const FairUsagePolicy = () => {
               <li>Repeatedly hitting validation or blacklist limits in ways that look automated against our infrastructure rather than driven by your own list quality.</li>
               <li>Operating multiple workspaces or accounts to bypass plan limits.</li>
               <li>Any of the prohibited activities listed in our{' '}
-                <a href="/terms-of-service" className="text-[#2663eb] hover:underline">Terms of Service</a>.
+                <a href="/terms-of-service" className="text-[#695AF2] hover:underline">Terms of Service</a>.
               </li>
             </ul>
           </div>
@@ -221,8 +221,8 @@ const FairUsagePolicy = () => {
             </p>
             <p className="text-[#6b7280] leading-relaxed mt-3">
               If you are only a small amount over a cap and an upgrade does not make sense yet, email{' '}
-              <a href="mailto:support@sendbox.ai" className="text-[#2663eb] hover:underline">
-                support@sendbox.ai
+              <a href="mailto:support@sendboxes.tech" className="text-[#695AF2] hover:underline">
+                support@sendboxes.tech
               </a>{' '}
               with your workspace name and the limit you are running into. We can usually help with modest, one-off increases for healthy senders.
             </p>

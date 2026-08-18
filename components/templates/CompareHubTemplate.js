@@ -42,7 +42,7 @@ function ComparisonCard({ comparison }) {
       </div>
 
       {/* Title */}
-      <h3 className="text-[15px] font-semibold text-black group-hover:text-[#2663eb] transition-colors mb-1.5">
+      <h3 className="text-[15px] font-semibold text-black group-hover:text-[#695AF2] transition-colors mb-1.5">
         Sendbox vs {comparison.competitorName}
       </h3>
 
@@ -50,7 +50,7 @@ function ComparisonCard({ comparison }) {
       <p className="text-[13px] text-[#6b7280] leading-relaxed line-clamp-2 flex-1">{comparison.description}</p>
 
       {/* Read link */}
-      <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-1 text-[13px] font-medium text-[#2663eb]">
+      <div className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-1 text-[13px] font-medium text-[#695AF2]">
         Read comparison
         <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
       </div>
@@ -76,11 +76,11 @@ function AlternativeCard({ alternative }) {
       </div>
 
       <div className="flex-1 min-w-0">
-        <h3 className="text-[15px] font-semibold text-black group-hover:text-[#2663eb] transition-colors mb-1">
+        <h3 className="text-[15px] font-semibold text-black group-hover:text-[#695AF2] transition-colors mb-1">
           {alternative.competitorName} Alternatives
         </h3>
         <p className="text-[13px] text-[#6b7280] leading-relaxed line-clamp-2">{alternative.description}</p>
-        <span className="inline-flex items-center gap-1 mt-2 text-[12px] font-medium text-[#2663eb]">
+        <span className="inline-flex items-center gap-1 mt-2 text-[12px] font-medium text-[#695AF2]">
           View alternatives <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
         </span>
       </div>
@@ -99,10 +99,10 @@ function ToolVsToolCard({ matchup }) {
         <span className="text-[11px] text-[#9ca3af]">vs</span>
         <Image src={matchup.toolB.logo} alt={matchup.toolB.name} width={64} height={16} className="h-4 w-auto rounded" />
       </div>
-      <span className="text-[13px] font-medium text-black group-hover:text-[#2663eb] transition-colors truncate">
+      <span className="text-[13px] font-medium text-black group-hover:text-[#695AF2] transition-colors truncate">
         {matchup.toolA.name} vs {matchup.toolB.name}
       </span>
-      <ArrowRight size={12} className="text-[#9ca3af] group-hover:text-[#2663eb] ml-auto flex-shrink-0 group-hover:translate-x-0.5 transition-all" />
+      <ArrowRight size={12} className="text-[#9ca3af] group-hover:text-[#695AF2] ml-auto flex-shrink-0 group-hover:translate-x-0.5 transition-all" />
     </a>
   );
 }
@@ -123,7 +123,7 @@ export default function CompareHubTemplate({ comparisons, alternatives, toolVsTo
           </nav>
 
           <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl" />
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
             <span>compare sendbox</span>
           </div>
 
@@ -197,10 +197,10 @@ export default function CompareHubTemplate({ comparisons, alternatives, toolVsTo
           <a href="/sendbox-alternatives" className="group rounded-xl border border-gray-200 p-5 flex items-center gap-4 hover:border-gray-300 hover:shadow-sm transition-all">
             <Image src="/icon.png" alt="Sendbox" width={96} height={24} className="h-6 w-auto flex-shrink-0" />
             <div className="flex-1">
-              <p className="text-[15px] font-semibold text-black group-hover:text-[#2663eb] transition-colors">Sendbox Alternatives</p>
+              <p className="text-[15px] font-semibold text-black group-hover:text-[#695AF2] transition-colors">Sendbox Alternatives</p>
               <p className="text-[13px] text-[#6b7280]">Our honest breakdown of what Sendbox does well and where other tools may be a better fit.</p>
             </div>
-            <ArrowRight size={16} className="text-[#9ca3af] group-hover:text-[#2663eb] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+            <ArrowRight size={16} className="text-[#9ca3af] group-hover:text-[#695AF2] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
           </a>
 
           <div className="rounded-xl bg-[#111] p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
@@ -212,7 +212,7 @@ export default function CompareHubTemplate({ comparisons, alternatives, toolVsTo
             </div>
             <a
               href="/what-is-sendbox"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#2663eb] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#695AF2] text-white rounded-lg text-sm font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg group flex-shrink-0"
             >
               What is Sendbox?
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />

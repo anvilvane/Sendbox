@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
         <Script
           defer
           data-website-id="dfid_Sz3bN39vzZJdfm6wuKo5b"
-          data-domain="sendbox.ai"
+          data-domain="sendboxes.tech"
           data-allow-localhost="true"
           src="https://datafa.st/js/script.js"
           strategy="lazyOnload"

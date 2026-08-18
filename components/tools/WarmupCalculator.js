@@ -111,7 +111,7 @@ export default function WarmupCalculator() {
         <button
           type="submit"
           disabled={!target || parseInt(target, 10) < 1}
-          className="relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#2663eb] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
+          className="relative inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#695AF2] text-white rounded-lg text-sm sm:text-[15px] font-medium transition-all hover:bg-[#5847E0] hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
         >
           <CalendarDotsIcon size={16} weight="duotone" />
           Generate Schedule
@@ -122,12 +122,12 @@ export default function WarmupCalculator() {
       {schedule && (
         <div className="mt-8 space-y-4">
           {/* Summary */}
-          <div className="p-4 rounded-lg bg-[#2663eb]/5 border border-[#2663eb]/10">
+          <div className="p-4 rounded-lg bg-[#695AF2]/5 border border-[#695AF2]/10">
             <p className="text-sm sm:text-[15px] text-black font-medium">
               You&apos;ll reach{' '}
-              <span className="text-[#2663eb] font-semibold">{t.toLocaleString()}</span>{' '}
+              <span className="text-[#695AF2] font-semibold">{t.toLocaleString()}</span>{' '}
               emails/day by Day 30 across{' '}
-              <span className="text-[#2663eb] font-semibold">{m}</span>{' '}
+              <span className="text-[#695AF2] font-semibold">{m}</span>{' '}
               mailbox{m !== 1 ? 'es' : ''}{' '}
               <span className="text-[#6b7280]">
                 ({Math.round(t / m)} per mailbox)

@@ -25,12 +25,12 @@ const Features = () => {
         {/* Section Header */}
         <div className="mb-10 md:mb-14">
           <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#2663eb] rounded-xl"></div>
-            <span>why sendbox</span>
+            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl"></div>
+            <span>why teams choose us</span>
           </div>
 
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight max-w-3xl text-balance">
-            The infrastructure that serious outbound teams need.
+            The infrastructure serious outbound teams actually need.
           </h2>
         </div>
 
@@ -41,15 +41,15 @@ const Features = () => {
             {/* Dedicated IPs - 4 col, dark, with visual */}
             <div className="bg-[#1a1a1a] p-6 md:p-8 md:col-span-4 md:flex md:gap-8 md:items-start border-b border-gray-200">
               <div className="flex-1 min-w-0">
-                <GlobeIcon size={20} weight="duotone" className="text-[#2663eb] mb-3" />
-                <h3 className="text-[15px] font-medium text-white tracking-tight"><Link href="/deliverability/dedicated-ips" className="hover:underline">Sendbox dedicated IPs</Link> on every plan</h3>
-                <p className="mt-1.5 text-sm text-[#9ca3af] leading-relaxed">Every account gets its own IP and fully isolated sending environment. Your sender reputation is yours alone. Other customers never affect your deliverability.</p>
+                <GlobeIcon size={20} weight="duotone" className="text-[#695AF2] mb-3" />
+                <h3 className="text-[15px] font-medium text-white tracking-tight">A dedicated IP comes standard on <Link href="/deliverability/dedicated-ips" className="hover:underline">every Sendbox plan</Link></h3>
+                <p className="mt-1.5 text-sm text-[#9ca3af] leading-relaxed">Each account gets assigned its own IP inside a fully isolated sending environment. What other senders do has zero effect on you — your reputation is yours and yours alone.</p>
               </div>
               <div className="mt-4 md:mt-0 md:w-[200px] shrink-0 space-y-1.5">
                 {[
-                  { label: 'Your IP', status: 'Dedicated' },
-                  { label: 'Infrastructure', status: 'Isolated' },
-                  { label: 'Reputation', status: 'Protected' },
+                  { label: 'IP Address', status: 'Dedicated' },
+                  { label: 'Environment', status: 'Isolated' },
+                  { label: 'Sender reputation', status: 'Protected' },
                 ].map((row) => (
                   <div key={row.label} className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 px-3 py-2">
                     <span className="text-[12px] font-medium text-white/70">{row.label}</span>
@@ -64,23 +64,23 @@ const Features = () => {
 
             {/* ESP matching - 2 col */}
             <div className="p-6 md:p-8 md:col-span-2 border-b border-gray-200">
-              <ArrowsLeftRightIcon size={20} weight="duotone" className="text-[#2663eb] mb-3" />
-              <h3 className="text-[15px] font-medium text-black tracking-tight"><Link href="/features/esp-matching" className="hover:underline">Sendbox ESP matching</Link></h3>
-              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">Detects your lead's email provider and routes through a matching mailbox. Gmail to Gmail. Outlook to Outlook. Higher inbox placement, automatically.</p>
+              <ArrowsLeftRightIcon size={20} weight="duotone" className="text-[#695AF2] mb-3" />
+              <h3 className="text-[15px] font-medium text-black tracking-tight"><Link href="/features/esp-matching" className="hover:underline">Sending that matches the recipient's ESP</Link></h3>
+              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">We automatically detect which inbox provider each lead uses and route the message through a matching mailbox — Gmail reaches Gmail, Outlook reaches Outlook — lifting inbox placement without you lifting a finger.</p>
             </div>
 
             {/* Warmup - 2 col */}
             <div className="p-6 md:p-8 md:col-span-2 border-b border-gray-200 md:border-r md:border-gray-200">
-              <FireIcon size={20} weight="duotone" className="text-[#2663eb] mb-3" />
-              <h3 className="text-[15px] font-medium text-black tracking-tight"><Link href="/deliverability/human-like-warmup" className="hover:underline">Sendbox warmup</Link> that passes detection</h3>
-              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">Randomized timing, natural engagement patterns, real account interactions. ESPs have gotten smart at detecting warmup. Ours is built to pass.</p>
+              <FireIcon size={20} weight="duotone" className="text-[#695AF2] mb-3" />
+              <h3 className="text-[15px] font-medium text-black tracking-tight">A <Link href="/deliverability/human-like-warmup" className="hover:underline">warmup engine</Link> built to slip past the detectors</h3>
+              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">Sending times shift naturally, engagement mimics a real person, and every interaction traces back to an actual account. Mailbox providers have gotten sharp at catching automated warmup, so this one was built specifically to fly under that radar.</p>
             </div>
 
             {/* No caps - 4 col, with stat grid */}
             <div className="p-6 md:p-8 md:col-span-4 border-b border-gray-200">
-              <InfinityIcon size={20} weight="duotone" className="text-[#2663eb] mb-3" />
-              <h3 className="text-[15px] font-medium text-black tracking-tight">No caps on anything</h3>
-              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed mb-4">Everything that matters for deliverability is unlimited on every plan.</p>
+              <InfinityIcon size={20} weight="duotone" className="text-[#695AF2] mb-3" />
+              <h3 className="text-[15px] font-medium text-black tracking-tight">No feature here is throttled</h3>
+              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed mb-4">Whichever plan you're on, every deliverability feature runs with no cap on how much you can use it.</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                 {[
                   { label: 'Warmup', value: 'Unlimited' },
@@ -98,23 +98,23 @@ const Features = () => {
 
             {/* AI - 2 col */}
             <div className="p-6 md:p-8 md:col-span-2 border-b border-gray-200 md:border-b-0 md:border-r md:border-gray-200">
-              <SparkleIcon size={20} weight="duotone" className="text-[#2663eb] mb-3" />
-              <h3 className="text-[15px] font-medium text-black tracking-tight">AI reply drafting + tagging</h3>
-              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">When a lead replies, AI drafts a response and tags it as interested, not now, wrong person, or unsubscribe. You review and send.</p>
+              <SparkleIcon size={20} weight="duotone" className="text-[#695AF2] mb-3" />
+              <h3 className="text-[15px] font-medium text-black tracking-tight">Replies drafted and tagged by AI</h3>
+              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">As soon as a lead writes back, AI drafts a response and tags what came in — interested, not now, wrong person, unsubscribe — so all you have to do is review and hit send.</p>
             </div>
 
             {/* No throttling - 2 col */}
             <div className="p-6 md:p-8 md:col-span-2 border-b border-gray-200 md:border-b-0 md:border-r md:border-gray-200">
-              <RocketLaunchIcon size={20} weight="duotone" className="text-[#2663eb] mb-3" />
-              <h3 className="text-[15px] font-medium text-black tracking-tight">No sending throttling</h3>
-              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">Your mailboxes send at full capacity. No artificial throttling, no shared queues. Maximum utilization from day one.</p>
+              <RocketLaunchIcon size={20} weight="duotone" className="text-[#695AF2] mb-3" />
+              <h3 className="text-[15px] font-medium text-black tracking-tight">Sending at full speed from day one</h3>
+              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">Every mailbox operates at its true sending capacity right away — no artificial slowdown, no shared queue holding you back.</p>
             </div>
 
             {/* A/B autopilot - 2 col */}
             <div className="p-6 md:p-8 md:col-span-2">
-              <ShuffleIcon size={20} weight="duotone" className="text-[#2663eb] mb-3" />
-              <h3 className="text-[15px] font-medium text-black tracking-tight"><Link href="/features/ab-testing" className="hover:underline">Sendbox A/B testing</Link> on autopilot</h3>
-              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">Auto-disables underperforming variants and scales winners. No manual monitoring needed.</p>
+              <ShuffleIcon size={20} weight="duotone" className="text-[#695AF2] mb-3" />
+              <h3 className="text-[15px] font-medium text-black tracking-tight"><Link href="/features/ab-testing" className="hover:underline">A/B testing</Link> that manages itself</h3>
+              <p className="mt-1.5 text-sm text-[#6b7280] leading-relaxed">Underperforming variants get shut off on their own while the winning ones pick up more volume — no one needs to sit there watching the test.</p>
             </div>
 
           </div>

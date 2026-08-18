@@ -1,5 +1,6 @@
 'use client';
 
+import { APP_LOGIN_URL } from "@/lib/app-url";
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRightIcon, GlobeIcon, HardDrivesIcon, FireIcon, BrainIcon, PulseIcon, ShieldCheckIcon, MagnifyingGlassIcon, TargetIcon } from '@phosphor-icons/react/dist/ssr';
@@ -7,19 +8,19 @@ import { motion } from 'framer-motion';
 
 const WhySection = () => {
   const useCases = [
-    { label: 'No shared infrastructure', desc: 'Dedicated IPs and isolated environments on every plan.', icon: GlobeIcon },
-    { label: 'Self-serve setup', desc: 'Go from sign-up to sending in under 15 minutes.', icon: HardDrivesIcon },
-    { label: 'Nothing is capped', desc: 'Unlimited warmup, validation, placement tests, and more.', icon: FireIcon },
-    { label: 'Built-in intelligence', desc: 'AI drafts replies and tags leads so you stay focused.', icon: BrainIcon },
-    { label: '24/7 bounce monitoring', desc: 'Issues detected and flagged before they hurt deliverability.', icon: PulseIcon },
-    { label: 'Mailbox health visibility', desc: 'Reply and bounce rate tracked per mailbox so you catch issues early.', icon: ShieldCheckIcon },
-    { label: 'Continuous health checks', desc: 'Blacklist and placement monitoring runs around the clock.', icon: MagnifyingGlassIcon },
-    { label: 'Full deliverability suite', desc: 'Warmup, validation, ESP matching, and A/B testing built in.', icon: TargetIcon }
+    { label: 'Truly yours, not shared', desc: 'Each plan ships with a dedicated IP running inside its own isolated sending environment.', icon: GlobeIcon },
+    { label: 'Skip the sales call', desc: "Sign up and you're already sending live campaigns within 15 minutes.", icon: HardDrivesIcon },
+    { label: 'No ceiling on usage', desc: 'Warmup, validation, and inbox placement testing all run without caps.', icon: FireIcon },
+    { label: 'Let AI handle the grunt work', desc: 'Replies get drafted and tagged automatically as they arrive, freeing your team to focus on leads worth chasing.', icon: BrainIcon },
+    { label: 'Bounces watched 24/7', desc: 'Issues get caught and flagged early, before they can put a dent in your sender reputation.', icon: PulseIcon },
+    { label: "Mailbox health, visible", desc: 'Bounce and reply rates are tracked mailbox by mailbox, so a struggling account never stays hidden for long.', icon: ShieldCheckIcon },
+    { label: 'Monitoring that never sleeps', desc: 'Blacklist status and inbox placement get rechecked continuously, not just once during setup.', icon: MagnifyingGlassIcon },
+    { label: 'Deliverability, all in one place', desc: 'Warmup, validation, ESP matching, and A/B testing all sit inside a single platform.', icon: TargetIcon }
   ];
 
   const stats = [
-    { tag: 'Setup', value: '15m', description: 'From sign-up to first campaign live. No onboarding calls. Fully self-serve.' },
-    { tag: 'Isolation', value: '100%', description: 'Every account gets its own IP and sending environment. Your reputation is never shared.' },
+    { tag: 'Setup', value: '15m', description: "That's how long it takes to go from a brand-new account to a campaign that's actually sending, with no onboarding call required." },
+    { tag: 'Isolation', value: '100%', description: 'Every account operates on its own IP within its own sending environment, keeping your sender reputation fully in your hands.' },
   ];
 
   return (
@@ -38,12 +39,12 @@ const WhySection = () => {
           {/* Eyebrow and Title */}
           <div className="mb-10 md:mb-16">
             <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-              <div className="w-5 h-1 bg-[#2663eb] rounded-xl"></div>
-              <span>what's included</span>
+              <div className="w-5 h-1 bg-[#695AF2] rounded-xl"></div>
+              <span>the essentials</span>
             </div>
 
             <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight max-w-3xl text-balance">
-              Everything you need to land in the inbox. Nothing you don't.
+              If it doesn't help you land in the inbox, it's not here.
             </h2>
           </div>
 
@@ -62,7 +63,7 @@ const WhySection = () => {
                     } ${index >= 4 ? 'border-t border-gray-100' : ''}`}
                   >
                     <div className="flex items-center gap-2.5">
-                      <Icon size={18} className="text-[#2663eb] flex-shrink-0 md:w-5 md:h-5" />
+                      <Icon size={18} className="text-[#695AF2] flex-shrink-0 md:w-5 md:h-5" />
                       <span className="text-black text-sm md:text-[15px] font-medium leading-snug">{useCase.label}</span>
                     </div>
                     <p className="text-xs md:text-[13px] text-[#6b7280] leading-relaxed">{useCase.desc}</p>
@@ -79,11 +80,11 @@ const WhySection = () => {
           {/* Left Content */}
           <div>
             <p className="text-base leading-relaxed text-[#6b7280] mb-8 max-w-lg">
-              Other tools share infrastructure. <Link href="/deliverability/isolated-infrastructure" className="text-[#2663eb] hover:underline">Sendbox's isolated infrastructure</Link> means your IP is yours. Your reputation is yours. And with <Link href="/deliverability/auto-mailbox-protection" className="text-[#2663eb] hover:underline">per-mailbox health visibility</Link>, you see reply and bounce rate for every mailbox, so a struggling one stands out before the damage spreads.
+              Plenty of outreach platforms lump every customer onto identical IPs and one shared reputation. <Link href="/deliverability/isolated-infrastructure" className="text-[#695AF2] hover:underline">Sendbox's isolated infrastructure</Link> means your IP and your sender reputation belong to nobody but you. Add <Link href="/deliverability/auto-mailbox-protection" className="text-[#695AF2] hover:underline">per-mailbox health visibility</Link> on top, and a mailbox in trouble gets caught before it pulls the rest of your sending down with it.
             </p>
 
-            <a href="https://app.sendbox.ai/login" data-fast-goal="click_start_sending" data-fast-goal-location="why_section" className="inline-flex items-center gap-2 text-[#2663eb] bg-transparent border-none cursor-pointer text-base font-medium transition-all hover:gap-3 group">
-              Start sending
+            <a href={APP_LOGIN_URL} data-fast-goal="click_start_sending" data-fast-goal-location="why_section" className="inline-flex items-center gap-2 text-[#695AF2] bg-transparent border-none cursor-pointer text-base font-medium transition-all hover:gap-3 group">
+              Start now
               <ArrowRightIcon size={20} className="transition-transform group-hover:translate-x-0.5" />
             </a>
           </div>
@@ -102,7 +103,7 @@ const WhySection = () => {
                 >
                   <div className="mb-3 md:mb-4">
                     <div className="inline-block mb-2 md:mb-4">
-                      <span className="bg-[#2663eb]/10 text-[#2663eb] text-xs md:text-sm font-medium tracking-tight px-2 py-1 rounded">{stat.tag}</span>
+                      <span className="bg-[#695AF2]/10 text-[#695AF2] text-xs md:text-sm font-medium tracking-tight px-2 py-1 rounded">{stat.tag}</span>
                     </div>
                     <div className="text-4xl md:text-6xl font-medium text-black tracking-tighter leading-none mb-2 md:mb-4 font-numeric">{stat.value}</div>
                   </div>
@@ -123,7 +124,7 @@ const WhySection = () => {
                 >
                   <div className="mb-3 md:mb-4">
                     <div className="inline-block mb-2 md:mb-4">
-                      <span className="bg-[#2663eb]/10 text-[#2663eb] text-xs md:text-sm font-medium tracking-tight px-2 py-1 rounded">{stat.tag}</span>
+                      <span className="bg-[#695AF2]/10 text-[#695AF2] text-xs md:text-sm font-medium tracking-tight px-2 py-1 rounded">{stat.tag}</span>
                     </div>
                     <div className="text-4xl md:text-6xl font-medium text-black tracking-tighter leading-none mb-2 md:mb-4 font-numeric">{stat.value}</div>
                   </div>
