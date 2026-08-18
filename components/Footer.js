@@ -57,10 +57,12 @@ const footerColumns = [
   {
     title: 'Company',
     links: [
+      { name: 'About Us', href: '/about' },
       { name: 'What is Sendbox?', href: '/what-is-sendbox' },
       { name: 'Changelog', href: '/changelog' },
       { name: 'Contributors', href: '/contributors' },
       { name: 'Documentation', href: 'https://docs.sendboxes.tech' },
+      { name: 'Contact Us', href: '/contact' },
       { name: 'Support', href: 'mailto:support@sendboxes.tech' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
