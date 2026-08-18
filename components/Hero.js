@@ -3,72 +3,29 @@ import React from 'react';
 import { ArrowRightIcon, YoutubeLogoIcon } from '@phosphor-icons/react/dist/ssr';
 import { APP_LOGIN_URL } from "@/lib/app-url";
 
-// Isolation grid — a literal visual for the product's actual core claim (every
-// account on its own dedicated IP, in its own isolated sending environment).
-// Not decorative: each cell is a "sender", most are dim/disconnected from each
-// other, one is lit and traced back to a single labeled account. Built in pure
-// CSS/SVG so there's no broken-asset risk and no stock-photo standing in for a
-// SaaS product that has no literal "scene" to photograph.
-function IsolationGrid() {
-  const cells = Array.from({ length: 30 });
-  const highlighted = 16;
-  return (
-    <div className="relative">
-      <div className="grid grid-cols-6 gap-2 sm:gap-2.5">
-        {cells.map((_, i) => (
-          <div
-            key={i}
-            className={
-              i === highlighted
-                ? 'aspect-square rounded-[7px] bg-[#695AF2] shadow-[0_0_0_3px_rgba(105,90,242,0.15),0_8px_20px_-6px_rgba(105,90,242,0.55)]'
-                : 'aspect-square rounded-[7px] bg-gray-100 border border-gray-200/80'
-            }
-          />
-        ))}
-      </div>
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <line x1="50" y1="0" x2="50" y2="100" stroke="transparent" />
-      </svg>
-      <div className="mt-4 flex items-start gap-2.5 sm:mt-5">
-        <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#695AF2]" />
-        <p className="text-xs leading-snug text-[#6b7280] sm:text-[13px]">
-          One dedicated IP, one isolated environment, per account. Nothing else on this grid can touch your reputation.
-        </p>
-      </div>
-    </div>
-  );
-}
+const FACTS = [
+  { value: 'Dedicated', label: 'IP on every plan' },
+  { value: 'Isolated', label: 'sending environment' },
+  { value: '15 min', label: 'signup to first send' },
+];
 
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Vertical guide lines - aligned with header's max-w-[80rem] container edges */}
-      <div className="absolute inset-0 pointer-events-none hidden lg:block">
-        <div className="max-w-[80rem] h-full mx-auto relative">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200" />
-          <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-200" />
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-100" />
-        </div>
-      </div>
+      <div className="relative z-10 mx-auto max-w-[80rem] px-4 pt-20 pb-16 sm:px-6 sm:pt-24 md:px-8 md:pt-28 lg:pt-32">
+        {/* Full-width, typography-led statement -- no side panel, no decorative
+            box. The headline IS the composition; confidence over ornament. */}
+        <h1 className="max-w-[18ch] text-[clamp(2.75rem,7vw,6rem)] font-semibold leading-[0.98] tracking-tight text-black">
+          <span className="block">Land in the inbox.</span>
+          <span className="block text-[#695AF2]">Not the spam folder.</span>
+        </h1>
 
-      <div className="relative z-10 mx-auto grid max-w-[80rem] grid-cols-1 gap-12 px-4 pb-14 pt-14 sm:px-6 sm:pb-16 sm:pt-16 md:px-8 md:pb-20 md:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-8 lg:py-24">
-        {/* Left: copy — left-aligned, not centered */}
-        <div className="max-w-xl">
-          <h1 className="text-[clamp(2.25rem,5vw,4.25rem)] font-semibold leading-[1.05] tracking-tight text-black">
-            <span className="block">Sequences built to land</span>
-            <span className="block">in the inbox, <span className="text-[#695AF2]">not the spam folder.</span></span>
-          </h1>
-
-          <p className="mt-6 max-w-md text-[clamp(0.9375rem,1.3vw,1.0625rem)] leading-relaxed text-[#4b5563]">
+        <div className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+          <p className="max-w-md text-[clamp(0.9375rem,1.3vw,1.0625rem)] leading-relaxed text-[#4b5563]">
             Each account gets its own dedicated IP, its own fully separated sending environment, and a warmup engine that outpaces what other platforms offer. Built for agencies and go-to-market teams who treat the primary inbox as the only acceptable outcome.
           </p>
 
-          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-3">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-3">
             <a
               href={APP_LOGIN_URL}
               data-fast-goal="click_start_sending"
@@ -90,20 +47,25 @@ const Hero = () => {
               Watch the 4-Minute Demo
             </a>
           </div>
-
-          <p className="mt-6 text-sm text-[#9ca3af]">Go from signup to a live campaign in 15 minutes.</p>
-          {/* Removed: "Backed by antx.vc" investor badge, and a scrolling wall of real
-              company logos (Understory, LeadHaste, 11x, Vectify, Lambda Group, etc.) --
-              both were SendKit's real, verified claims (a real investor, real customers).
-              Carrying them over would falsely claim Sendbox has that same backing/customer
-              base, which isn't true yet. Re-add once Sendbox has its own real investor
-              and/or customers to show. */}
         </div>
+        {/* Removed: "Backed by antx.vc" investor badge, and a scrolling wall of real
+            company logos (Understory, LeadHaste, 11x, Vectify, Lambda Group, etc.) --
+            both were SendKit's real, verified claims (a real investor, real customers).
+            Carrying them over would falsely claim Sendbox has that same backing/customer
+            base, which isn't true yet. Re-add once Sendbox has its own real investor
+            and/or customers to show. */}
+      </div>
 
-        {/* Right: the isolation grid — replaces the old dead-center trust row as the
-            asymmetric visual counterweight to the left column */}
-        <div className="lg:pl-4">
-          <IsolationGrid />
+      {/* Full-width fact strip -- a flat, confident line of real claims instead of a
+          boxed stat-card grid or a decorative side panel. */}
+      <div className="relative z-10 border-t border-gray-100">
+        <div className="mx-auto grid max-w-[80rem] grid-cols-1 divide-y divide-gray-100 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {FACTS.map((fact) => (
+            <div key={fact.label} className="flex items-baseline gap-3 px-4 py-5 sm:px-6 md:px-8 md:py-6">
+              <span className="font-numeric text-lg font-semibold tracking-tight text-black md:text-xl">{fact.value}</span>
+              <span className="text-sm text-[#6b7280]">{fact.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
