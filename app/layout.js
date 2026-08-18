@@ -1,44 +1,11 @@
-import { cloneElement, isValidElement } from "react";
-import { Poppins, Figtree, Inter } from "next/font/google";
-
-// Poppins → headings (h1-h6)
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-poppins",
-});
-
-// Figtree → body text / paragraphs / descriptions (site default)
-const figtree = Figtree({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-figtree",
-});
-
-// Inter → numeric displays (opt-in utility, see .font-numeric in globals.css)
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
-});
-
-const fontVariables = `${poppins.variable} ${figtree.variable} ${inter.variable}`;
-
+// This top-level layout intentionally renders no <html>/<body> of its own --
+// app/(main)/layout.js is the only remaining zone and renders the real <html>
+// document (including the Poppins/Figtree/Inter font setup). This file used to
+// try to inject fonts here via cloneElement onto `children`, which silently
+// did nothing in the App Router's RSC tree (children isn't a plain cloneable
+// element) -- the site shipped with the fonts never actually applied. Fixed by
+// moving the font setup to where the real <html> tag is, and reducing this
+// back to a trivial pass-through now that only one zone exists.
 export default function RootLayout({ children }) {
-  // This top-level app/layout.js intentionally renders no <html>/<body> of
-  // its own: each zone (app/(main)/layout.js, etc.) defines its own full HTML
-  // document. To make the Poppins/Figtree/Inter CSS variables available
-  // everywhere without editing those files, we merge the font variable
-  // classNames onto whichever root element the active zone's layout
-  // renders (normally its <html> tag), preserving any classNames already
-  // set there.
-  if (isValidElement(children)) {
-    return cloneElement(children, {
-      className: [children.props.className, fontVariables]
-        .filter(Boolean)
-        .join(" "),
-    });
-  }
-
   return children;
 }

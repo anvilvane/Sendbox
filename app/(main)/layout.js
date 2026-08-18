@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { GeistSans } from "geist/font/sans";
+import { Poppins, Figtree, Inter } from "next/font/google";
 import PlausibleProvider from "next-plausible";
 import { getSEOTags, getOrganizationSchema, getWebSiteSchema, getSoftwareApplicationSchema } from "@/libs/seo";
 import config from "@/config";
@@ -10,6 +10,18 @@ const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup"), { 
 import Header from "@/components/Header";
 import SmoothScrollOnNav from "@/components/SmoothScrollOnNav";
 import "../globals.css";
+
+// Poppins → headings (h1-h6), Figtree → body text, Inter → numeric displays.
+// Applied directly here because this is the file that actually renders the real
+// <html> tag (see app/layout.js -- it's a thin pass-through, not a real root
+// layout in this codebase's structure). An earlier attempt set these fonts in
+// app/layout.js and tried to merge them onto this element via cloneElement,
+// which silently did nothing (children here isn't a plain cloneable React
+// element in App Router's RSC tree) -- the site shipped with only GeistSans
+// applied. Fixed by importing the fonts where the <html> tag actually is.
+const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-poppins" });
+const figtree = Figtree({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-figtree" });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-inter" });
 
 
 export const viewport = {
@@ -29,7 +41,7 @@ export default function RootLayout({ children }) {
   const softwareAppSchema = getSoftwareApplicationSchema();
 
   return (
-    <html lang="en" data-theme={config.colors.theme} className={GeistSans.className}>
+    <html lang="en" data-theme={config.colors.theme} className={`${poppins.variable} ${figtree.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
