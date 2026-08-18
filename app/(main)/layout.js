@@ -1,6 +1,4 @@
-import Script from "next/script";
 import { Poppins, Figtree, Inter } from "next/font/google";
-import PlausibleProvider from "next-plausible";
 import { getSEOTags, getOrganizationSchema, getWebSiteSchema, getSoftwareApplicationSchema } from "@/libs/seo";
 import config from "@/config";
 import Providers from "@/components/Providers";
@@ -56,8 +54,6 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
         />
         <link rel="dns-prefetch" href="https://cdn.brandfetch.io" />
-        <link rel="dns-prefetch" href="https://datafa.st" />
-        <link rel="dns-prefetch" href="https://plausible.io" />
         <script id="suppress-console" dangerouslySetInnerHTML={{ __html: `
           if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
             var _log = console.log, _warn = console.warn, _err = console.error;
@@ -67,50 +63,17 @@ export default function RootLayout({ children }) {
             console.debug = function(){};
           }
         `}} />
-        <script id="datafast-queue" dangerouslySetInnerHTML={{ __html: `
-          window.datafast = window.datafast || function() {
-            window.datafast.q = window.datafast.q || [];
-            window.datafast.q.push(arguments);
-          };
-        `}} />
-        <script id="happierleads" dangerouslySetInnerHTML={{ __html: `
-          (function(){
-            function load(){
-              if (window.__hl_loaded) return; window.__hl_loaded = true;
-              var e="rest.happierleads.com/v3/script?clientId=nULKfWzsa6GhsNUU9bUCNQ&version=4.0.0",
-              t=document.createElement("script");
-              t.src="https://"+e; t.async = true;
-              t.onload = function(){ new Happierleads.default };
-              var c=document.getElementsByTagName("script")[0];
-              c.parentNode.insertBefore(t,c);
-            }
-            if ('requestIdleCallback' in window) { requestIdleCallback(load, { timeout: 5000 }); }
-            else { setTimeout(load, 4000); }
-          })();
-        `}} />
-        {config.domainName && (
-          <PlausibleProvider domain={config.domainName} />
-        )}
-        <Script
-          defer
-          data-website-id="dfid_Sz3bN39vzZJdfm6wuKo5b"
-          data-domain="sendboxes.tech"
-          data-allow-localhost="true"
-          src="https://datafa.st/js/script.js"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-JG1JZDPB0C"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-JG1JZDPB0C');
-          `}
-        </Script>
+        {/*
+          SECURITY/PRIVACY FIX: this file previously wired up Google Analytics
+          (G-JG1JZDPB0C), DataFast (dfid_Sz3bN39vzZJdfm6wuKo5b), HappierLeads
+          (clientId=nULKfWzsa6GhsNUU9bUCNQ), and Plausible -- all four were
+          SendKit's real, live third-party analytics accounts, carried over
+          verbatim by the original rebrand pass. Every Sendbox visitor's
+          traffic was being sent straight into SendKit's own analytics
+          dashboards. Removed entirely rather than left half-configured --
+          add Sendbox's own analytics accounts here once they exist, don't
+          reuse a competitor's tracking IDs as a placeholder.
+        */}
       </head>
       <body>
         <Providers>
