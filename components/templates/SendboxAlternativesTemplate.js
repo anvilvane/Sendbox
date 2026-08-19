@@ -106,11 +106,6 @@ export default function SendboxAlternativesTemplate({ data }) {
             <span className="text-[#6b7280]">Sendbox Alternatives</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
-            <span>sendbox alternatives</span>
-          </div>
-
           <h1 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] text-black tracking-tight mb-5">
             {data.headline}
           </h1>

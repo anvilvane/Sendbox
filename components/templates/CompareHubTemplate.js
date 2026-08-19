@@ -122,11 +122,6 @@ export default function CompareHubTemplate({ comparisons, alternatives, toolVsTo
             <span className="text-[#6b7280]">Compare</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
-            <span>compare sendbox</span>
-          </div>
-
           <h1 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] text-black tracking-tight mb-5">
             How Sendbox compares to other cold email platforms
           </h1>

@@ -24,11 +24,6 @@ export default function FeatureBento({ competitorCallout, howItWorks, detailBloc
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-10 md:mb-14">
-          <div className="inline-flex items-center gap-2 mb-6 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
-            <span>why sendbox</span>
-          </div>
-
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.1] text-black tracking-tight text-balance">
             The infrastructure advantage
           </h2>

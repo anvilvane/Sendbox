@@ -43,11 +43,6 @@ export default function WhatIsSendboxTemplate({ data }) {
             <span className="text-[#6b7280]">What is Sendbox</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
-            <span>about sendbox</span>
-          </div>
-
           <h1 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] text-black tracking-tight mb-5">{data.headline}</h1>
           <p className="text-[17px] text-[#374151] leading-[1.7] mb-5 max-w-2xl">{data.description}</p>
 
@@ -76,11 +71,14 @@ export default function WhatIsSendboxTemplate({ data }) {
             {/* Feature Highlights */}
             <div id="feature-highlights" className="scroll-mt-24">
               <h2 className="text-[1.375rem] font-semibold text-black tracking-tight leading-[1.2] mb-5">Key Features at a Glance</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8 border-t border-gray-100">
                 {data.featureHighlights.map((h, i) => (
-                  <div key={i} className="rounded-lg border border-gray-200 p-4">
-                    <h3 className="text-[14px] font-semibold text-black mb-1">{h.title}</h3>
-                    <p className="text-[13px] text-[#6b7280] leading-relaxed">{h.description}</p>
+                  <div key={i} className="flex gap-3 py-4 border-b border-gray-100 sm:[&:nth-last-child(2)]:border-b-0 last:border-b-0">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#695AF2]" />
+                    <div>
+                      <h3 className="text-[14px] font-semibold text-black mb-1">{h.title}</h3>
+                      <p className="text-[13px] text-[#6b7280] leading-relaxed">{h.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>

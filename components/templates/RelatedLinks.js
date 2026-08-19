@@ -15,16 +15,12 @@ function Section({ children, className = '' }) {
 }
 
 // groups: [{ title, links: [{ name, href }] }]
-export default function RelatedLinks({ eyebrow = 'keep exploring', heading = 'Related pages', groups }) {
+export default function RelatedLinks({ heading = 'Related pages', groups }) {
   const visibleGroups = (groups || []).filter((g) => g.links && g.links.length > 0);
   if (visibleGroups.length === 0) return null;
 
   return (
     <Section className="py-14 md:py-20 border-t border-gray-100">
-      <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-        <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
-        <span>{eyebrow}</span>
-      </div>
       <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold text-black tracking-tight leading-[1.2] mb-8">
         {heading}
       </h2>

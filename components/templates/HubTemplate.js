@@ -37,7 +37,7 @@ function HubCard({ item }) {
   );
 }
 
-export default function HubTemplate({ eyebrow, breadcrumb, title, description, stats, sections }) {
+export default function HubTemplate({ breadcrumb, title, description, stats, sections }) {
   return (
     <main className="bg-white">
       <Section className="pt-12 md:pt-16 pb-10 md:pb-14">
@@ -47,11 +47,6 @@ export default function HubTemplate({ eyebrow, breadcrumb, title, description, s
             <span>/</span>
             <span className="text-[#6b7280]">{breadcrumb}</span>
           </nav>
-
-          <div className="inline-flex items-center gap-2 mb-5 text-[15px] font-medium text-black">
-            <div className="w-5 h-1.5 bg-[#695AF2] rounded-xl" />
-            <span>{eyebrow}</span>
-          </div>
 
           <h1 className="text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.1] text-black tracking-tight mb-5">
             {title}
