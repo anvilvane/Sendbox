@@ -5308,7 +5308,7 @@ const toolVsToolData = [
       'Static egress paired with private networking',
       'EmailGuard covers inbox placement testing',
       'No caps on leads, workspaces, or teammates',
-      'Dedicated Slack-based support',
+      'Dedicated hands-on support',
     ],
     toolBCons: [
       'Just one plan at $599/mo, with nothing cheaper available',
@@ -5529,7 +5529,7 @@ const toolVsToolData = [
       'Static egress paired with private networking',
       'EmailGuard covers inbox placement testing',
       'No caps on leads, workspaces, or teammates',
-      'Dedicated Slack-based support',
+      'Dedicated hands-on support',
     ],
     toolBCons: [
       'Just one plan at $599/mo, with nothing cheaper available',
@@ -5759,7 +5759,7 @@ const toolVsToolData = [
       'Static egress paired with private networking',
       'EmailGuard covers inbox placement testing',
       'No per-seat charges, unlimited teammates included',
-      'Dedicated Slack-based support',
+      'Dedicated hands-on support',
     ],
     toolBCons: [
       'Just one plan at $599/mo, with nothing cheaper available',
@@ -5979,7 +5979,7 @@ const toolVsToolData = [
       'Static egress paired with private networking',
       'EmailGuard covers inbox placement testing',
       'No caps on leads, workspaces, or teammates',
-      'Dedicated Slack-based support',
+      'Dedicated hands-on support',
       'White-label branding and AI reply tagging included',
     ],
     toolBCons: [
@@ -6206,7 +6206,7 @@ const toolVsToolData = [
       'Static egress paired with private networking',
       'EmailGuard covers inbox placement testing',
       'No per-seat charges, unlimited teammates included',
-      'Dedicated Slack-based support',
+      'Dedicated hands-on support',
     ],
     toolBCons: [
       'Just one plan at $599/mo, with nothing cheaper available',
@@ -6437,7 +6437,7 @@ const toolVsToolData = [
       'Static egress paired with private networking',
       'EmailGuard covers inbox placement testing',
       'No caps on teammates',
-      'Dedicated Slack-based support',
+      'Dedicated hands-on support',
     ],
     toolBCons: [
       'Just one plan at $599/mo, with nothing cheaper available',
@@ -6668,7 +6668,7 @@ const toolVsToolData = [
       'Static egress paired with private networking',
       'EmailGuard covers inbox placement testing',
       'No caps on leads, workspaces, or teammates',
-      'Dedicated Slack-based support',
+      'Dedicated hands-on support',
     ],
     toolBCons: [
       'Just one plan at $599/mo, with nothing cheaper available',

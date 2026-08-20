@@ -19,7 +19,7 @@ const tools = [
   {
     icon: Tray,
     name: 'Inbox',
-    description: 'Every reply lands in a single inbox you can answer straight from Slack, so hot leads stop getting buried across a dozen open tabs.',
+    description: 'Every reply lands in a single inbox you can answer from directly, so hot leads stop getting buried across a dozen open tabs.',
   },
   {
     icon: ChartBar,

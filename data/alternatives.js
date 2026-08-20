@@ -1416,12 +1416,12 @@ const alternativesData = [
       {
         rank: 1, name: 'Sendbox', logo: '/icon.png', isSendbox: true,
         tagline: 'Best for: matching EmailBison\'s infrastructure at a fraction of the floor price',
-        description: 'Sendbox is the closest match on infrastructure shape: dedicated IPs and isolated sending on every plan. The pricing ladder looks completely different, though — Essential starts well below EmailBison\'s entry for 75K emails, and Pro covers 500K emails, the same volume as EmailBison\'s only plan, for noticeably less, while also including a 350M-contact database, a dialer, AI reply tagging, and ESP matching. What it doesn\'t match: the VPC and static-egress language, a dedicated Slack support channel, and native Clay integration.',
+        description: 'Sendbox is the closest match on infrastructure shape: dedicated IPs and isolated sending on every plan. The pricing ladder looks completely different, though — Essential starts well below EmailBison\'s entry for 75K emails, and Pro covers 500K emails, the same volume as EmailBison\'s only plan, for noticeably less, while also including a 350M-contact database, a dialer, AI reply tagging, and ESP matching. What it doesn\'t match: the VPC and static-egress language and native Clay integration.',
         screenshot: '/screenshots/sendbox/homepage.png',
         pros: ['Dedicated IPs on every plan, same as EmailBison', 'A far lower entry point than EmailBison\'s $599/mo floor', '350M+ contact database bundled in', 'A dialer included', 'Pro matches EmailBison\'s 500K volume for less'],
-        cons: ['No dedicated Slack support channel', 'Marketing language that\'s less infra-engineering-heavy', 'No native Clay integration'],
+        cons: ['Marketing language that\'s less infra-engineering-heavy', 'No native Clay integration'],
         pricing: 'Essential, Plus, Pro, and Agency — four flat tiers, priced with no metered add-ons.',
-        bestFor: 'Teams whose EmailBison spend was justified by isolation, not by a headcount-sized Slack channel.',
+        bestFor: 'Teams whose EmailBison spend was justified by isolation, not by a headcount-sized support retainer.',
       },
       {
         rank: 2, name: 'Smartlead', logo: '/screenshots/competitors/smartlead/logo.png', isSendbox: false,

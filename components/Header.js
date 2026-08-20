@@ -15,7 +15,6 @@ import {
   ShuffleIcon,
   TrayIcon,
   PhoneIcon,
-  BellRingingIcon,
   MagnifyingGlassIcon,
   AddressBookIcon,
   FileArrowDownIcon,
@@ -74,12 +73,6 @@ const platformCategories = [
         description: 'Call the leads who opened. Mix calls and email in one sequence',
         href: '/features/dialer',
         icon: PhoneIcon,
-      },
-      {
-        name: 'Slack Integration',
-        description: 'Replies hit your Slack. Respond there. We send the email',
-        href: '/features/slack-integration',
-        icon: BellRingingIcon,
       },
       {
         name: 'CRM Integrations',

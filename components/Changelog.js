@@ -326,7 +326,7 @@ const changelogData = [
           'Link an Airtable workspace to Sendbox in seconds',
           'Leads sync from Airtable bases straight into campaigns automatically',
           'Custom fields and data come through untouched',
-          'Joins the native integration lineup next to Clay, Slack, and webhooks'
+          'Joins the native integration lineup next to Clay and webhooks'
         ],
         description: "CSV exports and manual imports are no longer part of the workflow — data now moves on its own."
       }
@@ -465,23 +465,6 @@ const changelogData = [
           'Built for agencies and resellers who want to offer cold email infrastructure without building it themselves'
         ],
         description: 'The infrastructure is enterprise-grade; the name on the door is yours.'
-      }
-    ]
-  },
-  {
-    date: 'January 2, 2026',
-    title: 'Lead Replies Now Land in Slack',
-    description: 'If your team already lives in Slack, lead replies now show up there too.',
-    features: [
-      {
-        name: 'Slack Unibox Bot',
-        bullets: [
-          'A Slack notification fires the moment a lead replies',
-          'Full conversation threads are readable, and replies can be sent, without leaving Slack',
-          'Teammates can be tagged in to help work through an objection together',
-          'Channels can be organized per campaign or per rep'
-        ],
-        description: "SDRs can now run their whole pipeline from the tool that's already open all day, which tends to shorten response times and speed up deals."
       }
     ]
   },
@@ -647,7 +630,7 @@ const changelogData = [
         name: '24/7 Bounce Monitoring & Alerts',
         bullets: [
           'Bounce rates get watched around the clock',
-          'An alert fires over email or Slack the moment rates spike',
+          'An alert fires over email the moment rates spike',
           'Catch a bad list before it does lasting damage to sender reputation',
           'Flag a problem mailbox before an ESP does'
         ],

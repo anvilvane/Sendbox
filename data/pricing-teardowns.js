@@ -39,7 +39,7 @@ const pricingTeardownsData = [
         name: 'Enterprise',
         price: 'Custom',
         billingNote: 'contact sales',
-        features: ['Dedicated account manager', 'Shared Slack channel', 'Private Deliverability Network', 'Custom volume'],
+        features: ['Dedicated account manager', 'Private Deliverability Network', 'Custom volume'],
         limitations: ['Only way to get dedicated IPs', 'Requires custom pricing negotiation', 'Minimum commitment unknown'],
       },
     ],
@@ -62,7 +62,7 @@ const pricingTeardownsData = [
       },
       {
         title: 'Want a dedicated IP? That means Enterprise and a sales call',
-        description: "You won't find dedicated IPs listed as a feature on any published tier — they only come bundled into Enterprise, tucked inside what Instantly calls the \"Private Deliverability Network\" alongside an account manager and a shared Slack channel. There's no public rate card here; teams that have gone through the process describe quotes landing anywhere from $1,500 to $5,000 a month depending on volume.",
+        description: "You won't find dedicated IPs listed as a feature on any published tier — they only come bundled into Enterprise, tucked inside what Instantly calls the \"Private Deliverability Network\" alongside an account manager and a private support channel. There's no public rate card here; teams that have gone through the process describe quotes landing anywhere from $1,500 to $5,000 a month depending on volume.",
         estimatedCost: 'Quote-based, often $1,500+/mo',
       },
       {
@@ -129,12 +129,12 @@ const pricingTeardownsData = [
       {
         id: 'enterprise-mechanics',
         title: 'What actually happens when you buy Enterprise',
-        content: "The \"Private Deliverability Network\" is simply Instantly's branding for its Enterprise tier — and it's the only route to dedicated IPs on the platform. A few things about how the actual sales process plays out are worth knowing:\n\nYour quote isn't fixed by a formula. It shifts based on volume, which account manager you land, and even the timing of your negotiation. Customers with near-identical usage have reported quotes 40 percent apart. There's no rate card published anywhere; the number you land on is whatever you negotiate.\n\nExpect a 12-month minimum term as standard. Downgrading partway through isn't straightforward — if your usage drops in month seven, you're generally stuck paying for the rest of the term unless your account manager proactively flags you as a churn risk.\n\nTo be fair, the shared Slack channel and dedicated account manager deliver real value. Customers who've gone through Enterprise consistently describe response times measured in hours rather than days — the price tag buys that service level.",
+        content: "The \"Private Deliverability Network\" is simply Instantly's branding for its Enterprise tier — and it's the only route to dedicated IPs on the platform. A few things about how the actual sales process plays out are worth knowing:\n\nYour quote isn't fixed by a formula. It shifts based on volume, which account manager you land, and even the timing of your negotiation. Customers with near-identical usage have reported quotes 40 percent apart. There's no rate card published anywhere; the number you land on is whatever you negotiate.\n\nExpect a 12-month minimum term as standard. Downgrading partway through isn't straightforward — if your usage drops in month seven, you're generally stuck paying for the rest of the term unless your account manager proactively flags you as a churn risk.\n\nTo be fair, the private support channel and dedicated account manager deliver real value. Customers who've gone through Enterprise consistently describe response times measured in hours rather than days — the price tag buys that service level.",
         highlights: [
           'No published rate card — every quote is negotiated individually',
           'Standard minimum term runs 12 months',
           'Downgrading before the term ends is hard to pull off',
-          'The Slack channel and account manager are real, tangible upgrades',
+          'The private support channel and account manager are real, tangible upgrades',
         ],
       },
       {
@@ -1534,7 +1534,7 @@ const pricingTeardownsData = [
         name: 'Standard',
         price: '$599/mo',
         billingNote: 'single plan',
-        features: ['500,000 emails/month', 'Dedicated IPs', 'Isolated VPCs', 'Static egress', 'Private networking', 'Email warmup', 'Master inbox', 'Sequencing with A/B testing', 'Conditional logic', 'Unlimited leads', 'Unlimited workspaces', 'Unlimited teammates', 'API and webhooks', 'Clay, HubSpot, Salesforce integrations', 'EmailGuard (inbox placement)', 'Dedicated Slack support'],
+        features: ['500,000 emails/month', 'Dedicated IPs', 'Isolated VPCs', 'Static egress', 'Private networking', 'Email warmup', 'Master inbox', 'Sequencing with A/B testing', 'Conditional logic', 'Unlimited leads', 'Unlimited workspaces', 'Unlimited teammates', 'API and webhooks', 'Clay, HubSpot, Salesforce integrations', 'EmailGuard (inbox placement)', 'Dedicated support'],
         limitations: ['No lead finder or prospecting database', 'No dialer', 'No ESP matching', 'No SEG detection', 'No blacklist monitoring'],
       },
       {

@@ -337,58 +337,6 @@ export const featuresData = [
     },
   },
   {
-    slug: 'slack-integration',
-    name: 'Slack Integration',
-    category: 'Workspace',
-    headline: 'Replies land in Slack the second they arrive',
-    description: 'Connect Slack through OAuth and send reply notifications to whichever channel each campaign is tied to. Choose between every reply or just the positive ones — AI tagging decides which replies count as positive and fires the notification automatically.',
-    icon: 'BellRingingIcon',
-    benefitsHeadline: 'Interested leads go straight to Slack',
-    benefitsEyebrow: 'notification tools',
-    whySectionHeadline: 'You\'ll see a reply in Slack before you\'d have checked Sendbox',
-    whySectionEyebrow: 'connect slack',
-    detailsHeadline: 'Real Slack notifications, not forwarded email',
-    detailsEyebrow: 'why native',
-    showcaseTab: 'inbox',
-    howItWorks: [
-      { step: 1, title: 'Connect through OAuth', description: 'A one-click OAuth flow, then choose which Slack channels should get notifications.' },
-      { step: 2, title: 'Configure it per campaign', description: 'Every campaign can point at its own Slack channel, and you decide whether it gets every reply or only the ones tagged positive.' },
-      { step: 3, title: 'Get pinged the moment it matters', description: 'A lead replies, and a notification with their info and reply text drops into the configured channel.' },
-    ],
-    useCases: [
-      { title: 'Working the way your sales team already does', description: 'Your team lives in Slack already. Route positive replies to a dedicated channel so closers can move fast without logging into Sendbox.' },
-      { title: 'One channel per client', description: 'Give each client campaign its own Slack channel, so replies always land in the right place.' },
-      { title: 'Keeping leadership in the loop', description: 'Set up a channel that only surfaces positive replies. Execs see the wins without needing Sendbox access.' },
-    ],
-    competitorCallout: {
-      title: 'Slack channels per campaign, with a positive-only filter',
-      description: 'Sendbox\'s Slack integration is set up per campaign, not as one global feed. Route replies to whichever channel makes sense, and filter down to positive replies only if you\'d rather skip the noise — AI tags decide what qualifies.',
-      competitors: ['Instantly', 'Smartlead'],
-    },
-    detailBlocks: [
-      {
-        title: 'The right replies land in the right channel',
-        description: 'Every campaign gets its own Slack channel. Choose whether it receives every reply or only the positive ones, as determined by AI tags — closers see the interested leads, everyone else stays focused on their own work.',
-      },
-    ],
-    benefits: [
-      { title: 'OAuth connection', description: 'One click connects Slack — no manual webhook setup or token juggling required.' },
-      { title: 'Per-campaign channels', description: 'Route each campaign\'s replies to its own dedicated Slack channel to keep things organized.' },
-      { title: 'All replies or positive-only', description: 'Choose every reply, or just the ones AI tags as positive, to cut down on noise for your team.' },
-      { title: 'Notifications land instantly', description: 'Replies show up in Slack as soon as they arrive, while the lead is still engaged.' },
-    ],
-    faqs: [
-      { question: 'How does Sendbox\'s Slack integration work?', answer: 'Connect via OAuth, then set a Slack channel per campaign. A reply triggers a notification in that channel, with the option to filter down to positive replies only.' },
-      { question: 'Can I route different campaigns to different Slack channels?', answer: 'Yes — each campaign has its own channel, and reply notifications go wherever you\'ve configured that campaign to send them.' },
-      { question: 'Can I filter Slack notifications to only positive replies?', answer: 'Yes, per campaign you can choose between every reply or positive-only, with AI tagging deciding which replies qualify as positive.' },
-    ],
-    seo: {
-      title: 'Slack Alerts for Cold Email Replies',
-      description: 'Route cold email replies to Slack per campaign, filtered to positive-only if you prefer. Sendbox connects through OAuth and gets hot replies to your sales team instantly.',
-      keywords: ['cold email slack notifications', 'slack integration cold email tool', 'slack cold email alerts', 'best slack email integration 2026', 'cold email reply notifications', 'sendbox slack integration', 'sendbox', 'slack sales notifications', 'positive reply slack alerts', 'email reply slack channel', 'cold email notification tool', 'slack oauth cold email', 'sendbox vs instantly slack', 'sales team slack integration', 'real-time reply alerts slack'],
-    },
-  },
-  {
     slug: 'crm-integrations',
     name: 'CRM Integrations',
     category: 'Workspace',
@@ -670,7 +618,7 @@ export const featuresData = [
     name: 'AI Tagging',
     category: 'AI Features',
     headline: 'Replies sorted for you automatically',
-    description: 'Incoming replies get read by AI and tagged into categories you\'ve defined yourself — each with its own name, description, color, and a positive-or-negative flag. Configure the AI agent with your company\'s domain, a tone, and custom instructions, and those tags then feed directly into CRM boards and can trigger Slack alerts.',
+    description: 'Incoming replies get read by AI and tagged into categories you\'ve defined yourself — each with its own name, description, color, and a positive-or-negative flag. Configure the AI agent with your company\'s domain, a tone, and custom instructions, and those tags then feed directly into CRM boards.',
     icon: 'TagIcon',
     benefitsHeadline: 'AI sorts the inbox before you even open it',
     benefitsEyebrow: 'ai features',
@@ -682,22 +630,22 @@ export const featuresData = [
     howItWorks: [
       { step: 1, title: 'Set up your tags', description: 'Create tags with a name, description, color, and isPositive flag — think "Interested" (positive), "Not Now" (negative), "Out of Office" (negative).' },
       { step: 2, title: 'Configure the agent', description: 'Set your company domain, pick a tone — professional, casual, or friendly — and add any custom instructions. The agent factors this in when it classifies replies.' },
-      { step: 3, title: 'Tags trigger what happens next', description: 'Tagged replies show up on their matching AI tag board in the CRM, positive tags can trigger a Slack alert, and the pipeline organizes itself.' },
+      { step: 3, title: 'Tags trigger what happens next', description: 'Tagged replies show up on their matching AI tag board in the CRM, and the pipeline organizes itself.' },
     ],
     useCases: [
-      { title: 'Surfacing interested leads first', description: 'Positive replies get tagged automatically, land on the CRM\'s AI tag boards, and trigger a Slack notification so closers can act right away.' },
+      { title: 'Surfacing interested leads first', description: 'Positive replies get tagged automatically and land on the CRM\'s AI tag boards, so closers can act right away.' },
       { title: 'Classifying replies your way', description: 'Define tags that match how your team actually thinks about replies — "Budget Question," "Referral," "Competitor Mention," whatever fits.' },
       { title: 'Cutting out manual sorting', description: 'Stop reading every single reply to figure out what it means — AI classifies as they arrive, and you review the edge cases.' },
     ],
     competitorCallout: {
       title: 'Custom tags backed by AI agents you configure yourself',
-      description: 'Most tools stop at basic positive/negative labels. Sendbox lets you define custom tags with your own descriptions and colors, then configure AI agents with your company\'s context, tone, and instructions — with tags feeding straight into CRM boards and Slack notifications.',
+      description: 'Most tools stop at basic positive/negative labels. Sendbox lets you define custom tags with your own descriptions and colors, then configure AI agents with your company\'s context, tone, and instructions — with tags feeding straight into CRM boards.',
       competitors: ['Instantly', 'Smartlead', 'Lemlist'],
     },
     detailBlocks: [
       {
         title: 'Tags that actually move your pipeline',
-        description: 'Tags aren\'t just labels — each one you create carries a name, description, color, and a positive/negative flag. Positive tags trigger Slack alerts, and every tag generates its own board in the CRM where leads sort themselves by classification.',
+        description: 'Tags aren\'t just labels — each one you create carries a name, description, color, and a positive/negative flag. Every tag generates its own board in the CRM where leads sort themselves by classification.',
       },
       {
         title: 'AI agents that know your business',
@@ -708,16 +656,15 @@ export const featuresData = [
       { title: 'Custom tags', description: 'Define tags with a name, description, color, and positive/negative flag, classifying replies into categories that actually matter to your business.' },
       { title: 'Configurable AI agents', description: 'Set your company domain, tone, and custom instructions, and the agent classifies replies using that context.' },
       { title: 'CRM tag boards', description: 'Tags automatically generate boards in the CRM, sorting leads by AI classification without manual work.' },
-      { title: 'Slack notifications on positive tags', description: 'Positive tags trigger a Slack alert, so closers hear about interested leads the moment they come in.' },
     ],
     faqs: [
       { question: 'Can I define custom AI tags in Sendbox?', answer: 'Yes — create tags with a name, description, color, and positive/negative flag, like "Interested" (positive), "Objection" (negative), or "Referral" (positive). The AI agent uses these definitions when it classifies replies.' },
       { question: 'What is an AI agent in Sendbox?', answer: 'It\'s configurable with your company domain, a tone (professional, casual, or friendly), and custom instructions, all of which shape how it classifies incoming replies.' },
-      { question: 'How do AI tags connect to the CRM?', answer: 'Every tag generates a board in the CRM, and leads land automatically on whichever board matches their AI classification. Positive tags also trigger Slack notifications.' },
+      { question: 'How do AI tags connect to the CRM?', answer: 'Every tag generates a board in the CRM, and leads land automatically on whichever board matches their AI classification.' },
     ],
     seo: {
       title: 'AI-Powered Reply Tagging and Classification',
-      description: 'Classify cold email replies automatically into custom categories with configurable AI agents. Sendbox feeds tags straight into CRM boards and Slack alerts.',
+      description: 'Classify cold email replies automatically into custom categories with configurable AI agents. Sendbox feeds tags straight into CRM boards.',
       keywords: ['ai email tagging', 'cold email ai reply classification', 'ai reply categorization', 'ai tagging software for email', 'best ai email tagging tool 2026', 'email intent detection', 'sendbox ai tagging', 'sendbox', 'ai reply sorting tool', 'cold email reply classification', 'automated email tagging', 'ai cold email agent', 'sendbox vs instantly ai tagging', 'reply sentiment analysis tool', 'smart email classification 2026'],
     },
   },

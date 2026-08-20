@@ -27,10 +27,6 @@ export const homepageFAQs = [
     answer: "Google Workspace, Microsoft 365, Outlook, and anything else that speaks IMAP or SMTP. There's no cap on how many mailboxes you connect or how you mix providers. Sendbox also does ESP matching under the hood, detecting which provider a recipient uses and routing the send through a matching mailbox to improve the odds of landing in the inbox."
   },
   {
-    question: "Does Sendbox have a Slack integration for managing replies?",
-    answer: "Yes. A lead's reply shows up straight in your Slack channel, and you can answer from right there, Sendbox sends it on your behalf. There's also an AI reply agent that drafts responses and auto-tags each reply as interested, not now, wrong person, or unsubscribe, so your team keeps moving without hopping between tools."
-  },
-  {
     question: "Are there limits on warmup, inbox placement tests, or blacklist monitoring?",
     answer: "Every Sendbox plan comes with unlimited mailbox warmup, unlimited inbox placement tests, and unlimited blacklist monitoring, subject to a fair use policy that normal usage patterns won't come close to hitting. The only real caps are on sending volume and active leads, and those scale with whichever plan you're on."
   },

@@ -184,7 +184,6 @@ export const getSoftwareApplicationSchema = () => ({
     "Dedicated IP Addresses",
     "Unified Inbox",
     "AI Reply Suggestions",
-    "Slack Integration",
     "Email Validation",
     "Deliverability Monitoring",
     "Isolated Infrastructure",

@@ -83,6 +83,14 @@ const nextConfig = {
         destination: '/:slug',
         permanent: true,
       },
+      // /features/slack-integration was a real, indexed page for a Slack integration
+      // that does not exist and is not being built. The feature entry is gone from
+      // data/features.js, so send the old URL to the features hub instead of 404ing.
+      {
+        source: '/features/slack-integration',
+        destination: '/features',
+        permanent: true,
+      },
       // Branded "/better-than-<tool>" battlecard short links used to redirect here to
       // same-domain PDFs -- those were SendKit's real battlecards, deleted along with
       // the rest of the SendKit-branded doc library (see app/(main)/university/page.js).

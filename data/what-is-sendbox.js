@@ -78,7 +78,7 @@ export const whatIsSendboxData = {
     },
     {
       question: 'What integrations does Sendbox support?',
-      answer: 'Sendbox offers signature-verified webhooks, CRM integrations, a Slack integration, and CSV import and export. The webhook system covers 6 event types for teams building their own workflow automation.',
+      answer: 'Sendbox offers signature-verified webhooks, CRM integrations, and CSV import and export. The webhook system covers 6 event types for teams building their own workflow automation.',
     },
   ],
 

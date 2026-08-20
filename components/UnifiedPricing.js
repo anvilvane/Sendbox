@@ -23,14 +23,14 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
     { category: "Tools & automation" },
     { name: "AI reply agent", essential: true, plus: true, pro: true, agency: true, power: true },
     { name: "AI reply tagging", essential: true, plus: true, pro: true, agency: true, power: true },
-    { name: "Unified inbox + Slack", essential: true, plus: true, pro: true, agency: true, power: true },
-    { name: "Phone dialer**", essential: true, plus: true, pro: true, agency: true, power: true },
+    { name: "Unified inbox", essential: true, plus: true, pro: true, agency: true, power: true },
+    { name: "Phone dialer**", comingSoon: true, essential: false, plus: false, pro: false, agency: false, power: false },
     { name: "Inbox placement tests", essential: "Unlimited*", plus: "Unlimited*", pro: "Unlimited*", agency: "Unlimited*", power: "Unlimited*" },
     { name: "Blacklist monitoring", essential: "Unlimited*", plus: "Unlimited*", pro: "Unlimited*", agency: "Unlimited*", power: "Unlimited*" },
 
     // Scale & agency
     { category: "Scale & agency" },
-    { name: "Workspaces", essential: "Unlimited", plus: "Unlimited", pro: "Unlimited", agency: "Unlimited", power: "Unlimited" },
+    { name: "Workspaces", essential: "1", plus: "3", pro: "10", agency: "25", power: "Unlimited" },
     { name: "White label", essential: false, plus: false, pro: true, agency: true, power: true },
     { name: "Custom branded reports", essential: false, plus: false, pro: false, agency: true, power: true },
     { name: "Dedicated account manager", essential: false, plus: false, pro: false, agency: true, power: true },
@@ -217,6 +217,11 @@ const UnifiedPricing = ({ headingTag: HeadingTag = 'h2' }) => {
                       </span>
                     ) : (
                       feature.name
+                    )}
+                    {feature.comingSoon && (
+                      <span className="ml-2 inline-flex items-center rounded-full border border-gray-200 bg-[#fafafa] px-2 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-wider text-[#6b7280]">
+                        Coming soon
+                      </span>
                     )}
                   </div>
                   {plans.map((plan) => (

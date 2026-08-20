@@ -26,7 +26,6 @@ Sendbox is cold email software purpose-built for deliverability. Every account g
 - [Webhooks](https://sendboxes.tech/features/webhooks): 6 event types with HMAC signature verification
 - [Unified Inbox](https://sendboxes.tech/features/unified-inbox): All replies in one place with AI tagging
 - [Dialer](https://sendboxes.tech/features/dialer): Built-in VoIP dialer with call recording
-- [Slack Integration](https://sendboxes.tech/features/slack-integration): Reply notifications in Slack
 - [CRM Integrations](https://sendboxes.tech/features/crm-integrations): HubSpot, Salesforce, Pipedrive
 - [Lead Finder](https://sendboxes.tech/features/lead-finder): B2B database with enrichment
 - [CRM](https://sendboxes.tech/features/crm): Kanban pipeline with auto-created boards
